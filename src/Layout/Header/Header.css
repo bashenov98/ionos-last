@@ -3,13 +3,20 @@ header {
     padding: 20px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
     position: sticky;
-    top: 0;
     z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    padding: 30px 100px;
 }
 
 nav {
     width: 100%;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 ul.links {
@@ -43,7 +50,7 @@ li.subtabs {
     justify-content: flex-start;
 }
 
-.langswitch {
+.headerLangswitch {
     margin: 0 10px;
     padding: 5px 10px;
     font-size: 1rem;
@@ -55,32 +62,36 @@ li.subtabs {
     cursor: pointer;
 }
 
-.langswitch:hover {
+.headerLangswitch:hover {
     background-color: #0056b3;
 }
 
-.langswitch:focus {
+.headerLangswitch:focus {
     outline: none;
 }
 
-.top {
+.headerTop {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.top-right {
+.headerTop-right {
     display: flex;
     flex-direction: column;
     justify-content: end;
 }
 
-.bot {
+.headerBot {
     display: flex;
     flex-direction: row;
-    
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
 }
 
-.bastyk-links {
+.header-bastyk-links {
     text-decoration: none;
     color: #333;
 }
