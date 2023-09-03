@@ -210,10 +210,12 @@ const Home = () => {
                 </div>
                 <div className='otherNews'>
                     {otherNews.map((news, index) => (
-                        <div className='otherNewsItem' key={index}>
-                            <div><h5>{news.header}</h5></div>
-                            <div>{`${news.publish_date.getDate()} ${months[news.publish_date.getMonth()]} ${news.publish_date.getYear()}`}</div>
-                        </div>
+                        <Link to={`/institute/news/${news.id}`}>
+                            <div className='otherNewsItem' key={index}>
+                                <div><h5>{news.header}</h5></div>
+                                <div>{`${news.publish_date.getDate()} ${months[news.publish_date.getMonth()]} ${news.publish_date.getYear()}`}</div>
+                            </div>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -237,17 +239,17 @@ const Home = () => {
                     </div>
                     <form>
                         <div className='contactUsNameEmail'>
-                            <div>
-                                <input type="text" id="name" name="name" required placeholder='name' />
+                            <div className='contactUsName'>
+                                <input className='contactUsInput' type="text" id="name" name="name" required placeholder='name' />
                             </div>
-                            <div>
-                                <input type="email" id="email" name="email" placeholder='email' required />
+                            <div className='contactUsEmail'>
+                                <input className='contactUsInput' type="email" id="email" name="email" placeholder='email' required />
                             </div>
                         </div>
-                        <div>
-                            <textarea id="message" name="message" placeholder='message' required></textarea>
+                        <div className='contactUsMessage'>
+                            <textarea className='contactUsInput' id="message" name="message" placeholder='message' required></textarea>
                         </div>
-                        <button type="submit">Submit</button>
+                        <button className='contactUsButton' type="submit">Submit</button>
                     </form>
                 </div>
             </div>

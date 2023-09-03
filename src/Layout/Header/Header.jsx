@@ -47,8 +47,9 @@ const Header = () => {
       </div>
       <div className="headerBot">
         <div className="headerBot-left">
-          <Link to='/' >
-            <img className="logo" src={Logo} />
+          <Link className="headerLogoLink" to='/' >
+            <h1 className="headerLogo">IONOS</h1>
+            {/* <img className="logo" src={Logo} /> */}
           </Link>
         </div>
         <div className="headerBot-left">

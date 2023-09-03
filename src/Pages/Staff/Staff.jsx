@@ -6,6 +6,10 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
+import job from '../../media/portfolio.png';
+import email from '../../media/contactIcons/email.png';
+import orcid from '../../media/digital-identity.png';
+
 
 import './Staff.css';
 
@@ -66,24 +70,27 @@ export const StaffDetail = () => {
 
     const [employee, setEmployee] = useState();
 
-    
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         const fetchStaffDetail = async () => {
-            await axios.get(`http://localhost:1337/api/employees/12?populate=*`, {
+            await axios.get(`http://localhost:1337/api/employees/${id}?populate=*`, {
                 headers: { Authorization: 'bearer d0c2c9e6d1e901cb8c7d394af03f7095912bdc63c760c08a41f3e370594bd3a023701f1dac6ae7d4a72e45893371f9333094ecbe57bef695102d42864c700787f3951f929aefcbbb7799c344a0b8ba0d37b5bc0bd68cffe1d7926c59631a24fce5928c2f1765662e466a7fa03c6709e5fd4df774ded6e36d3cb17ebaeab43d79' }
             })
                 .then(response => {
+
                     const n = response.data.data
+                    console.log(n.attributes.Photo.data[0].attributes.formats.small.url)
 
                     setEmployee({
                         id: n.id,
                         name: `${n.attributes.Name} ${n.attributes.Last_Name} `,
-                        job: n.attributes.Position, 
+                        job: n.attributes.Position,
                         email: n.attributes.Email,
                         orcid: n.attributes.Orcid_Link,
                         photo: n.attributes.Photo.data[0].attributes.formats.small.url
                     })
+                    setLoaded(true);
                 })
                 .catch(error => {
                     console.error('Error fetching data: ', error);
@@ -94,13 +101,25 @@ export const StaffDetail = () => {
         fetchStaffDetail();
     }, []);
 
-    return (
+    return loaded && (
         <div className='staffDetail'>
             <div>
-                <img src={employee.photo} />
+                {employee.photo && <img src={employee.photo} />}
             </div>
-            <div >
-
+            <div className='employeeParams'>
+                <h2>{employee.name}</h2>
+                <div className='employeeParam'>
+                    <img className='employeeIcon' src={job} />
+                    <p>{employee.job}</p>
+                </div>
+                <div className='employeeParam'>
+                    <img className='employeeIcon' src={email} />
+                    <p>Email: <a href="">{employee.email}</a></p>
+                </div>
+                <div className='employeeParam'>
+                    <img className='employeeIcon' src={orcid} />
+                    <p>ORCID: <a href={employee.orcid}>{employee.orcid.substring(18)}</a></p>
+                </div>
             </div>
         </div>
     );

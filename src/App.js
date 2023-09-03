@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Layout/Header/Header';
 import Home from './Pages/Home/Home';
 import Labs from './Labs/Labs';
-import News from './Pages/Institute/News';
+import News, { NewsDetail } from './Pages/News/News';
 import History from './Pages/Institute/History';
 import Staff, { StaffDetail } from './Pages/Staff/Staff';
 import ExperimentalBase from './Pages/Institute/ExperimentalBase';
@@ -19,11 +19,13 @@ import Publications from './Pages/Performance/Publications';
 import Seminars from './Pages/Performance/Seminars';
 import Patents from './Pages/Performance/Patents';
 
+import './App.css';
+
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className='app'>
         <Header />
         <Routes>
           <Route path="/" Component={Home} />
@@ -35,6 +37,7 @@ function App() {
           <Route path="/labs/complexlab" Component={Labs} />
           <Route path="/labs/cartographylab" Component={Labs} />
           <Route path="/institute/news" Component={News}/>
+          <Route path="/institute/news/:id" Component={NewsDetail}/>
           <Route path="/institute/history" Component={History}/>
           <Route path="/institute/staff" Component={Staff}/>
           <Route path="/institute/staff/:id" Component={StaffDetail} />
