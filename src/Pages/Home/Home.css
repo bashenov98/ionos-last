@@ -1,0 +1,111 @@
+.homeWrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.homeBanner{
+    padding: 150px;
+    background-color: cornflowerblue;
+    color: white;
+    text-align: center;
+}
+
+.homeEmployees {
+
+}
+
+.mapMain {
+    display: flex;
+    flex-direction: row;
+}
+
+.mapContacts {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.contactIcon {
+    height: 30px;
+    width: auto;
+}
+
+.contactText {
+    padding-left: 5px;
+}
+
+.employeesList {
+    display: flex;
+    flex-direction: row;
+}
+
+.employeesItem {
+    padding: 20px;
+}
+
+.employeesImg {
+    width: 200px;
+    height: auto;
+}
+
+.newsUnderHeader {
+    display: flex;
+    flex-direction: row;
+}
+
+.arrow {
+    padding: 0 10px;
+    height: 20px;
+    width: auto;
+}
+
+.latestNews {
+    display: flex;
+    flex-direction: row;
+}
+
+.latestNewsItem {
+    display: flex;
+    flex-direction: row;
+}
+
+.otherNews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.map {
+    width: 500px;
+    height: 500px;
+}
+
+.contactUs {
+    padding-top: 100px;
+}
+
+.contactUsTop {
+    display: flex;
+    flex-direction: row;
+}
+
+.socialLinks {
+    display: flex;
+    flex-direction: row;
+}
+
+.socialIcon {
+    height: 35px;
+    width: auto;
+}
+
+.contactUsNameEmail {
+    display: flex;
+    flex-direction: row;
+}

@@ -47,7 +47,9 @@ const Header = () => {
       </div>
       <div className="headerBot">
         <div className="headerBot-left">
-          <img className="logo" src={Logo} />
+          <Link to='/' >
+            <img className="logo" src={Logo} />
+          </Link>
         </div>
         <div className="headerBot-left">
           <nav>
