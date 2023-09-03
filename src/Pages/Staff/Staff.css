@@ -1,0 +1,30 @@
+.staff {
+    padding: 100px;
+}
+
+.header {
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    font-weight: 800;
+    font-size: 36px;
+    color: #333;
+}
+
+.employees {
+    display: flex;
+    flex-flow: wrap row;
+}
+
+.employee {
+    padding: 20px 20px 20px 0;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.employeePhoto {
+    height: 300px;
+    width: auto;
+}

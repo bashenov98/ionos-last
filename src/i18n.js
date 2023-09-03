@@ -36,7 +36,9 @@ i18n
           "geomagneticdimensions": "GEOMAGNETIC DIMENSIONS",
           "aerospacemonitoring": "AEROSPACE MONITORING",
           "geoinformsystemdevelopment": "DEVELOPMENT OF GEOINFORMATION SYSTEMS",
-
+          "adminsheader": "Administration of Institute",
+          "latestNewsHeader": "Latest news",
+          "contactUsHeader": "Contact us"
         }
       },
       ru: {
@@ -69,7 +71,10 @@ i18n
           "aerospacemonitoring": "АЭРОКОСМИЧЕСКИЙ МОНИТОРИНГ",
           "geoinformsystemdevelopment": "РАЗРАБОТКА ГЕОИНФОРМАЦИОННЫХ СИСТЕМ",
           "committee": "Аэрокосмический комитет Министерства цифрового развития, инноваций и аэрокосмической промышленности",
-          "blog": "Блог министра"
+          "blog": "Блог министра",
+          "adminsheader": "Администрация института",
+          "latestNewsHeader": "Последние новости",
+          "contactUsHeader": "Свяжитесь с нами"
         }
       }
     },

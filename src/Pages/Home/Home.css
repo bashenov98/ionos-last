@@ -4,15 +4,55 @@
 
 }
 
+.header {
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    font-weight: 800;
+    font-size: 36px;
+    color: #333;
+}
+
 .homeBanner{
+    display: table;
+    width: 100%;
     padding: 150px;
-    background-color: cornflowerblue;
+    background-image: url('../../media/2023-09-03\ 15.36.08.jpg');
     color: white;
     text-align: center;
+    background-size: cover;
+}
+
+.homeBannerOverlay {
+    
+    background: rgba(0,0,0,0.2);
+
+}
+
+.homeBannerHeader {
+    font-family: 'Raleway',sans-serif;
+    color: #fff;
+    font-size: 82px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.homeBannerText {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 30px;
+    margin: 0 auto;
+    margin-bottom: 60px;
 }
 
 .homeEmployees {
+    padding: 100px;
+}
 
+.homeEmployeesHeader {
+    text-align: center;
 }
 
 .mapMain {
@@ -54,6 +94,10 @@
     height: auto;
 }
 
+.homeMainNews {
+    padding: 100px;
+}
+
 .newsUnderHeader {
     display: flex;
     flex-direction: row;
@@ -81,13 +125,17 @@
     justify-content: space-between;
 }
 
+.homeMainMap {
+    padding: 100px;
+}
+
 .map {
     width: 500px;
     height: 500px;
 }
 
 .contactUs {
-    padding-top: 100px;
+    padding: 100px;
 }
 
 .contactUsTop {

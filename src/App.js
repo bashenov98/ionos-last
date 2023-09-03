@@ -4,7 +4,7 @@ import Home from './Pages/Home/Home';
 import Labs from './Labs/Labs';
 import News from './Pages/Institute/News';
 import History from './Pages/Institute/History';
-import Staff from './Pages/Institute/Staff';
+import Staff, { StaffDetail } from './Pages/Staff/Staff';
 import ExperimentalBase from './Pages/Institute/ExperimentalBase';
 import TechEquip from './Pages/Institute/TechEquip';
 import YoungScientists from './Pages/Institute/YoungScientists';
@@ -37,6 +37,7 @@ function App() {
           <Route path="/institute/news" Component={News}/>
           <Route path="/institute/history" Component={History}/>
           <Route path="/institute/staff" Component={Staff}/>
+          <Route path="/institute/staff/:id" Component={StaffDetail} />
           <Route path="/institute/experimentalbase" Component={ExperimentalBase}/>
           <Route path="/institute/technicalequipment" Component={TechEquip}/>
           <Route path="/institute/youngscientists" Component={YoungScientists}/>

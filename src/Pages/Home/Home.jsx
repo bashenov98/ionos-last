@@ -6,6 +6,8 @@ import arrleft from '../../media/arrow-left.png';
 import arrright from '../../media/right-arrow.png';
 import dir from '../../media/admins/Nurakynov_Serik_Maratovich.jpg';
 import DG from '2gis-maps';
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
 
 import address from '../../media/contactIcons/maps-and-flags.png';
 import phone from '../../media/contactIcons/phone-call.png';
@@ -61,6 +63,7 @@ const Map = () => {
 }
 
 const Home = () => {
+    const { t } = useTranslation();
     const [news, setNews] = useState([]);
     const [latestNews, setLatestNews] = useState([]);
     const [otherNews, setOtherNews] = useState([]);
@@ -159,12 +162,14 @@ const Home = () => {
     return (
         <div className='homeWrapper'>
             <div className='homeBanner'>
-                <h1>Welcome to Our Website!</h1>
-                <p>Enjoy your stay here.</p>
+                <div className='homeBannerOverlay'>
+                    <h1 className='homeBannerHeader'>Институт ионосферы</h1>
+                    <p className='homeBannerText'>Мы являемся одним из старейших научно-исследовательских институтов в Казахстане и единственным в Средней Азии специализированным институтом, занимающийся изучением состояния ионосферы. </p>
+                </div>
             </div>
             <div className='homeEmployees'>
-                <div>
-                    <h2>Администрация универститета</h2>
+                <div className='homeEmployeesHeader'>
+                    <h1 className='header'>{t("adminsheader")}</h1>
                 </div>
                 <div className='employeesList'>
                     {administration.map((admin, index) => (
@@ -179,7 +184,7 @@ const Home = () => {
             <div className='homeMainNews'>
                 <div>
                     <div className='newsHeader'>
-                        <h2>Последние новости</h2>
+                        <h1 className='header'>{t("latestNewsHeader")}</h1>
                     </div>
                     <div className='newsUnderHeader'>
                         <div><p>Узнайте о последних новостях</p></div>
@@ -221,7 +226,7 @@ const Home = () => {
             <div className='contactUs'>
                 <div>
                     <div className='contactUsTop'>
-                        <h1>Contact us</h1>
+                        <h1 className='header'>{t("contactUsHeader")}</h1>
                         <div className='socialLinks'>
                             {socialLinks.map((social, index) => (
                                 <div className='socialLink' key={index}>
@@ -233,7 +238,7 @@ const Home = () => {
                     <form>
                         <div className='contactUsNameEmail'>
                             <div>
-                                <input type="text" id="name" name="name" required placeholder='name'/>
+                                <input type="text" id="name" name="name" required placeholder='name' />
                             </div>
                             <div>
                                 <input type="email" id="email" name="email" placeholder='email' required />
