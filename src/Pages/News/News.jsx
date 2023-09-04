@@ -30,7 +30,7 @@ export const NewsDetail = () => {
     useEffect(() => {
         console.log()
         const fetchNewsDetail = async () => {
-            await axios.get(`http://localhost:1337/api/newss/${id}?populate=*`, {
+            await axios.get(`https://ionos-strapi.onrender.com/api/newss/${id}?populate=*`, {
                 headers: { Authorization: 'bearer d0c2c9e6d1e901cb8c7d394af03f7095912bdc63c760c08a41f3e370594bd3a023701f1dac6ae7d4a72e45893371f9333094ecbe57bef695102d42864c700787f3951f929aefcbbb7799c344a0b8ba0d37b5bc0bd68cffe1d7926c59631a24fce5928c2f1765662e466a7fa03c6709e5fd4df774ded6e36d3cb17ebaeab43d79' }
             })
                 .then(response => {

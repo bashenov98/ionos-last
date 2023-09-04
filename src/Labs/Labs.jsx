@@ -12,8 +12,8 @@ const Labs = () => {
     const { t } = useTranslation();
 
     return (
-        <div>
-                <h2>{t(location.pathname.slice(6))}</h2>
+        <div className='lab'>
+                <h1 className='header'>{t(location.pathname.slice(11))}</h1>
         </div>
     );
 }

@@ -29,7 +29,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" Component={Home} />
-          <Route path="/labs/diagnosticlab" Component={Labs} />
+          <Route path="/institute/diagnosticlab" Component={Labs} />
           <Route path="/labs/nonstationarylab" Component={Labs} />
           <Route path="/labs/geomagneticlab" Component={Labs} />
           <Route path="/labs/reliabilitylab" Component={Labs} />

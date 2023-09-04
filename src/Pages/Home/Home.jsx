@@ -36,7 +36,7 @@ const Map = () => {
             <div className='map' id='map-container'>
 
             </div>
-            <div className='mapContacts'>
+            {/* <div className='mapContacts'>
                 <div className='contact'>
                     <img className='contactIcon' src={address} />
                     <p className='contactText'>050020, Республика Казахстан, г.Алматы, Каменское плато, Садоводческое товарищество «Ионосфера» д.117</p>
@@ -57,7 +57,7 @@ const Map = () => {
                     <img className='contactIcon' src={time} />
                     <p className='contactText'>пн-пт с 09:00 до 17:00, перерыв с 13:00 до 13:30</p>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }
@@ -226,16 +226,16 @@ const Home = () => {
                 <Map />
             </div>
             <div className='contactUs'>
+                <h1 className='header'>{t("contactUsHeader")}</h1>
                 <div>
                     <div className='contactUsTop'>
-                        <h1 className='header'>{t("contactUsHeader")}</h1>
-                        <div className='socialLinks'>
+                        {/* <div className='socialLinks'>
                             {socialLinks.map((social, index) => (
                                 <div className='socialLink' key={index}>
                                     <Link to={social.link}><img className='socialIcon' src={social.img} /></Link>
                                 </div>
                             ))}
-                        </div>
+                        </div> */}
                     </div>
                     <form>
                         <div className='contactUsNameEmail'>
