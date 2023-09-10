@@ -1,0 +1,147 @@
+header {
+    padding: 20px;
+    position: sticky;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    padding: 30px 100px;
+    background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%);
+
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.headerRight {
+    padding-left: 50px;
+}
+
+.headerRightTop {
+    display: flex;
+    flex-direction: row;
+}
+
+nav {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+ul.links {
+    list-style-type: none;
+    padding: 0;
+    display: inline-flex;
+    justify-content: right;
+}
+
+ul.links li {
+    margin-right: 20px;
+}
+
+.tabs {
+    color: white;
+}
+
+ul.links li:last-child {
+    margin-right: 0;
+}
+
+ul.links li a {
+    text-decoration: none;
+}
+
+ul.links li a:hover {
+    color: #007bff;
+}
+
+li.subtabs {
+    list-style-type: none; /* This will remove the bullet points */
+    padding: 0 ;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.headerLangswitch {
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.headerLangswitch:hover {
+    background-color: #0056b3;
+}
+
+.headerLangswitch:focus {
+    outline: none;
+}
+
+.headerLogoLink {
+    text-decoration: none;
+    color: black;
+}
+
+.headerLogo {
+
+    font-family: 'Raleway',sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.headerTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.headerTop-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.headerBot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.header-bastyk-links {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    width: 125px; /* adjust as needed */
+    height: auto; /* keeps the aspect ratio of the image */
+}
+
+.droptab {
+    padding: 10px;
+}
+
+.droptab-link {
+    transition: all linear .2s;
+    touch-action: manipulation;
+    color: black
+}
+
+li > a {
+    display: block;
+}

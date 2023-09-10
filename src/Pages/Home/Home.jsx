@@ -4,8 +4,6 @@ import Button from 'react';
 import './Home.css';
 import arrleft from '../../media/arrow-left.png';
 import arrright from '../../media/right-arrow.png';
-import dir from '../../media/admins/Nurakynov_Serik_Maratovich.jpg';
-import DG from '2gis-maps';
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
 
@@ -17,50 +15,11 @@ import time from '../../media/contactIcons/clock.png';
 
 import linkedin from '../../media/social/linkedin.png';
 import inst from '../../media/social/instagram.png';
+import { Administration } from './Administration';
 
-const Map = () => {
-    useEffect(() => {
-        let map
-        map = DG.map("map-container", {
-            center: [43.1760, 76.9535],
-            zoom: 20
-        })
+import { VideoComponent } from './Video/Video';
+import { Map } from './Map/Map';
 
-
-
-        DG.marker([43.1759, 76.9535]).addTo(map)
-        return () => map && map.remove();
-    }, []);
-    return (
-        <div className='mapMain'>
-            <div className='map' id='map-container'>
-
-            </div>
-            {/* <div className='mapContacts'>
-                <div className='contact'>
-                    <img className='contactIcon' src={address} />
-                    <p className='contactText'>050020, Республика Казахстан, г.Алматы, Каменское плато, Садоводческое товарищество «Ионосфера» д.117</p>
-                </div>
-                <div className='contact'>
-                    <img className='contactIcon' src={phone} />
-                    <p className='contactText'>8(727) 380-30-54</p>
-                </div>
-                <div className='contact'>
-                    <img className='contactIcon' src={fax} />
-                    <p className='contactText'>8(727) 380-30-53</p>
-                </div>
-                <div className='contact'>
-                    <img className='contactIcon' src={email} />
-                    <p className='contactText'>ionos@ionos.kz, admion1@mail.ru</p>
-                </div>
-                <div className='contact'>
-                    <img className='contactIcon' src={time} />
-                    <p className='contactText'>пн-пт с 09:00 до 17:00, перерыв с 13:00 до 13:30</p>
-                </div>
-            </div> */}
-        </div>
-    );
-}
 
 const Home = () => {
     const { t } = useTranslation();
@@ -129,32 +88,6 @@ const Home = () => {
                 publish_date: (new Date("2023-04-23"))
             }
         ]);
-        setAdministration([
-            {
-                id: 1,
-                lastName: "Нуракынов",
-                name: "Серик",
-                middleName: "Маратович",
-                img: dir,
-                position: "Директор"
-            },
-            {
-                id: 2,
-                lastName: "Искаков",
-                name: "Берик",
-                middleName: "Амангельдыевич",
-                img: dir,
-                position: "Заместитель директора по НИР"
-            },
-            {
-                id: 3,
-                lastName: "Искакова",
-                name: "Гульнара",
-                middleName: "",
-                img: dir,
-                position: "Ученый секретарь"
-            },
-        ]);
     }, []);
 
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -167,20 +100,7 @@ const Home = () => {
                     <p className='homeBannerText'>Мы являемся одним из старейших научно-исследовательских институтов в Казахстане и единственным в Средней Азии специализированным институтом, занимающийся изучением состояния ионосферы. </p>
                 </div>
             </div>
-            <div className='homeEmployees'>
-                <div className='homeEmployeesHeader'>
-                    <h1 className='header'>{t("adminsheader")}</h1>
-                </div>
-                <div className='employeesList'>
-                    {administration.map((admin, index) => (
-                        <div className='employeesItem' key={index}>
-                            <img className='employeesImg' src={admin.img} />
-                            <h4>{`${admin.lastName} ${admin.name} ${admin.middleName} `}</h4>
-                            <p>{admin.position}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <Administration />
             <div className='homeMainNews'>
                 <div>
                     <div className='newsHeader'>
@@ -253,6 +173,7 @@ const Home = () => {
                     </form>
                 </div>
             </div>
+            <VideoComponent />
         </div>
     );
 }

@@ -1,147 +1,99 @@
-header {
-    background-color: #202A44;
-    padding: 20px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
-    position: sticky;
-    z-index: 1;
 
+.header {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-
-    padding: 30px 100px;
-}
-
-.headerContainer {
-    display: flex;
-    flex-direction: row;
-}
-
-.headerRight {
-    padding-left: 50px;
-}
-
-.headerRightTop {
-    display: flex;
-    flex-direction: row;
-}
-
-nav {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-}
-
-ul.links {
-    list-style-type: none;
-    padding: 0;
-    display: inline-flex;
-    justify-content: right;
-}
-
-ul.links li {
-    margin-right: 20px;
-}
-
-.tabs {
-    color: white;
-}
-
-ul.links li:last-child {
-    margin-right: 0;
-}
-
-ul.links li a {
-    text-decoration: none;
-}
-
-ul.links li a:hover {
-    color: #007bff;
-}
-
-li.subtabs {
-    list-style-type: none; /* This will remove the bullet points */
-    padding: 0 ;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.headerLangswitch {
-    margin: 0 10px;
-    padding: 5px 10px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    cursor: pointer;
-}
-
-.headerLangswitch:hover {
-    background-color: #0056b3;
-}
-
-.headerLangswitch:focus {
-    outline: none;
-}
-
-.headerLogoLink {
-    text-decoration: none;
-    color: black;
-}
-
-.headerLogo {
-
-    font-family: 'Raleway',sans-serif;
-    font-size: 35px;
-    font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
 }
 
 .headerTop {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    height: 71px;
     width: 100%;
+    background-color: white;
+    padding-top: 15px;
+    padding-left: 40px;
 }
 
-.headerTop-right {
+.headerTopContacts {
+    gap: 0;
+}
+
+.headerTopContact {
+    font-family: Poppins;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 17px;
+    letter-spacing: 0.15em;
+    text-align: left;
+}
+
+.headerLogo {
+    height: 87px;
+    width: auto;
+    padding-top: 25px;
+    padding-left: 100px;
+}
+
+.headerTopLinks {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    align-items: center;
+    padding-left: 140px;
+}
+
+.headerTopLink {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.headerLanguageButtons {
+    padding-left: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: end;
+
+}
+
+.headerLanguageButton {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    letter-spacing: 0.03em;
+    text-align: left;
 }
 
 .headerBot {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
-    align-items: center;
+    height: 115px;
+    background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%);
 }
 
-.header-bastyk-links {
+
+.headerBotTabs {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-top: 40px;
+    list-style-type: none;
+}
+
+.headerBotTab {
     text-decoration: none;
     color: white;
-}
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 36px;
+    letter-spacing: 0.03em;
+    text-align: left;
 
-.logo {
-    width: 125px; /* adjust as needed */
-    height: auto; /* keeps the aspect ratio of the image */
-}
-
-.droptab {
-    padding: 10px;
-}
-
-.droptab-link {
-    transition: all linear .2s;
-    touch-action: manipulation;
-    color: black
-}
-
-li > a {
-    display: block;
 }

@@ -1,0 +1,48 @@
+.administrationHeader {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%);
+    height: 158px;
+}
+
+.administrationHeaderText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.administrationList {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    gap: 30px;
+    background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%)
+}
+
+.administrationItem {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    width: 90%;
+    height: 400px;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(250,250,250,0) 20%, rgba(255, 255, 255, 0.12) 66%, rgba(255, 255, 255, 0.13) 70%);
+}
+
+.administrationItemImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0rem auto 3rem;
+    transform: translateY(-11px);
+    
+}
+
+.administrationItemName {
+    text-align: center;
+}
+
+.administrationItemPosition {
+    text-align: center;
+}

@@ -14,6 +14,12 @@ const Labs = () => {
     return (
         <div className='lab'>
                 <h1 className='header'>{t(location.pathname.slice(11))}</h1>
+                <div>
+                    <div className='labEmployees'>
+                        
+
+                    </div>
+                </div>
         </div>
     );
 }
