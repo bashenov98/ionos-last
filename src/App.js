@@ -20,6 +20,7 @@ import Seminars from './Pages/Performance/Seminars';
 import Patents from './Pages/Performance/Patents';
 
 import './App.css';
+import { Footer } from './Layout/Footer/Footer';
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
           <Route path="/performance/patents" Component={Patents}/>
           
         </Routes>
+        <Footer />
       </div>
     </Router>
 

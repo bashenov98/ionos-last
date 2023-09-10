@@ -5,17 +5,14 @@
 }
 
 .header {
-    text-transform: uppercase;
+    /* text-transform: uppercase;
     margin: 0 0 20px 0;
     font-weight: 800;
     font-size: 36px;
     color: white;
-    text-align: center;
+    text-align: center; */
 }
 
-h2 {
-    color:white;
-}
 h3 {
     color:white;
 }
@@ -28,8 +25,9 @@ h5 {
 
 .homeBanner{
     display: table;
+    height: 200px;
     width: 100%;
-    background-image: url('../../media/2023-09-03\ 15.36.08.jpg');
+    background-image: url('../../media/2023-09-11\ 01.15.44.jpg');
     color: white;
     text-align: center;
     background-size: cover;
@@ -46,9 +44,9 @@ h5 {
 }
 
 .homeBannerHeader {
-    font-family: 'Raleway',sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #fff;
-    font-size: 82px;
+    font-size: 96px;
     font-weight: 700;
     text-transform: uppercase;
     margin-top: 0;
@@ -56,9 +54,11 @@ h5 {
 }
 
 .homeBannerText {
+    padding-top: 40px;
+    font-family: 'Poppins', sans-serif;
     color: #fff;
-    font-size: 22px;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 200;
     line-height: 30px;
     margin: 0 auto;
     margin-bottom: 60px;

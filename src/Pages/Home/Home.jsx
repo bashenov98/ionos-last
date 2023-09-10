@@ -19,6 +19,10 @@ import { Administration } from './Administration';
 
 import { VideoComponent } from './Video/Video';
 import { Map } from './Map/Map';
+import { Projects } from './Projects/Projects';
+import { News } from './News/News';
+import { Partners } from './Partners/Partners';
+import { ContactUs } from './ContactUs/ContactUs';
 
 
 const Home = () => {
@@ -101,10 +105,13 @@ const Home = () => {
                 </div>
             </div>
             <Administration />
-            <div className='homeMainNews'>
+            <News />
+            <Projects />
+            <Map />
+            {/* <div className='homeMainNews'>
                 <div>
                     <div className='newsHeader'>
-                        <h1 className='header'>{t("latestNewsHeader")}</h1>
+                        <h1>{t("latestNewsHeader")}</h1>
                     </div>
                     <div className='newsUnderHeader'>
                         <div><p>Узнайте о последних новостях</p></div>
@@ -138,42 +145,21 @@ const Home = () => {
                         </Link>
                     ))}
                 </div>
-            </div>
-            <div className='homeMainTeam'>
+            </div> */}
+            {/* <div className='homeMainTeam'>
 
-            </div>
-            <div className='homeMainMap'>
+            </div> */}
+            {/* <div className='homeMainMap'>
                 <Map />
-            </div>
-            <div className='contactUs'>
-                <h1 className='header'>{t("contactUsHeader")}</h1>
-                <div>
-                    <div className='contactUsTop'>
-                        {/* <div className='socialLinks'>
-                            {socialLinks.map((social, index) => (
-                                <div className='socialLink' key={index}>
-                                    <Link to={social.link}><img className='socialIcon' src={social.img} /></Link>
-                                </div>
-                            ))}
-                        </div> */}
-                    </div>
-                    <form>
-                        <div className='contactUsNameEmail'>
-                            <div className='contactUsName'>
-                                <input className='contactUsInput' type="text" id="name" name="name" required placeholder='name' />
-                            </div>
-                            <div className='contactUsEmail'>
-                                <input className='contactUsInput' type="email" id="email" name="email" placeholder='email' required />
-                            </div>
-                        </div>
-                        <div className='contactUsMessage'>
-                            <textarea className='contactUsInput' id="message" name="message" placeholder='message' required></textarea>
-                        </div>
-                        <button className='contactUsButton' type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
+            </div> */}
+            <ContactUs />
+            {/* <div className='contactUs'>
+                
+            </div> */}
             <VideoComponent />
+
+            <Partners />
+
         </div>
     );
 }

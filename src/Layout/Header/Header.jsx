@@ -18,11 +18,13 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className="header">
       <div className="headerTop">
         <div className="headerTopContacts">
-          <p className="headerTopContact">8(727) 380-30-54</p>
-          <p className="headerTopContact">ionos@ionos.kz</p>
+          <div className="headerTopContact">8(727) 380-30-54</div>
+          <div className="headerTopContact">ionos@ionos.kz</div>
+          {/* <p className="headerTopContact">8(727) 380-30-54</p>
+          <p className="headerTopContact">ionos@ionos.kz</p> */}
         </div>
         <div className="headerTopLinks">
           <Link
@@ -41,12 +43,14 @@ const Header = () => {
         <div className="headerLanguageButtons">
           {languagesData.map((item, i) => (
             <a onClick={() => changeLanguage(`${item}`)}>
-              <p
-                className="headerLanguageButton"
-                key={i}
-              >
-                {item.toLocaleUpperCase()}
-              </p>
+              <div className="headerLanguageButton">
+                <p
+                  className="headerLanguageButtonText"
+                  key={i}
+                >
+                  {item.toLocaleUpperCase()}
+                </p>
+              </div>
             </a>
           ))}
         </div>

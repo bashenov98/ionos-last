@@ -1,11 +1,12 @@
 .mapContainer {
     display: flex;
     flex-direction: column;
+    padding: 100px;
 }
 
 .map {
     width: 100%;
-    height: 500px;
+    height: 479px;
 }
 
 .mapAddress {
@@ -17,7 +18,7 @@
 
 .mapAddressHeader {
     text-align: center;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
@@ -29,7 +30,7 @@
 
 .mapAddressText {
     text-align: center;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-size: 17px;
     font-weight: 500;
     line-height: 26px;

@@ -2,14 +2,6 @@
     padding: 100px;
 }
 
-.header {
-    text-transform: uppercase;
-    margin: 0 0 20px 0;
-    font-weight: 800;
-    font-size: 36px;
-    color: white;
-    text-align: center;
-}
 
 .employees {
     display: flex;

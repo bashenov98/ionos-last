@@ -10,7 +10,7 @@ import './Administration.css';
 
 export const Administration = () => {
     const { t } = useTranslation();
-    
+
 
     const administration = [
         {
@@ -50,14 +50,18 @@ export const Administration = () => {
     return (
         <div className='administration'>
             <div className='administrationHeader'>
-                <h1 className='header'>{t("adminsheader")}</h1>
+                <h1 className='administrationHeaderText'>{t("adminsheader")}</h1>
             </div>
             <div className='administrationList'>
                 {administration.map((admin, index) => (
                     <div className='administrationItem' key={index}>
-                        <img className='administrationItemImg' src={admin.img} />
-                        <h4 className='administrationItemName'>{`${admin.lastName} ${admin.name} ${admin.middleName} `}</h4>
-                        <p className='administrationItemPosition'>{admin.position}</p>
+                        <div className='administrationItemImgDiv'>
+                            <img className='administrationItemImg' src={admin.img} />
+                        </div>
+                        <div className='administrationItemDiv'>
+                            <h4 className='administrationItemName'>{`${admin.lastName} ${admin.name} ${admin.middleName} `}</h4>
+                            <p className='administrationItemPosition'>{admin.position}</p>
+                        </div>
                     </div>
                 ))}
             </div>
