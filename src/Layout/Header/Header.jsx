@@ -56,7 +56,7 @@ const Header = () => {
         </div>
       </div>
       <div className="headerBot">
-        <div>
+        <div className="headerLogoDiv">
           <Link to="/"><img src={Logo} className='headerLogo' alt="logo" /></Link>
         </div>
         <div>
@@ -74,6 +74,7 @@ const Header = () => {
                     style={{
                       display:
                         isDropdownVisible === item.index ? "block" : "none",
+                      marginLeft: i===2? "0px" : i===3 && "-570px"
                     }}
                   >
                     {item.subSection.map((subsection, i) => (

@@ -1,16 +1,38 @@
-.staff {
-    padding: 100px;
+.staffBackground {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: linear-gradient(245.86deg, #1B3571 26.48%, #4C1F3D 45.38%), url("../../media/ionos_logo-white\ 1.png");
+    background-blend-mode: overlay;
+}
+
+.staffContainer {}
+
+.staffHeaderText {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 36px;
+    letter-spacing: 0.55em;
+    text-align: center;
+    color:white;
+    padding: 42px 0 66px;
 }
 
 
-.employees {
+.staffList {
     display: flex;
     flex-flow: wrap row;
+    padding: 0 90px;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
 }
 
-.employee {
-    padding: 20px 20px 20px 0;
-}
+.staffItem {
+
+}  
+
 
 .link {
     text-decoration: none;
@@ -18,14 +40,42 @@
 }
 
 .employeePhoto {
-    height: 300px;
-    width: auto;
+    height: 207.2px;
+    width: 150px;
+    border-radius: 10px;
 }
 
 .staffDetail {
     display: flex;
     flex-direction: row;
     padding: 100px;
+}
+
+.staffItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.employeeNameText {
+    padding-top: 17px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0.13em;
+    text-align: center;
+}
+
+.employeePositionText {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0.13em;
+    text-align: center;
+    color: white;
 }
 
 
@@ -38,9 +88,9 @@
     flex-direction: row;
 }
 
+
 .employeeIcon {
     height: 25px;
     width: auto;
     padding-right: 20px;
 }
-

@@ -31,10 +31,10 @@ const Staff = () => {
                     const employees = emps.map(emp => ({
                         id: emp.id,
                         name: `${emp.attributes.Name} ${emp.attributes.Last_Name}`,
-                        job: emp.attributes.Position,
-                        img: emp.attributes.Photo.data[0].attributes.formats.small.url
+                        job: emp.attributes.Position ? emp.attributes.Position : "",
+                        img: emp.attributes.Photo.data ? emp.attributes.Photo.data[0].attributes.formats.small.url : "https://res.cloudinary.com/ddsakxfcm/image/upload/v1693151526/small_1_335533421b.png"
                     }));
-                    console.log(employees)
+
                     setStaff(employees)
                 })
                 .catch(error => {
@@ -44,18 +44,18 @@ const Staff = () => {
     }, []);
 
     return (
-        <div className='staff'>
-            <div>
-                <h1 className='header'>{t(location.pathname.slice(11))}</h1>
-                <div className='employees'>
+        <div className='staffBackground'>
+            <div className='staffContainer'>
+                <div className='staffHeader'>
+                    <h1 className='staffHeaderText'>{t(location.pathname.slice(11))}</h1>
+                </div>
+                <div className='staffList'>
                     {staff.map((emp, index) => (
                         <Link className='link' to={`/institute/staff/${emp.id}`}>
-                            <div className='employee' key={index}>
-                                <div>
-                                    <img className='employeePhoto' src={emp.img} />
-                                    <h4>{emp.name}</h4>
-                                    <p>{emp.job}</p>
-                                </div>
+                            <div className='staffItem' key={index}>
+                                <img className='employeePhoto' src={emp.img} />
+                                <h4 className='employeeNameText' >{emp.name}</h4>
+                                <p className='employeePositionText'>{emp.job}</p>
                             </div>
                         </Link>
                     ))}
@@ -86,9 +86,9 @@ export const StaffDetail = () => {
                         id: n.id,
                         name: `${n.attributes.Name} ${n.attributes.Last_Name} `,
                         job: n.attributes.Position,
-                        email: n.attributes.Email,
-                        orcid: n.attributes.Orcid_Link,
-                        photo: n.attributes.Photo.data[0].attributes.formats.small.url
+                        email: n.attributes.Email ? n.attributes.Email : "",
+                        orcid: n.attributes.Orcid_Link ? n.attributes.Orcid_Link : "",
+                        photo: n.attributes.Photo.data ? n.attributes.Photo.data[0].attributes.formats.small.url : "https://res.cloudinary.com/ddsakxfcm/image/upload/v1693151526/small_1_335533421b.png"
                     })
                     setLoaded(true);
                 })

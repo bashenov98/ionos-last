@@ -35,15 +35,15 @@ export const News = () => {
             <div className="newsHeader">
                 <h1 className="newsHeaderText">ПОСЛЕДНИЕ НОВОСТИ</h1>
             </div>
-            <div className="newsList">
+            <div className="newsHomeList">
                 {news.map((newsItem, i) => (
-                    <div className="newsItem" key={i}>
+                    <div className="newsHomeItem" key={i}>
                         <div className="newsItemTop">
                             <div className="newsItemDate">
                                 <p className="newsItemDateText">{newsItem.date}</p>
                             </div>
-                            <div className="newsItemImgDiv">
-                                <img className="newsItemImg" src={newsItem.img} />
+                            <div className="newsHomeItemImgDiv">
+                                <img className="newsHomeItemImg" src={newsItem.img} />
                             </div>
                             <div className="newsItemButtonDiv">
                                 <button className="newsItemButton">ПОДРОБНЕЕ</button>
