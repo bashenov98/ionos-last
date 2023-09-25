@@ -84,7 +84,7 @@ export const Partners = () => {
 
                 Array.from(carouselItems).forEach((item) => {
                     if (i < carouselItems.length) {
-                        item.style.transform = `translateX(-${i * 100}%)`
+                        item.style.transform = `translateX(-${i * 80}%)`
                     }
                 })
 

@@ -1,6 +1,7 @@
 .newsContainer {
     display: flex;
     flex-direction: column;
+    padding-bottom: 100px;
 }
 
 .newsHeaderText {
@@ -154,6 +155,31 @@ link {
 
 }
 
+.newsDate {
+    display: flex;
+    flex-direction: row;
+    padding-left: 31px;
+}
+
+.newsDateImg {
+    height: 19px;
+    width: 17px;
+}
+
+.newsDateText {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    padding-left: 7px;
+    margin-top: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
 .newsImageParams {
     padding: 42px 57px 0;
 }
@@ -161,7 +187,7 @@ link {
 .newsDetailImage {
     width: 513px;
     height: auto;
-    
+
     box-shadow: 0px 9px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
@@ -175,34 +201,3 @@ link {
     text-align: left;
 
 }
-
-/* .newsDetail {
-    padding: 100px;
-} */
-
-/* .newsHeader {
-    width: 100%;
-    padding-bottom: 20px;
-    border-bottom: 0.5px solid hsla(0, 0%, 77%, .6);
-    margin-bottom: 20px;
-
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 36px;
-    color: #333;
-}
-
-.newsImageParams {
-    display: flex;
-    flex-direction: row;
-}
-
-.newsImage {
-    margin-right: 30px;
-}
-
-.newsParams {}
-
-.newsDescription {
-    padding-top: 30px;
-} */

@@ -59,7 +59,7 @@ const Header = () => {
         <div className="headerLogoDiv">
           <Link to="/"><img src={Logo} className='headerLogo' alt="logo" /></Link>
         </div>
-        <div>
+        <div style={{width: "100%"}}>
           <nav>
             <ul className="headerBotTabs">
               {headerData.map((item, i) => (
@@ -96,132 +96,6 @@ const Header = () => {
         </div>
       </div>
     </div>
-    // <header>
-    //   <div className="headerContainer">
-    //     <div className="headerRight">
-
-    //       <div className="headerRightTop">
-    //         <div>
-    //           <nav>
-    //             <ul className="links">
-    //               {headerData.map((item, i) => (
-    //                 <li
-    //                   onMouseEnter={() => setDropdownVisibility(item.index)}
-    //                   onMouseLeave={() => setDropdownVisibility(0)}
-    //                   key={i}
-    //                 >
-    //                   <a class="dropdown-toggle" className="tabs">{t(item.section)}</a>
-    //                   <ul
-    //                     class="dropdown-menu no-border-radius fadeIn animated"
-    //                     style={{
-    //                       display:
-    //                         isDropdownVisible === item.index ? "block" : "none",
-    //                     }}
-    //                   >
-    //                     {item.subSection.map((subsection, i) => (
-    //                       <li className="droptab" key={i}>
-    //                         <Link
-    //                           className="droptab-link"
-    //                           to={`/institute/${subsection}`}
-    //                         >
-    //                           {t(subsection)}
-    //                         </Link>
-    //                       </li>
-    //                     ))}
-    //                   </ul>
-    //                 </li>
-    //               ))}
-    //             </ul>
-    //           </nav>
-    //         </div>
-    //         <div>
-    //           <div className="headerTop-left">
-    //             {languagesData.map((item, i) => (
-    //               <button
-    //                 className="headerLangswitch"
-    //                 onClick={() => changeLanguage("en")}
-    //                 key={i}
-    //               >
-    //                 {item}
-    //               </button>
-    //             ))}
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-
-
-    //   {/* <div className="headerTop">
-
-    //   <div className="headerBot-left">
-    //       <Link className="headerLogoLink" to='/' >
-    //         <img className="logo" src={Logo} />
-    //       </Link>
-    //     </div>
-
-    //     <div className="headerTop-right">
-    //       <Link
-    //         className="header-bastyk-links"
-    //         to="https://www.gov.kz/memleket/entities/kazcosmos"
-    //       >
-    //         {t("committee")}
-    //       </Link>
-    //       <Link
-    //         className="header-bastyk-links"
-    //         to="https://dialog.egov.kz/blogs/1376256/posts"
-    //       >
-    //         {t("blog")}
-    //       </Link>
-    //     </div>
-    //   </div>
-    //   <div className="headerBot">
-    //     <div className="headerBot-left">
-    //       <nav>
-    //         <ul className="links">
-    //           {headerData.map((item, i) => (
-    //             <li
-    //               onMouseEnter={() => setDropdownVisibility(item.index)}
-    //               onMouseLeave={() => setDropdownVisibility(0)}
-    //               key={i}
-    //             >
-    //               <a class="dropdown-toggle" className="tabs">{t(item.section)}</a>
-    //               <ul
-    //                 class="dropdown-menu no-border-radius fadeIn animated"
-    //                 style={{
-    //                   display:
-    //                     isDropdownVisible === item.index ? "block" : "none",
-    //                 }}
-    //               >
-    //                 {item.subSection.map((subsection, i) => (
-    //                   <li className="droptab" key={i}>
-    //                     <Link
-    //                       className="droptab-link"
-    //                       to={`/institute/${subsection}`}
-    //                     >
-    //                       {t(subsection)}
-    //                     </Link>
-    //                   </li>
-    //                 ))}
-    //               </ul>
-    //             </li>
-    //           ))}
-    //         </ul>
-    //       </nav>
-    //     </div>
-    //     <div className="headerTop-left">
-    //       {languagesData.map((item, i) => (
-    //         <button
-    //           className="headerLangswitch"
-    //           onClick={() => changeLanguage("en")}
-    //           key={i}
-    //         >
-    //           {item}
-    //         </button>
-    //       ))}
-    //     </div>
-    //   </div> */}
-    // </header>
   );
 };
 

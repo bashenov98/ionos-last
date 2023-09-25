@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
 import { useLocation, Link } from 'react-router-dom';
 
-import logo from '../../media/ionos_logo-white.png'
-import nav from '../../media/nav.png'
+import logo from '../../media/ionos_logo-white.png';
+import nav from '../../media/nav.png';
+import dateLogo from '../../media/date.png';
 
 import { useParams } from 'react-router-dom';
 
@@ -80,6 +81,7 @@ const News = () => {
 export const NewsDetail = () => {
     const [news, setNews] = useState();
     const [loaded, setLoaded] = useState(false);
+    const [date, setDate] = useState();
 
     const { id } = useParams();
 
@@ -91,15 +93,24 @@ export const NewsDetail = () => {
             })
                 .then(response => {
                     const n = response.data.data
-                    console.log(n.attributes)
+                    console.log(n.attributes.Publish_date)
+                    const newDate = new Date(n.attributes.Publish_date)
+                    const formattedDate = new Intl.DateTimeFormat('ru-RU', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: '2-digit'
+                      }).format(newDate);
+
                     setNews({
                         header: n.attributes.Header,
                         description: n.attributes.Description,
-                        date: (new Date(n.attributes.Publish_date)),
+                        date: formattedDate,
                         author: n.attributes.Author ? `${n.attributes.Author.data.attributes.Name} ${n.attributes.Author.data.attributes.Last_Name}` : "",
                         authorId: n.attributes.Author ? n.attributes.Author.data.id : "",
                         image: n.attributes.Image.data ? n.attributes.Image.data.attributes.formats.small.url : logo
                     });
+                
+                    setDate(formattedDate);      
                     setLoaded(true);
                 })
                 .catch(error => {
@@ -128,13 +139,13 @@ export const NewsDetail = () => {
                     <h1 className='newsNavbarPage'>{news.header}</h1>
                 </div>
             </div>
+            <div className='newsDate'>
+                <img src={dateLogo} className='newsDateImg'/> 
+                <h1 className='newsDateText'>{`Опубликовано:   ${news.date}`}</h1>
+            </div>
             <div className='newsImageParams'>
                 <div className='newsImage'>
                     {news.image && <img className='newsDetailImage' src={news.image} />}
-                </div>
-                <div className='newsParams'>
-                    <Link to={`/institute/staff/${news.authorId}`}>{news.author}</Link>
-                    <h1>{news.date.toLocaleDateString("ru")}</h1>
                 </div>
             </div>
             <div className='newsDetailDescription'>
