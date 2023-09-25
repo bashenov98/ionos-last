@@ -1,6 +1,6 @@
 import './ExperimentalBaseFirst.css'
 
-import ObservatoryImg from "../../../../media/institute/experimental-base/observatory.png";
+import ObservatoryImg from "../../../../../media/institute/experimental-base/observatory.png";
 
 const ExperimentalBaseFirst = () => {
   return (

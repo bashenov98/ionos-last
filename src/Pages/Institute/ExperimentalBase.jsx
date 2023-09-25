@@ -3,8 +3,9 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
 import { useLocation } from "react-router-dom";
 import "./ExperimentalBase.css";
-import ExperimentalBaseFirst from "./components/experimentals-base/ExperimentalBaseFirst";
-import ExperimentalBaseSecond from "./components/experimentals-base/ExperimentalBaseSecond";
+import ExperimentalBaseFirst from "./components/experimentals-base/first/ExperimentalBaseFirst";
+import ExperimentalBaseSecond from "./components/experimentals-base/second/ExperimentalBaseSecond";
+import ExperimentalBaseThird from "./components/experimentals-base/third/ExperimentalBaseThird";
 
 const ExperimentalBase = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const ExperimentalBase = () => {
 
         <ExperimentalBaseFirst/>
         <ExperimentalBaseSecond/>
+        <ExperimentalBaseThird/>
     </div>
   );
 };

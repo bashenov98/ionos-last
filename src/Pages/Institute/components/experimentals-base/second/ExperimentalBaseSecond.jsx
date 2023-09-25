@@ -1,4 +1,4 @@
-import RadioImg from "../../../../media/institute/experimental-base/radio-telescope.png";
+import RadioImg from "../../../../../media/institute/experimental-base/radio-telescope.png";
 
 import "./ExperimentalBaseSecond.css";
 

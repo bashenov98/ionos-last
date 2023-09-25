@@ -1,0 +1,29 @@
+.experimentalBaseThird {
+  display: flex;
+  flex-direction: column;
+}
+
+.experimentalBaseThirdMain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.experimentalBaseThirdMainLeft p {
+  margin: 0;
+}
+
+.experimentalBaseThirdBtm {
+  text-align: center;
+}
+
+.experimentalBaseThirdRight {
+  color: #030305;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.7px;
+}
