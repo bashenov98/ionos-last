@@ -17,7 +17,7 @@ export const Footer = () => {
             <div className="footerBorder"/>
             <div className="footerRight">
                 <p className="footerText">E-mail: ionos@ionos.kz</p>
-                <p className="footerText">admion1@mail.ru</p>
+                <p className="footerText">admion1@mail.ru</p> 
             </div>
         </div>
     );

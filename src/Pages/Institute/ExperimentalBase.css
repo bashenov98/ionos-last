@@ -1,0 +1,18 @@
+.experimentalBase {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 40px;
+  min-height: 70vh;
+}
+
+.experimentalBase h1 {
+  color: #030305;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 8.4px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,54 @@
+.experimentalBaseFirstMain {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+.experimentalBaseFirst p {
+  color: #030305;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.75px;
+  margin: 0;
+}
+
+.experimentalBaseFirstMidLeft {
+  color: #030305;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.experimentalBaseFirstMid {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.experimentalBaseFirstMidRight {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.experimentalBaseFirstBottom {
+  margin-top: 20px;
+  color: #030305;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.75px;
+}
