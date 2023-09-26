@@ -2,19 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react';
 import './Home.css';
-import arrleft from '../../media/arrow-left.png';
-import arrright from '../../media/right-arrow.png';
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
 
-import address from '../../media/contactIcons/maps-and-flags.png';
-import phone from '../../media/contactIcons/phone-call.png';
-import fax from '../../media/contactIcons/fax.png';
-import email from '../../media/contactIcons/email.png';
-import time from '../../media/contactIcons/clock.png';
-
-import linkedin from '../../media/social/linkedin.png';
-import inst from '../../media/social/instagram.png';
 import { Administration } from './Administration';
 
 import { VideoComponent } from './Video/Video';
@@ -23,83 +13,74 @@ import { Projects } from './Projects/Projects';
 import { News } from './News/News';
 import { Partners } from './Partners/Partners';
 import { ContactUs } from './ContactUs/ContactUs';
+import axios from 'axios';
 
 
 const Home = () => {
     const { t } = useTranslation();
+    const [inputText, setInputText] = useState("");
+
+    const [isDropdownVisible, setDropdownVisibility] = useState(0);
+
+    const [employees, setEmployees] = useState([]);
     const [news, setNews] = useState([]);
-    const [latestNews, setLatestNews] = useState([]);
-    const [otherNews, setOtherNews] = useState([]);
 
-    const [administration, setAdministration] = useState([]);
 
-    const socialLinks = [
-        {
-            img: linkedin,
-            link: "https://kz.linkedin.com/company/ionos-kz"
-        },
-        {
-            img: inst,
-            link: "https://www.instagram.com/nurzhvnovv/"
-        }
-    ]
 
 
     useEffect(() => {
-        setLatestNews([
-            {
-                id: 5,
-                header: "Празднование 30-летия казахстанской космонавтики",
-                description: "",
-                author: "",
-                publish_date: (new Date("2023-05-27"))
-            },
-            {
-                id: 6,
-                header: "Перерегистрация Института ионосферы и изменение наименования",
-                description: "",
-                author: "Dani",
-                publish_date: (new Date("2023-06-30"))
-            }
-        ]);
-        setOtherNews([
-            {
-                id: 1,
-                header: "GIS DAY 2022",
-                description: "",
-                author: "",
-                publish_date: (new Date("2023-01-14"))
-            },
-            {
-                id: 2,
-                header: "Празднование 30-летия казахстанской космонавтики",
-                description: "",
-                author: "",
-                publish_date: (new Date("2023-02-17"))
-            },
-            {
-                id: 3,
-                header: "Перерегистрация Института ионосферы и изменение наименования",
-                description: "",
-                author: "",
-                publish_date: (new Date("2023-03-20"))
-            },
-            {
-                id: 4,
-                header: "GIS DAY 2022",
-                description: "",
-                author: "",
-                publish_date: (new Date("2023-04-23"))
-            }
-        ]);
-    }, []);
+        const search = async () => {
+            await axios.get(`http://localhost:1337/api/fuzzy-search/search?query=${inputText}`, {
+                headers: { Authorization: 'bearer d0c2c9e6d1e901cb8c7d394af03f7095912bdc63c760c08a41f3e370594bd3a023701f1dac6ae7d4a72e45893371f9333094ecbe57bef695102d42864c700787f3951f929aefcbbb7799c344a0b8ba0d37b5bc0bd68cffe1d7926c59631a24fce5928c2f1765662e466a7fa03c6709e5fd4df774ded6e36d3cb17ebaeab43d79' }
+            })
+                .then(response => {
 
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    const resp = response.data
+                    console.log(resp)
+
+                    setEmployees(resp.employees)
+                    setNews(resp.newss)
+                    setDropdownVisibility(1);
+                })
+                .catch(error => {
+                    console.error('Error fetching data: ', error);
+                });
+
+        }
+
+        if (inputText === "") {
+
+            setEmployees([])
+            setNews([])
+            setDropdownVisibility(0);
+        }
+        search();
+        if (inputText === "") {
+
+            setEmployees([])
+            setNews([])
+            setDropdownVisibility(0);
+        }
+    }, [inputText]);
+
+    let inputHandler = (e) => {
+        //convert input text to lower case
+        var lowerCase = e.target.value.toLowerCase();
+        setInputText(lowerCase);
+    };
 
     return (
         <div className='homeWrapper'>
             <div className='homeBanner'>
                 <div className='homeBannerOverlay'>
+                    <input type="text" className='searchInput' onChange={inputHandler} />
+                    <div className='searchResults' style={{ display: isDropdownVisible === 1 ? "block" : "none" }}>
+                        {employees.map((emp, i) => (
+                            <Link to={`/institute/staff/${emp.id}`}>
+                                <h1 className='searchResultText'>{`${emp.Name} ${emp.Last_Name}`}</h1>
+                            </Link>
+                        ))}
+                    </div>
                     <h1 className='homeBannerHeader'>Институт ионосферы</h1>
                     <p className='homeBannerText'>Мы являемся одним из старейших научно-исследовательских институтов в Казахстане и единственным в Средней Азии специализированным институтом, занимающийся изучением состояния ионосферы. </p>
                 </div>

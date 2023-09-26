@@ -7,6 +7,7 @@ import zamdirOV from '../../media/admins/zamdir_ov.png';
 import secretary from '../../media/admins/secretary.png';
 
 import './Administration.css';
+import { Link } from 'react-router-dom';
 
 export const Administration = () => {
     const { t } = useTranslation();
@@ -14,7 +15,7 @@ export const Administration = () => {
 
     const administration = [
         {
-            id: 1,
+            id: 3,
             lastName: "НУРАКЫНОВ",
             name: "СЕРИК",
             middleName: "МАРАТОВИЧ",
@@ -22,7 +23,7 @@ export const Administration = () => {
             img: dir
         },
         {
-            id: 2,
+            id: 6,
             lastName: "ИСКАКОВ",
             name: "БЕРИК",
             middleName: "АМАНГЕЛЬДЫЕВИЧ",
@@ -30,7 +31,7 @@ export const Administration = () => {
             img: zamdir
         },
         {
-            id: 3,
+            id: 59,
             lastName: "КУДАЙБЕРГЕНОВ",
             name: "МУРАТБЕК",
             middleName: "КАСИМБЕКОВИЧ",
@@ -38,8 +39,8 @@ export const Administration = () => {
             img: zamdirOV
         },
         {
-            id: 4,
-            lastName: "ИСКАКОВА",
+            id: 7,
+            lastName: "ИСКАЛИЕВА",
             name: "ГУЛЬНАРА",
             middleName: "",
             position: "Ученый секретарь",
@@ -59,12 +60,12 @@ export const Administration = () => {
                             <img className='administrationItemImg' src={admin.img} />
                         </div>
                         <div className='administrationItemDiv'>
-                            <h4 className='administrationItemName'>{`${admin.lastName} ${admin.name} ${admin.middleName} `}</h4>
+                            <Link style={{ textDecoration: 'none', color: 'inherit' }} to={`/institute/staff/${admin.id}`}><h4 className='administrationItemName'>{`${admin.lastName} ${admin.name} ${admin.middleName} `}</h4></Link>
                             <p className='administrationItemPosition'>{admin.position}</p>
                         </div>
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     );
 }

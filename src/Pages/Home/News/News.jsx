@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import './News.css';
 
@@ -46,7 +47,7 @@ export const News = () => {
                                 <img className="newsHomeItemImg" src={newsItem.img} />
                             </div>
                             <div className="newsItemButtonDiv">
-                                <button className="newsItemButton">ПОДРОБНЕЕ</button>
+                                <Link to={`/institute/news/${newsItem.id}`}><button className="newsItemButton">ПОДРОБНЕЕ</button></Link>
                             </div>
                         </div>
                         <div className="newsItemBot">
@@ -56,7 +57,7 @@ export const News = () => {
                 ))}
             </div>
             <div className="newsBot">
-                <button className="newsBotButton">ВСЕ НОВОСТИ</button>
+                <Link to='/institute/news'><button className="newsBotButton">ВСЕ НОВОСТИ</button></Link>
             </div>
         </div>
     );

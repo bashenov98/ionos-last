@@ -1,7 +1,10 @@
+.administration {
+    background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%);
+}
+
 .administrationHeader {
     display: flex;
     justify-content: center;
-    background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%);
     height: 158px;
 }
 
@@ -24,7 +27,6 @@
     flex-direction: row;
     padding: 10px 100px 100px;
     gap: 10px;
-    background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%)
 }
 
 .administrationItem {
@@ -46,8 +48,10 @@
 }
 
 .administrationItemImg {
-    width: 120px;
     height: 120px;
+    width: 120px;
+    object-fit: cover;
+    object-position: 100% 37%;
     border-radius: 50%;
     overflow: hidden;
     margin: 0rem auto 3rem;
