@@ -30,7 +30,7 @@ const Home = () => {
 
     useEffect(() => {
         const search = async () => {
-            await axios.get(`http://localhost:1337/api/fuzzy-search/search?query=${inputText}`, {
+            await axios.get(`https://ionos-strapi.onrender.com/api/fuzzy-search/search?query=${inputText}`, {
                 headers: { Authorization: 'bearer d0c2c9e6d1e901cb8c7d394af03f7095912bdc63c760c08a41f3e370594bd3a023701f1dac6ae7d4a72e45893371f9333094ecbe57bef695102d42864c700787f3951f929aefcbbb7799c344a0b8ba0d37b5bc0bd68cffe1d7926c59631a24fce5928c2f1765662e466a7fa03c6709e5fd4df774ded6e36d3cb17ebaeab43d79' }
             })
                 .then(response => {
@@ -45,22 +45,8 @@ const Home = () => {
                 .catch(error => {
                     console.error('Error fetching data: ', error);
                 });
-
-        }
-
-        if (inputText === "") {
-
-            setEmployees([])
-            setNews([])
-            setDropdownVisibility(0);
         }
         search();
-        if (inputText === "") {
-
-            setEmployees([])
-            setNews([])
-            setDropdownVisibility(0);
-        }
     }, [inputText]);
 
     let inputHandler = (e) => {
@@ -74,7 +60,7 @@ const Home = () => {
             <div className='homeBanner'>
                 <div className='homeBannerOverlay'>
                     <input type="text" className='searchInput' onChange={inputHandler} />
-                    <div className='searchResults' style={{ display: isDropdownVisible === 1 ? "block" : "none" }}>
+                    <div className='searchResults' style={{ display: inputText != "" ? "block" : "none" }}>
                         {employees.map((emp, i) => (
                             <Link to={`/institute/staff/${emp.id}`}>
                                 <h1 className='searchResultText'>{`${emp.Name} ${emp.Last_Name}`}</h1>
