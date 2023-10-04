@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import i18n from "../../i18n";
+import i18n from "i18n";
 import { useLocation } from "react-router-dom";
 import "./ExperimentalBase.css";
-import ExperimentalBaseFirst from "./components/experimentals-base/first/ExperimentalBaseFirst";
-import ExperimentalBaseSecond from "./components/experimentals-base/second/ExperimentalBaseSecond";
-import ExperimentalBaseThird from "./components/experimentals-base/third/ExperimentalBaseThird";
-import ExperimentalBaseFourth from "./components/experimentals-base/fourth/ExperimentalBaseFourth";
+import ExperimentalBaseFirst from "./first/ExperimentalBaseFirst";
+import ExperimentalBaseSecond from "./second/ExperimentalBaseSecond";
+import ExperimentalBaseThird from "./third/ExperimentalBaseThird";
+import ExperimentalBaseFourth from "./fourth/ExperimentalBaseFourth";
 
 const ExperimentalBase = () => {
   const location = useLocation();

@@ -5,8 +5,8 @@ import Labs from './Labs/Labs';
 import News, { NewsDetail } from './Pages/News/News';
 import History from './Pages/Institute/History';
 import Staff, { StaffDetail } from './Pages/Staff/Staff';
-import ExperimentalBase from './Pages/Institute/ExperimentalBase';
-import TechEquip from './Pages/Institute/TechEquip';
+import ExperimentalBase from 'Pages/Institute/components/experimentals-base/ExperimentalBase';
+import TechnicalEquipment from 'Pages/Institute/components/technical-equipment/TechnicalEquipment';
 import YoungScientists from './Pages/Institute/YoungScientists';
 import Anticorruption from './Pages/Institute/Anticorruption';
 import GovPurchases from './Pages/Institute/GovPurchases';
@@ -43,7 +43,7 @@ function App() {
           <Route path="/institute/staff" Component={Staff}/>
           <Route path="/institute/staff/:id" Component={StaffDetail} />
           <Route path="/institute/experimentalbase" Component={ExperimentalBase}/>
-          <Route path="/institute/technicalequipment" Component={TechEquip}/>
+          <Route path="/institute/technicalequipment" Component={TechnicalEquipment}/>
           <Route path="/institute/youngscientists" Component={YoungScientists}/>
           <Route path="/institute/anticorruption" Component={Anticorruption}/>
           <Route path="/institute/govpurchases" Component={GovPurchases}/>

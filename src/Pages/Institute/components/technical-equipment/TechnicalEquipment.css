@@ -1,0 +1,17 @@
+.technicalEquipment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 40px;
+  min-height: 70vh;
+}
+
+.technicalEquipment h2 {
+  color: #030305;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 8.4px;
+}

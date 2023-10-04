@@ -1,0 +1,46 @@
+.technicalEquipmentFirst {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 120px;
+}
+
+.technicalEquipmentFirst h3,
+p {
+  margin: 0;
+}
+
+.technicalEquipmentFirst h3 {
+  color: #030305;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.8px;
+  margin-top: 50px;
+}
+
+.technicalEquipmentFirstCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.technicalEquipmentFirstCenterSmall {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 265px;
+  color: #030305;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.65px;
+}
+
+.technicalEquipmentFirstCenterSmall:nth-child(3) {
+  margin-top: 100px;
+}
