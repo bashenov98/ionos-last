@@ -5,6 +5,7 @@ import i18n from "i18n";
 import { useLocation } from "react-router-dom";
 import TechnicalEquipmentFirst from "./first/TechnicalEquipmentFirst";
 import EquippedPersonImg from "media/institute/technical-equipment/equipped-person-scheme.png";
+import TechnicalEquipmentSecond from "./second/TechnicalEquipmentSecond";
 
 const TechnicalEquipment = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const TechnicalEquipment = () => {
 
       <TechnicalEquipmentFirst />
       <img src={EquippedPersonImg} alt="equipped-person" width="617px"/>
+      <TechnicalEquipmentSecond/>
     </div>
   );
 };
