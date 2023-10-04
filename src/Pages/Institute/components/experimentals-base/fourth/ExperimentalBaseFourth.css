@@ -1,0 +1,37 @@
+.experimentalBaseFourth {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.experimentalBaseFourth p {
+  margin: 0;
+
+  color: #030305;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.75px;
+}
+
+.experimentalBaseFourthCenter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #030305;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.65px;
+}
+
+.experimentalBaseFourthCenterImg {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}

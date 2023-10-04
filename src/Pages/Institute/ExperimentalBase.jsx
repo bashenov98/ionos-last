@@ -6,6 +6,7 @@ import "./ExperimentalBase.css";
 import ExperimentalBaseFirst from "./components/experimentals-base/first/ExperimentalBaseFirst";
 import ExperimentalBaseSecond from "./components/experimentals-base/second/ExperimentalBaseSecond";
 import ExperimentalBaseThird from "./components/experimentals-base/third/ExperimentalBaseThird";
+import ExperimentalBaseFourth from "./components/experimentals-base/fourth/ExperimentalBaseFourth";
 
 const ExperimentalBase = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const ExperimentalBase = () => {
         <ExperimentalBaseFirst/>
         <ExperimentalBaseSecond/>
         <ExperimentalBaseThird/>
+        <ExperimentalBaseFourth/>
     </div>
   );
 };
