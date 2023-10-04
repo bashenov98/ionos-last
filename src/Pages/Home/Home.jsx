@@ -16,6 +16,10 @@ import { ContactUs } from './ContactUs/ContactUs';
 import axios from 'axios';
 
 
+import user from '../../media/search/user-fill.svg';
+import search from '../../media/search/search-line.svg';
+
+
 const Home = () => {
     const { t } = useTranslation();
     const [inputText, setInputText] = useState("");
@@ -45,6 +49,7 @@ const Home = () => {
                 .catch(error => {
                     console.error('Error fetching data: ', error);
                 });
+            console.log(employees)
         }
         search();
     }, [inputText]);
@@ -59,11 +64,18 @@ const Home = () => {
         <div className='homeWrapper'>
             <div className='homeBanner'>
                 <div className='homeBannerOverlay'>
-                    <input type="text" className='searchInput' onChange={inputHandler} />
+                    <div className='searchBar' style={{ borderRadius: inputText === "" || employees.length === 0 ? "10px" : "10px 10px 0 0" }} >
+                        <img src={search} />
+                        <input type="text" className='searchInput' onChange={inputHandler} />
+                    </div>
+
                     <div className='searchResults' style={{ display: inputText != "" ? "block" : "none" }}>
                         {employees.map((emp, i) => (
-                            <Link to={`/institute/staff/${emp.id}`}>
-                                <h1 className='searchResultText'>{`${emp.Name} ${emp.Last_Name}`}</h1>
+                            <Link className='searchResultLink' to={`/institute/staff/${emp.id}`}>
+                                <div className='searchResult' style={{ borderBottom: "0.5px solid black", borderTop: "0.5px solid black", }}>
+                                    <img src={user} />
+                                    <h1 className='searchResultText'>{`${emp.Name} ${emp.Last_Name}`}</h1>
+                                </div>
                             </Link>
                         ))}
                     </div>
