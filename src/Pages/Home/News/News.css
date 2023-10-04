@@ -23,7 +23,7 @@
 .newsHomeList {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 30px;
     padding-left: 100px;
     padding-top: 60px;
 }

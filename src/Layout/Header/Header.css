@@ -11,26 +11,17 @@
     flex-direction: row;
     height: 71px;
     width: 100%;
-    padding-top: 15px;
-    padding-left: 40px;
+    padding-left: 20px;
     padding-right: 40px;
     justify-content: space-between;
+    align-items: center;
 }
 
 .headerTopContacts  {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.headerTopContact {
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-    font-weight: 300;
-    line-height: 17px;
-    letter-spacing: 0.15em;
-    text-align: left;
-    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .headerLogoDiv {
@@ -50,17 +41,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    justify-content: center;
 }
 
 .headerTopLink {
     text-decoration: none;
-    color: black;
+    color: rgba(28, 54, 114, 1);
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .headerLanguageButtons {
@@ -68,20 +59,29 @@
     flex-direction: row;
     gap: 30px;
     align-items: center;
-    
-
+    justify-content: center;
 }
 
 .headerLanguageButton {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .headerLanguageButtonText {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 21px;
     letter-spacing: 0.03em;
-    text-align: end;
+    text-align: center;
+    color: rgba(28, 54, 114, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    
 }
 
 .headerBot {
@@ -113,7 +113,7 @@
     color: white;
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
-    font-weight: 900;
+    font-weight: 600;
     line-height: 36px;
     letter-spacing: 0.03em;
     text-align: left;
