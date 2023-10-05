@@ -15,8 +15,10 @@ import { Partners } from "./Partners/Partners";
 import { ContactUs } from "./ContactUs/ContactUs";
 import axios from "axios";
 
-import user from "../../media/search/user-fill.svg";
-import search from "../../media/search/search-line.svg";
+import user from "media/search/user-fill.svg";
+import search from "media/search/search-line.svg";
+import newsLogo from "media/search/article-line.svg";
+import project from "media/search/file-chart-line.svg";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -26,6 +28,7 @@ const Home = () => {
 
   const [employees, setEmployees] = useState([]);
   const [news, setNews] = useState([]);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     const search = async () => {
@@ -45,6 +48,7 @@ const Home = () => {
 
           setEmployees(resp.employees);
           setNews(resp.newss);
+          setProjects(resp.projects);
           setDropdownVisibility(1);
         })
         .catch((error) => {
@@ -101,6 +105,40 @@ const Home = () => {
                   >
                     <img src={user} />
                     <h1 className="searchResultText">{`${emp.Name} ${emp.Last_Name}`}</h1>
+                  </div>
+                </Link>
+              ))}
+              {news.map((n, i) => (
+                <Link
+                  className="searchResultLink"
+                  to={`/institute/news/${n.id}`}
+                >
+                  <div
+                    className="searchResult"
+                    style={{
+                      borderBottom: "0.5px solid black",
+                      borderTop: "0.5px solid black",
+                    }}
+                  >
+                    <img src={newsLogo} />
+                    <h1 className="searchResultText">{n.Header}</h1>
+                  </div>
+                </Link>
+              ))}
+              {projects.map((p, i) => (
+                <Link
+                  className="searchResultLink"
+                  to={`/performance/currentprojects/${p.id}`}
+                >
+                  <div
+                    className="searchResult"
+                    style={{
+                      borderBottom: "0.5px solid black",
+                      borderTop: "0.5px solid black",
+                    }}
+                  >
+                    <img src={project} />
+                    <h1 className="searchResultText">{p.Header}</h1>
                   </div>
                 </Link>
               ))}
