@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useParams } from 'react-router-dom';
 
 import logo from '../../media/ionos_logo-white.png';
 import nav from '../../media/nav.png';
 import dateLogo from '../../media/date.png';
 
-import { useParams } from 'react-router-dom';
 
 import axios from 'axios';
 
