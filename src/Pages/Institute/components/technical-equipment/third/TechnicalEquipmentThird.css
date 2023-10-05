@@ -1,0 +1,49 @@
+.technicalEquipmentThird {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.technicalEquipmentThird h3,
+p {
+  margin: 0;
+}
+
+.technicalEquipmentThird h3 {
+  color: #030305;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.4px;
+  text-decoration-line: underline;
+}
+
+.technicalEquipmentThirdLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.technicalEquipmentThirdTxtBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  color: #030305;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.65px;
+}
+
+.technicalEquipmentThirdTxtBox p {
+  color: #030305;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.65px;
+}

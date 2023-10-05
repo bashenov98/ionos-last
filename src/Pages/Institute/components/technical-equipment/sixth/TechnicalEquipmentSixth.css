@@ -1,0 +1,40 @@
+.technicalEquipmentSixth {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 120px;
+}
+
+.technicalEquipmentSixth h3 {
+  margin: 0;
+  color: #030305;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+
+.technicalEquipmentSixthTop {
+  color: #030305;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.8px;
+}
+
+.technicalEquipmentSixthMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.technicalEquipmentSixthMainLeft {
+  color: #030305;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.8px;
+}

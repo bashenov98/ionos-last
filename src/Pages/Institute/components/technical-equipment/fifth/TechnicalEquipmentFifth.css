@@ -1,0 +1,43 @@
+.technicalEquipmentFifth {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  gap: 40px;
+}
+
+.technicalEquipmentFifth h3,
+p {
+  margin: 0;
+}
+
+.technicalEquipmentFifth h3 {
+  color: #0606ff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  margin-bottom: 30px;
+}
+
+.technicalEquipmentFifthMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.technicalEquipmentFifthMainLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.technicalEquipmentFifthMainLeft h3 {
+  color: #030305;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  margin-bottom: 20px;
+}
