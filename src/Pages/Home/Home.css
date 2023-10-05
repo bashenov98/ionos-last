@@ -1,11 +1,10 @@
 .homeWrapper {
-    display: flex;
-    flex-direction: column;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-    /* text-transform: uppercase;
+  /* text-transform: uppercase;
     margin: 0 0 20px 0;
     font-weight: 800;
     font-size: 36px;
@@ -14,270 +13,272 @@
 }
 
 h3 {
-    color: white;
+  color: white;
 }
 
 h4 {
-    color: white;
+  color: white;
 }
 
 h5 {
-    color: white;
+  color: white;
 }
 
 .homeBanner {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    background-image: url('../../media/2023-09-11\ 01.15.44.jpg');
-    color: white;
-    text-align: center;
-    background-size: cover;
-
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../media/2023-09-11\ 01.15.44.jpg");
+  color: white;
+  text-align: center;
+  background-size: cover;
 }
 
 .homeBannerOverlay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.2);
-    width: 100%;
-    position: relative;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
-
 .searchBar {
-    display: flex;
-    flex-direction: row;
-    width: 630px;
-    height: 40px;
-    background-color: rgba(251, 251, 251);
-    padding-left: 15px;
-    padding-right: 15px;
+  width: 630px;
+  height: 40px;
 
-    margin-top: 40px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.searchBarMain {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(251, 251, 251);
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .searchInput {
-    border: none;
-    width: 500px;
-    height: 40px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: 0.1em;
-    text-align: left;
-    padding-left: 30px;
+  border: none;
+  width: 500px;
+  height: 40px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.1em;
+  text-align: left;
+  padding-left: 30px;
 }
 
 .searchInput:focus {
-    outline: none;
+  outline: none;
 }
 
 .searchResults {
-    display: flex;
-    background: rgba(255, 255, 255, 1);
-    width: 630px;
-    height: max-content;
-    border-radius: 0 0 10px 10px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 90px;
+  position: absolute;
+  display: flex;
+  background: rgba(255, 255, 255, 1);
+  width: 630px;
+  height: max-content;
+  border-radius: 0 0 10px 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 90px;
+  margin-top: 40px;
 }
 
 .searchResult {
-    display: flex;
-    flex-direction: row;
-    padding: 10px 0 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .searchResultLink {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .searchResultText {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.05em;
-    text-align: left;
-    color: gray;
-    padding-left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color: gray;
+  padding-left: 30px;
 }
 
 .homeBannerHeader {
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    font-size: 96px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-top: 100px;
-    margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-size: 96px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 100px;
+  margin-bottom: 10px;
 }
 
 .homeBannerText {
-    padding-top: 40px;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 200;
-    line-height: 30px;
-    margin: 0 auto;
-    margin-bottom: 40px;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 30px;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .homeEmployees {
-    padding: 100px;
-
+  padding: 100px;
 }
 
 .homeEmployeesHeader {
-    text-align: center;
-    background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%);
+  text-align: center;
+  background: linear-gradient(245.86deg, #1b3571 26.48%, #5e1532 93.72%);
 }
 
 .mapMain {
-    display: flex;
-    flex-direction: сolumn;
+  display: flex;
+  flex-direction: сolumn;
 }
 
 .mapContacts {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
 }
 
 .contactIcon {
-    height: 30px;
-    width: auto;
+  height: 30px;
+  width: auto;
 }
 
 .contactText {
-    padding-left: 5px;
+  padding-left: 5px;
 }
 
 .homeMainNews {
-    padding: 100px;
+  padding: 100px;
 }
 
 .newsUnderHeader {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .arrow {
-    padding: 0 10px;
-    height: 20px;
-    width: auto;
+  padding: 0 10px;
+  height: 20px;
+  width: auto;
 }
 
 .latestNews {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .latestNewsItem {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .otherNews {
-    display: grid;
-    grid-template-columns: auto auto;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .otherNewsItem {
-    width: 90%;
+  width: 90%;
 }
 
 .homeMainMap {
-    padding: 100px;
+  padding: 100px;
 }
 
 .contactUs {
-    padding: 100px;
+  padding: 100px;
 }
 
 .contactUsTop {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .socialLinks {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .socialIcon {
-    height: 35px;
-    width: auto;
+  height: 35px;
+  width: auto;
 }
 
 .contactUsNameEmail {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-
-
 .contactUsInput {
-    display: block;
-    width: 100%;
-    padding: 6px 12px;
-    font-size: 16px;
-    line-height: 1.42857143;
-    color: #444;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ddd;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #444;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
 }
 
 .contactUsEmail {
-    padding-left: 20px;
-    width: 300px;
+  padding-left: 20px;
+  width: 300px;
 }
 
 .contactUsMessage {
-    padding-top: 15px;
-    padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 30px;
 }
 
 .contactUsButton {
-    margin: 30px 0;
-    background: transparent;
-    border: 2px solid #fff;
+  margin: 30px 0;
+  background: transparent;
+  border: 2px solid #fff;
 
-    font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
-    color: #fff;
-    background-color: #5ca9fb;
-    background-image: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
-    padding: 14px 34px;
-    letter-spacing: 1px;
-    margin: 0;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 10px;
-    transition: all 0.5s linear;
-    border: 0;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #5ca9fb;
+  background-image: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  padding: 14px 34px;
+  letter-spacing: 1px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.5s linear;
+  border: 0;
 }
