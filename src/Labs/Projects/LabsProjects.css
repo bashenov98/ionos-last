@@ -1,0 +1,16 @@
+.labsProjects {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 60px 20px;
+  align-items: center;
+}
+
+.labsProjects h1 {
+  color: #030305;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 11.2px;
+}

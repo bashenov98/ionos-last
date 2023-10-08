@@ -1,0 +1,23 @@
+.labsEmployees {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 100px 30px;
+}
+
+.labsEmployees h1 {
+  color: #030305;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 6.4px;
+}
+
+.labsEmployeesMain {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 40px;
+  row-gap: 40px;
+}
