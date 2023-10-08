@@ -10,13 +10,13 @@ import logo from 'media/ionos_logo-white 1.png'
 
 import './Projects.css';
 
-const ShortenedTextComponent = ({ text, maxLength }) => {
-    return (
-      <span style={{ overflow: "ellipsis", whiteSpace: "nowrap" }}>
-        {text.substring(0, maxLength)}
-      </span>
-    );
-  };
+function monthDiff(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months;
+}
 
 export const Projects = () => {
     const location = useLocation();
@@ -27,7 +27,7 @@ export const Projects = () => {
 
     useEffect(() => {
         const fetchProjectDetail = async () => {
-            await axios.get(`https://ionos-strapi.onrender.com/api/projects`, {
+            await axios.get(`https://ionos-strapi.onrender.com/api/projects?populate=*`, {
                 headers: { Authorization: 'bearer d0c2c9e6d1e901cb8c7d394af03f7095912bdc63c760c08a41f3e370594bd3a023701f1dac6ae7d4a72e45893371f9333094ecbe57bef695102d42864c700787f3951f929aefcbbb7799c344a0b8ba0d37b5bc0bd68cffe1d7926c59631a24fce5928c2f1765662e466a7fa03c6709e5fd4df774ded6e36d3cb17ebaeab43d79' }
             })
                 .then(response => {
@@ -36,7 +36,12 @@ export const Projects = () => {
                     const projectsData = resp.map(p => ({
                         id: p.id,
                         Header: p.attributes.Header,
-                        Goal: p.attributes.Goal
+                        Goal: p.attributes.Goal,
+                        Image: p.attributes.Image.data ? `https://ionos-strapi.onrender.com${p.attributes.Image.data.attributes.url}` : logo,
+                        IRN: p.attributes.IRN ? p.attributes.IRN : "",
+                        Start_Date: p.attributes.Start_Date ? new Date(p.attributes.Start_Date) : null,
+                        Date_End: p.attributes.Date_End ? new Date(p.attributes.Date_End) : null,
+                        Head: p.attributes.Supervisor.data ? `${p.attributes.Supervisor.data.attributes.Name} ${p.attributes.Supervisor.data.attributes.Last_Name} `: ""
                     }));
 
                     setProjects(projectsData)
@@ -53,7 +58,7 @@ export const Projects = () => {
     }, []);
 
     return loaded && (
-        <div>
+        <div className='projectsDiv'>
             <div className='newsHeader'>
                 <h1 className='newsHeaderText'>{t(location.pathname.slice(13))}</h1>
             </div>
@@ -69,15 +74,16 @@ export const Projects = () => {
             <div className='newsList'>
                 {projects.map((p, i) => (
                     <div key={i} className='newsItem'>
-                        <div className='newsItemLeft'>
-                            <img className='newsItemImg' src={logo} />
+                        <div className='projectItemLeft'>
+                            <img className='projectItemImg' src={p.Image} />
                         </div>
                         <div className='newsItemRight'>
-                            <h1 className='newsItemHeaderTop'>{p.Header}</h1>
-                            <h1 className='newsItemHeaderBot'><ShortenedTextComponent text={p.Goal} maxLength={100} /></h1>
-                            <Link className='newsItemMoreButtonLink' to={`/institute/news/${p.id}`}>
-                                <div className='newsItemMoreButton'>
-                                    <button className='newsItemMoreButtonText'>Подробнее</button>
+                            <h1 className='projectItemHeader'>{p.Header}</h1>
+                            <h1 className='projectItemHeadText'>{p.Head ? `${t('head')}: ${p.Head}`: ""}</h1>
+                            <h1 className='projectItemIRNText'>{p.IRN ? `Грантовый проект ИРН ${p.IRN}`: ""} {p.IRN ? ", ": ""} {p.Start_Date && p.Date_End ? `${p.Start_Date.getFullYear()}-${p.Date_End.getFullYear()} гг. (${monthDiff(p.Start_Date, p.Date_End)} месяцев)` : ""}</h1>
+                            <Link className='projectItemMoreButtonLink' to={`/institute/news/${p.id}`}>
+                                <div className='projectItemMoreButton'>
+                                    <button className='projectItemMoreButtonText'>Подробнее</button>
                                 </div>
                             </Link>
                         </div>

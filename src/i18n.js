@@ -38,7 +38,8 @@ i18n
           "geoinformsystemdevelopment": "DEVELOPMENT OF GEOINFORMATION SYSTEMS",
           "adminsheader": "ADMINISTRATION OF INSTITUTE",
           "latestNewsHeader": "Latest news",
-          "contactUsHeader": "Contact us"
+          "contactUsHeader": "Contact us",
+          "head": "Supervisor"
         }
       },
       ru: {
@@ -73,7 +74,8 @@ i18n
           "committee": "Аэрокосмический комитет Министерства цифрового развития, инноваций и аэрокосмической промышленности",
           "adminsheader": "АДМИНИСТРАЦИЯ ИНСТИТУТА",
           "latestNewsHeader": "Последние новости",
-          "contactUsHeader": "Свяжитесь с нами"
+          "contactUsHeader": "Свяжитесь с нами",
+          "head": "Руководитель"
         }
       },
       kz: {
@@ -83,7 +85,8 @@ i18n
           "performance": "ІС-ШАРАЛАР",
           "services": "ҚЫЗМЕТТЕР",
           "committee": "Цифрлық даму, инновациялар және аэроғарыш өнеркәсібі министрлігінің Аэроғарыш комитеті",
-          "adminsheader": "ИНСТИТУТ ӘКІМШІЛІГІ"
+          "adminsheader": "ИНСТИТУТ ӘКІМШІЛІГІ",
+          "head": "Жетекшісі"
         }
       }
     },
