@@ -15,7 +15,7 @@ import GeomagneticDimensions from "./Pages/Services/GeomagneticDimensions";
 import GeophysicalForecast from "./Pages/Services/GeophysicalForecast";
 import SystemDev from "./Pages/Services/SystemDev";
 import { Projects, ProjectDetail } from "./Pages/Performance/Projects/Projects";
-import Publications from "./Pages/Performance/Publications";
+import Publications from "./Pages/Performance/Publications/Publications";
 import Seminars from "./Pages/Performance/Seminars";
 import Patents from "./Pages/Performance/Patents";
 
