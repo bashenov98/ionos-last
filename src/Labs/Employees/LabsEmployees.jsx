@@ -3,6 +3,9 @@ import './LabsEmployees.css';
 import ProfileImg from 'media/labs/empty-profile.png';
 
 const LabsEmployees = () => {
+
+    
+
   return (
     <div className='labsEmployees'>
       <h1>СОТРУДНИКИ</h1>

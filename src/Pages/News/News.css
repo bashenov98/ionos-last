@@ -16,18 +16,16 @@
 }
 
 .newsNavbarDiv {
-
-    padding-left: 26px;
     padding-bottom: 28px;
 }
 
 .newsNavbar {
+    padding-left: 12px;
     display: flex;
     flex-direction: row;
     background: rgba(245, 245, 245, 1);
     height: 34px;
-    width: 1224px;
-
+    width: 100%;
 }
 
 link {
@@ -64,13 +62,15 @@ link {
 .newsList {
     display: flex;
     flex-direction: column;
-    padding-left: 79px;
+    padding-left: 40px;
+    padding-right: 40px;
     gap: 51px;
 }
 
 .newsItem {
     display: flex;
     flex-direction: row;
+    gap: 50px;
 }
 
 .newsItemLeft {
@@ -88,9 +88,7 @@ link {
     height: auto;
 }
 
-.newsItemRight {
-    padding-left: 47px;
-}
+
 
 .newsItemHeaderTop {
     font-family: 'Poppins', sans-serif;

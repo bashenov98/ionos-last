@@ -42,7 +42,7 @@ const LabsProjects = () => {
     <div className="labsProjects">
       <h1>ПРОЕКТЫ</h1>
       <div className="labsProjectsMain">
-
+            
       </div>
     </div>
   );
