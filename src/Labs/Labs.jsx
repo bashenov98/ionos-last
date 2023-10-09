@@ -13,8 +13,6 @@ const Labs = () => {
   const navigate = useNavigate();
   const currentPath = location.pathname.slice(6);
 
-  console.log(currentPath)
-
   const [lab, setLab] = useState();
   const [img, setImg] = useState("");
   const [empId, setEmpId] = useState("");
@@ -33,7 +31,6 @@ const Labs = () => {
         }
       )
       .then((response) => {
-        console.log(response.data.data)
         setData(response.data.data);
         setEmpId(response.data.data.attributes.Head.data.id);
       })
