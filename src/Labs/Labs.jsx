@@ -13,6 +13,8 @@ const Labs = () => {
   const navigate = useNavigate();
   const currentPath = location.pathname.slice(6);
 
+  console.log(currentPath)
+
   const [lab, setLab] = useState();
   const [img, setImg] = useState("");
   const [empId, setEmpId] = useState("");
@@ -60,7 +62,7 @@ const Labs = () => {
         console.error("Error fetching data: ", error);
       });
 
-    console.log(res);
+    return res;
   };
 
   const dataHandler = () => {
