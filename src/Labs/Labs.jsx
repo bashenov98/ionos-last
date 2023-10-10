@@ -31,7 +31,6 @@ const Labs = () => {
         }
       )
       .then((response) => {
-        console.log(response.data.data)
         setData(response.data.data);
         setEmpId(response.data.data.attributes.Head.data.id);
       })
@@ -60,7 +59,7 @@ const Labs = () => {
         console.error("Error fetching data: ", error);
       });
 
-    console.log(res);
+    return res;
   };
 
   const dataHandler = () => {

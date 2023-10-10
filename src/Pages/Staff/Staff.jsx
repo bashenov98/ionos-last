@@ -51,8 +51,8 @@ const Staff = () => {
                 </div>
                 <div className='staffList'>
                     {staff.map((emp, index) => (
-                        <Link className='link' to={`/institute/staff/${emp.id}`}>
-                            <div className='staffItem' key={index}>
+                        <Link className='link' to={`/institute/staff/${emp.id}`} key={index}>
+                            <div className='staffItem' >
                                 <img className='employeePhoto' src={emp.img} />
                                 <h4 className='employeeNameText' >{emp.name}</h4>
                                 <p className='employeePositionText'>{emp.job}</p>
@@ -69,6 +69,8 @@ export const StaffDetail = () => {
     const { id } = useParams();
 
     const [employee, setEmployee] = useState();
+
+    console.log(employee)
 
     const [loaded, setLoaded] = useState(false);
 

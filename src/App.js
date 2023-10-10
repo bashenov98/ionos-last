@@ -46,7 +46,7 @@ function App() {
             <>
               <Route path={`/labs/${path}/projects`} Component={LabsProjects} />
               <Route path={`/labs/${path}/employees`} Component={LabsEmployees} />
-              <Route path="/labs/diagnosticlab" Component={Labs} />
+              <Route path={`/labs/${path}`} Component={Labs} />
             </>
           ))}
 

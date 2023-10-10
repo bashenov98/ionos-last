@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import './LabsProjects.css';
 import EmptyProfile from "media/labs/empty-profile.png";
+import axios from "axios";
 
 const LabsProjects = () => {
   const location = useLocation();
@@ -38,11 +39,15 @@ const LabsProjects = () => {
     }
   };
 
+  const fetchLab = async () => {
+    
+  }
+
   return (
     <div className="labsProjects">
       <h1>ПРОЕКТЫ</h1>
       <div className="labsProjectsMain">
-
+        
       </div>
     </div>
   );
