@@ -112,6 +112,7 @@ const Home = () => {
                 <Link
                   className="searchResultLink"
                   to={`/institute/news/${n.id}`}
+                  key={i}
                 >
                   <div
                     className="searchResult"
@@ -152,7 +153,7 @@ const Home = () => {
             институтом, занимающийся изучением состояния ионосферы.{" "}
           </p>
         </div>
-      </div>
+      </div> 
       <Administration />
       <News />
       <Projects />
