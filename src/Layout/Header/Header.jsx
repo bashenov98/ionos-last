@@ -8,11 +8,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import headerData from "./header.data";
 import languagesData from "./languages.data";
 
-import YoutubeIcon from '../../media/social/youtube-fill.svg';
-import InstagramIcon from '../../media/social/instagram-fill.svg';
-import FacebookIcon from '../../media/social/facebook-box-fill.svg';
-import LinkedInIcon from '../../media/social/linkedin-box-fill.svg'
-
+import YoutubeIcon from "../../media/social/youtube-fill.svg";
+import InstagramIcon from "../../media/social/instagram-fill.svg";
+import FacebookIcon from "../../media/social/facebook-box-fill.svg";
+import LinkedInIcon from "../../media/social/linkedin-box-fill.svg";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -27,16 +26,25 @@ const Header = () => {
     <div className="header">
       <div className="headerTop">
         <div className="headerTopContacts">
-          <Link style={{ paddingRight: "18px" }} to='https://youtube.com/@Instituteofionosphere?si=Ql_V8WJWj0ItWEO9'>
+          <Link
+            style={{ paddingRight: "18px" }}
+            to="https://youtube.com/@Instituteofionosphere?si=Ql_V8WJWj0ItWEO9"
+          >
             <img src={YoutubeIcon} />
           </Link>
-          <Link style={{ paddingRight: "18px" }} to='https://instagram.com/ionoskz?igshid=MzRlODBiNWFlZA=='>
+          <Link
+            style={{ paddingRight: "18px" }}
+            to="https://instagram.com/ionoskz?igshid=MzRlODBiNWFlZA=="
+          >
             <img src={InstagramIcon} />
           </Link>
-          <Link style={{ paddingRight: "18px" }} to='https://www.linkedin.com/company/ionos-kz/'>
+          <Link
+            style={{ paddingRight: "18px" }}
+            to="https://www.linkedin.com/company/ionos-kz/"
+          >
             <img src={LinkedInIcon} />
           </Link>
-          <Link to='https://m.facebook.com/p/100081835389053/'>
+          <Link to="https://m.facebook.com/p/100081835389053/">
             <img src={FacebookIcon} />
           </Link>
         </div>
@@ -52,10 +60,7 @@ const Header = () => {
           {languagesData.map((item, i) => (
             <a onClick={() => changeLanguage(`${item}`)}>
               <div className="headerLanguageButton">
-                <h1
-                  className="headerLanguageButtonText"
-                  key={i}
-                >
+                <h1 className="headerLanguageButtonText" key={i}>
                   {item.toLocaleUpperCase()}
                 </h1>
               </div>
@@ -65,7 +70,9 @@ const Header = () => {
       </div>
       <div className="headerBot">
         <div className="headerLogoDiv">
-          <Link to="/"><img src={Logo} className='headerLogo' alt="logo" /></Link>
+          <Link to="/">
+            <img src={Logo} className="headerLogo" alt="logo" />
+          </Link>
         </div>
         <div style={{ width: "100%" }}>
           <nav>
@@ -76,13 +83,15 @@ const Header = () => {
                   onMouseLeave={() => setDropdownVisibility(0)}
                   key={i}
                 >
-                  <a class="dropdown-toggle" className="headerBotTab">{t(item.section)}</a>
+                  <a class="dropdown-toggle" className="headerBotTab">
+                    {t(item.section)}
+                  </a>
                   <ul
                     class="dropdown-menu no-border-radius fadeIn animated"
                     style={{
                       display:
                         isDropdownVisible === item.index ? "block" : "none",
-                      marginLeft: i === 2 ? "0px" : i === 3 && "-570px"
+                      marginLeft: i === 2 ? "0px" : i === 3 && "-570px",
                     }}
                   >
                     {item.subSection.map((subsection, i) => (
