@@ -145,11 +145,9 @@ const Home = () => {
             </div>
           </div>
 
-          <h1 className="homeBannerHeader">Институт ионосферы</h1>
+          <h1 className="homeBannerHeader">{t('bannerheader')}</h1>
           <p className="homeBannerText">
-            Мы являемся одним из старейших научно-исследовательских институтов в
-            Казахстане и единственным в Средней Азии специализированным
-            институтом, занимающийся изучением состояния ионосферы.{" "}
+          {t('bannerbio')}{" "}
           </p>
         </div>
       </div>
