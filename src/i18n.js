@@ -7,6 +7,8 @@ i18n
     resources: {
       en: {
         translation: {
+          "bannerheader": "INSTITUTE OF IONOSPHERE",
+          "bannerbio": "We are one of the oldest research institutes in Kazakhstan and the only specialized institute in Central Asia studying the state of the ionosphere.",
           "labs": "LABORATORIES",
           "diagnosticlab": "SPACE WEATHER DIAGNOSIS AND FORECAST LABORATORY",
           "nonstationarylab": "LABORATORY FOR NON-STATIONARY PROCESSES IN THE ATMOSPHERE AND IONOSPHERE",
@@ -44,6 +46,8 @@ i18n
       },
       ru: {
         translation: {
+          "bannerheader": "ИНСТИТУТ ИОНОСФЕРЫ",
+          "bannerbio": "Мы являемся одним из старейших научно-исследовательских институтов в Казахстане и единственным в Средней Азии специализированным институтом, занимающийся изучением состояния ионосферы.",
           "labs": "ЛАБОРАТОРИИ",
           "diagnosticlab": "ЛАБОРАТОРИЯ ДИАГНОСТИКИ И ПРОГНОЗА КОСМИЧЕСКОЙ ПОГОДЫ",
           "nonstationarylab": "ЛАБОРАТОРИЯ НЕСТАЦИОНАРНЫХ ПРОЦЕССОВ В АТМОСФЕРЕ И ИОНОСФЕРЕ",
@@ -80,6 +84,8 @@ i18n
       },
       kz: {
         translation: {
+          "bannerheader": "ИОНОСФЕРА ИНСТИТУТЫ",
+          "bannerbio": "Біз Қазақстандағы ең көне ғылыми-зерттеу институттарының бірі және ионосфера жағдайын зерттейтін Орталық Азиядағы жалғыз мамандандырылған институтпыз.",
           "labs": "ЗЕРТХАНАЛАР",
           "institute": "ИНСТИТУТ",
           "performance": "ІС-ШАРАЛАР",

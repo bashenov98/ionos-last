@@ -16,7 +16,7 @@ import GeophysicalForecast from "./Pages/Services/GeophysicalForecast";
 import SystemDev from "./Pages/Services/SystemDev";
 import { Projects, ProjectDetail } from "./Pages/Performance/Projects/Projects";
 import Publications from "./Pages/Performance/Publications/Publications";
-import Seminars from "./Pages/Performance/Seminars";
+import Seminars from "./Pages/Performance/Seminars/Seminars";
 import Patents from "./Pages/Performance/Patents";
 
 import "./App.css";
