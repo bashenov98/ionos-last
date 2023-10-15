@@ -32,7 +32,7 @@ const Staff = () => {
                         id: emp.id,
                         name: `${emp.attributes.Name} ${emp.attributes.Last_Name}`,
                         job: emp.attributes.Position ? emp.attributes.Position : "",
-                        img: emp.attributes.Photo.data ? emp.attributes.Photo.data[0].attributes.formats.small.url : "https://res.cloudinary.com/ddsakxfcm/image/upload/v1693151526/small_1_335533421b.png"
+                        img: emp.attributes.Photo.data ? (emp.attributes.Photo.data[0].attributes.formats.small ? emp.attributes.Photo.data[0].attributes.formats.small.url : "https://res.cloudinary.com/ddsakxfcm/image/upload/v1693151526/small_1_335533421b.png") : "https://res.cloudinary.com/ddsakxfcm/image/upload/v1693151526/small_1_335533421b.png"
                     }));
 
                     setStaff(employees)

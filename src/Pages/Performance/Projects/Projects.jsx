@@ -108,7 +108,7 @@ export const Projects = () => {
                 </h1>
                 <Link
                   className="projectItemMoreButtonLink"
-                  to={`/institute/news/${p.id}`}
+                  to={`/performance/currentprojects/${p.id}`}
                 >
                   <button className="projectItemMoreButtonText">
                     Подробнее

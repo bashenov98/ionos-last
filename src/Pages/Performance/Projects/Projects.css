@@ -63,6 +63,7 @@
     letter-spacing: 0.05em;
     text-align: left;
     white-space: pre-wrap;
+    padding: 0px 42px 20px;
 }
 
 .projectItemMoreButtonLink {
