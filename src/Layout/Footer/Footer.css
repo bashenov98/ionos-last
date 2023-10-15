@@ -1,7 +1,8 @@
 .footerContainer {
     display: flex;
     flex-direction: row;
-    
+    position: absolute;
+    bottom: 0;
     width: 100%;
     height: 88px;
     background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%);
