@@ -112,6 +112,7 @@ const Home = () => {
                 <Link
                   className="searchResultLink"
                   to={`/institute/news/${n.id}`}
+                  key={i}
                 >
                   <div
                     className="searchResult"
@@ -150,7 +151,7 @@ const Home = () => {
           {t('bannerbio')}{" "}
           </p>
         </div>
-      </div>
+      </div> 
       <Administration />
       <News />
       <Projects />

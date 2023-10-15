@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.newsHeaderText {
+.newsHeaderText { 
     font-family: 'Poppins', sans-serif;
     font-size: 36px;
     font-weight: 900;
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: row;
     gap: 30px;
-    padding-left: 100px;
+ 
     padding-top: 60px;
 }
 
@@ -71,7 +71,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 295px;
     height: 200px;
     object-fit: contain; 
@@ -96,9 +95,7 @@
     background-color: white;
     color: rgba(28, 54, 114, 1);
     border: none;
-
     padding: 1px 20px;
-
     bottom: 10px;
 
 }
@@ -132,4 +129,15 @@
     padding: 9px 70px;
     border: none;
     border-radius: 1dvi;
+}
+
+@media only screen and (max-width: 1024px) {
+    .newsHomeList {
+        flex-direction: column;
+        
+    }
+
+    .newsHomeItem {
+        width: auto;
+    }
 }
