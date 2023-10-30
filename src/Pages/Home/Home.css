@@ -114,7 +114,6 @@
 }
 
 .homeBannerHeader {
-  font-family: "Poppins", sans-serif;
   color: #fff;
   font-size: 96px;
   font-weight: 700;
@@ -124,8 +123,7 @@
 }
 
 .homeBannerText {
-  padding-top: 40px;
-  font-family: "Poppins", sans-serif;
+  margin-top: 40px;
   color: #fff;
   font-size: 24px;
   font-weight: 200;
@@ -292,4 +290,8 @@
     height: 70vh;
   }
 
+  .homeBannerText {
+    line-height: normal;
+    font-size: 55px;
+  }
 }

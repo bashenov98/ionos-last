@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import "./Labs.css";
 
 const Labs = () => {
+  
   const location = useLocation();
   const navigate = useNavigate();
   const currentPath = location.pathname.slice(6);

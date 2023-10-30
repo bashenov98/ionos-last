@@ -44,7 +44,6 @@ const Home = () => {
         )
         .then((response) => {
           const resp = response.data;
-          console.log(resp);
 
           setEmployees(resp.employees);
           setNews(resp.newss);

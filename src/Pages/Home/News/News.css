@@ -140,4 +140,16 @@
     .newsHomeItem {
         width: auto;
     }
+
+    .newsItemDateText {
+        font-size: 25px;
+    }
+
+    .newsItemHeader {
+        font-size: 30px;
+    }
+
+    .newsBotButton {
+        font-size: 30px;
+    }
 }

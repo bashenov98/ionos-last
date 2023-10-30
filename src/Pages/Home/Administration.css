@@ -96,4 +96,14 @@
     .administrationItem {
         width: 100%;
     }
+
+    .administrationItemName {
+        font-size: 28px;
+        line-height: normal;
+    }
+
+    .administrationItemPosition {
+        font-size: 25px;
+        line-height: normal;
+    }
 }
