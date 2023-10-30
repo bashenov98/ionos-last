@@ -40,61 +40,61 @@ function App() {
       <div className="app">
         <Header />
         <Routes>
-          <Route path="/" Component={Home} />
+          <Route path="/" element={<Home/>} />
 
           {labPathData.map((path, i) => (
             <>
-              <Route path={`/labs/${path}/projects`} Component={LabsProjects} />
-              <Route path={`/labs/${path}/employees`} Component={LabsEmployees} />
-              <Route path={`/labs/${path}`} Component={Labs} />
+              <Route path={`/labs/${path}/projects`} element={<LabsProjects/>} />
+              <Route path={`/labs/${path}/employees`} element={<LabsEmployees/>} />
+              <Route path={`/labs/${path}`} element={<Labs/>} />
             </>
           ))}
 
-          <Route path="/institute/news" Component={News} />
-          <Route path="/institute/news/:id" Component={NewsDetail} />
-          <Route path="/institute/history" Component={History} />
-          <Route path="/institute/staff" Component={Staff} />
-          <Route path="/institute/staff/:id" Component={StaffDetail} />
+          <Route path="/institute/news" element={<News/>} />
+          <Route path="/institute/news/:id" element={<NewsDetail/>} />
+          <Route path="/institute/history" element={<History/>} />
+          <Route path="/institute/staff" element={<Staff/>} />
+          <Route path="/institute/staff/:id" element={<StaffDetail/>} />
           <Route
             path="/institute/experimentalbase"
-            Component={ExperimentalBase}
+            element={<ExperimentalBase/>}
           />
           <Route
             path="/institute/technicalequipment"
-            Component={TechnicalEquipment}
+            element={<TechnicalEquipment/>}
           />
           <Route
             path="/institute/youngscientists"
-            Component={YoungScientists}
+            element={<YoungScientists/>}
           />
-          <Route path="/institute/anticorruption" Component={Anticorruption} />
-          <Route path="/institute/govpurchases" Component={GovPurchases} />
+          <Route path="/institute/anticorruption" element={<Anticorruption/>} />
+          <Route path="/institute/govpurchases" element={<GovPurchases/>} />
 
           <Route
             path="/services/geophysicalforecast"
-            Component={GeophysicalForecast}
+            element={<GeophysicalForecast/>}
           />
           <Route
             path="/services/geomagneticdimensions"
-            Component={GeomagneticDimensions}
+            element={<GeomagneticDimensions/>}
           />
           <Route
             path="/services/aerospacemonitoring"
-            Component={AerospaceMonitoring}
+            element={<AerospaceMonitoring/>}
           />
           <Route
             path="/services/geoinformsystemdevelopment"
-            Component={SystemDev}
+            element={<SystemDev/>}
           />
 
-          <Route path="/performance/currentprojects" Component={<Projects/>} />
+          <Route path="/performance/currentprojects" element={<Projects/>} />
           <Route
             path="/performance/currentprojects/:id"
-            Component={ProjectDetail}
+            element={<ProjectDetail/>}
           />
-          <Route path="/performance/publications" Component={Publications} />
-          <Route path="/performance/seminars" Component={Seminars} />
-          <Route path="/performance/patents" Component={Patents} />
+          <Route path="/performance/publications" element={<Publications/>} />
+          <Route path="/performance/seminars" element={<Seminars/>} />
+          <Route path="/performance/patents" element={<Patents/>} />
         </Routes>
         <Footer />
       </div>
