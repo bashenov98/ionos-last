@@ -38,3 +38,15 @@
     text-align: center;
     color: rgba(33, 51, 108, 1);
 }
+
+@media only screen and (max-width: 1024px) {
+    .mapAddressHeader {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .mapAddressText {
+        font-size: 26px;
+        line-height: normal;
+    }
+}

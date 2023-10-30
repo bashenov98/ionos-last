@@ -12,7 +12,6 @@
 }
 
 .contactUsHeaderText {
-    font-family: 'Poppins', sans-serif;
     font-size: 36px;
     font-weight: 900;
     line-height: 54px;
@@ -30,4 +29,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+    .contactUsInput {
+        height: 80px;
+        font-size: 36px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
