@@ -87,7 +87,7 @@ function App() {
             Component={SystemDev}
           />
 
-          <Route path="/performance/currentprojects" Component={Projects} />
+          <Route path="/performance/currentprojects" Component={<Projects/>} />
           <Route
             path="/performance/currentprojects/:id"
             Component={ProjectDetail}
