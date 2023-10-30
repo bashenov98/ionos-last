@@ -223,6 +223,15 @@ const Header = () => {
                   {t("committee")}
                 </Link>
               </div>
+              {isDropdownVisible === 0 && (
+              <div className="footerMobile">
+                <p className="footerMobileText">Адрес: 050020, Республика Казахстан, г.Алматы,Каменское плато, Садоводческое товарищество «Ионосфера» д.117</p>
+                <p className="footerMobileText">Время работы: пн-пт с 09:00 до 17:00, перерыв с 13:00 до 13:30</p>
+                <p className="footerMobileText">Телефон: 8(727) 380-30-54</p>
+                <p className="footerMobileText">Факс: 8(727) 380-30-53</p>
+                <p className="footerMobileText">E-mail: ionos@ionos.kz</p>
+                <p className="footerMobileText">admion1@mail.ru</p>
+              </div>)}
             </Drawer>
           </div>
         )}
