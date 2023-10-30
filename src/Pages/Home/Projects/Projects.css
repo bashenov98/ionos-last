@@ -33,7 +33,6 @@
 
 .projectItem {
     width: 361px;
-    height: 400px;
 }
 
 .projectItemTop {
@@ -102,4 +101,21 @@
     color: rgba(38, 49, 104, 1);
     border-radius: 7px;
 
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .projectList {
+        flex-direction: column;
+    }
+
+    .projectItemBotText {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    .projectsButton {
+        font-size: 30px;
+        line-height: normal;
+    }
 }
