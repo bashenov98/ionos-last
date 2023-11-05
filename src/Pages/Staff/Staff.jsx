@@ -12,6 +12,7 @@ import orcid from '../../media/digital-identity.png';
 
 
 import './Staff.css';
+import { StepForwardFilled } from '@ant-design/icons';
 
 
 
@@ -69,6 +70,8 @@ export const StaffDetail = () => {
     const { id } = useParams();
 
     const [employee, setEmployee] = useState();
+    const [publications, setPublications] = useState([]);
+    const [projects, setProjects] = useState([]);
 
     console.log(employee)
 
@@ -76,13 +79,13 @@ export const StaffDetail = () => {
 
     useEffect(() => {
         const fetchStaffDetail = async () => {
-            await axios.get(`https://ionos-strapi.onrender.com/api/employees/${id}?populate=*`, {
+            await axios.get(`https://ionos-strapi.onrender.com/api/employees/${id}?populate[publications][populate][0]=Authors&populate[Photo][populate][1]=data&populate[projects][populate][2]=Image&populate[laboratory][populate][3]=data`, {
                 headers: { Authorization: 'bearer d0c2c9e6d1e901cb8c7d394af03f7095912bdc63c760c08a41f3e370594bd3a023701f1dac6ae7d4a72e45893371f9333094ecbe57bef695102d42864c700787f3951f929aefcbbb7799c344a0b8ba0d37b5bc0bd68cffe1d7926c59631a24fce5928c2f1765662e466a7fa03c6709e5fd4df774ded6e36d3cb17ebaeab43d79' }
             })
                 .then(response => {
 
                     const n = response.data.data
-                    console.log(n.attributes.Photo.data[0].attributes.formats.small.url)
+                    // console.log(n.attributes.Photo.data[0].attributes.formats.small.url)
 
                     setEmployee({
                         id: n.id,
@@ -92,7 +95,32 @@ export const StaffDetail = () => {
                         orcid: n.attributes.Orcid_Link ? n.attributes.Orcid_Link : "",
                         photo: n.attributes.Photo.data ? n.attributes.Photo.data[0].attributes.formats.small.url : "https://res.cloudinary.com/ddsakxfcm/image/upload/v1693151526/small_1_335533421b.png"
                     })
+                    const pubs = n.attributes.publications.data
+                    const p = pubs.map(pub => ({
+                        year: pub.attributes.Year,
+                        authors: pub.attributes.Authors.data.map(author => ({
+                            last_name: author.attributes.Last_Name,
+                            name: author.attributes.Name,
+                            middle_name: author.attributes.Middle_Name ? author.attributes.Middle_Name : "",
+                            id: author.id,
+                        })),
+                        title: pub.attributes.Title,
+                        journal: pub.attributes.Journal,
+                        volume: pub.attributes.Volume,
+                        number: pub.attributes.Number,
+                        pages: pub.attributes.Pages,
+                        url: pub.attributes.url
+                    }));
+                    const pros = n.attributes.projects.data;
+                    const ps = pros.map(pro => ({
+                        header: pro.attributes.Header,
+                        date_end: pro.attributes.Date_End,
+                        image: pro.attributes.Image.data ? pro.attributes.Image.data.url : null
+                    }));
+                    setProjects(ps);
+                    setPublications(p)
                     setLoaded(true);
+                    console.log(ps)
                 })
                 .catch(error => {
                     console.error('Error fetching data: ', error);
@@ -100,27 +128,82 @@ export const StaffDetail = () => {
 
         }
 
+
+
         fetchStaffDetail();
     }, []);
 
+
+
     return loaded && (
         <div className='staffDetail'>
-            <div>
-                {employee.photo && <img src={employee.photo} />}
+            <div className='staffDetailCard'>
+                <div>
+                    {employee.photo && <img src={employee.photo} />}
+                </div>
+                <div className='employeeParams'>
+                    <h2>{employee.name}</h2>
+                    <div className='employeeParam'>
+                        <img className='employeeIcon' src={job} />
+                        <p>{employee.job}</p>
+                    </div>
+                    <div className='employeeParam'>
+                        <img className='employeeIcon' src={email} />
+                        <p>Email: <a href="">{employee.email}</a></p>
+                    </div>
+                    <div className='employeeParam'>
+                        <img className='employeeIcon' src={orcid} />
+                        <p>ORCID: <a href={employee.orcid}>{employee.orcid.substring(18)}</a></p>
+                    </div>
+                </div>
+                <div>
+                    <h3>Участие в проектах</h3>
+                    <div>
+                        <h6>Текущие проекты</h6>
+                        {projects.filter(project => {
+                            let currentDate = new Date();
+                            currentDate.setHours(0, 0, 0, 0);    // Set the time to 00:00:00 for a fair comparison
+
+                            let itemDate = new Date(project.date_end);
+                            return itemDate >= currentDate;
+                        }).map((p, k) => (
+                            <div key={k}>
+                                {p.header}
+                            </div>
+                        ))}
+                    </div>
+                    <div>
+                        <h6>Завершенные проекты</h6>
+                        {projects.filter(project => {
+                            let currentDate = new Date();
+                            currentDate.setHours(0, 0, 0, 0);    // Set the time to 00:00:00 for a fair comparison
+
+                            let itemDate = new Date(project.date_end);
+                            return itemDate <= currentDate;
+                        }).map((p, k) => (
+                            <div key={k}>
+                                {p.header}
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
-            <div className='employeeParams'>
-                <h2>{employee.name}</h2>
-                <div className='employeeParam'>
-                    <img className='employeeIcon' src={job} />
-                    <p>{employee.job}</p>
-                </div>
-                <div className='employeeParam'>
-                    <img className='employeeIcon' src={email} />
-                    <p>Email: <a href="">{employee.email}</a></p>
-                </div>
-                <div className='employeeParam'>
-                    <img className='employeeIcon' src={orcid} />
-                    <p>ORCID: <a href={employee.orcid}>{employee.orcid.substring(18)}</a></p>
+            <div className='staffDetailPublications'>
+                <div className='staffDetailPublicationsHeader'>
+                    <h1 className='staffDetailPublicationsHeaderText'>Публикации</h1>
+                    <ul>
+                        {publications.map((pub, i) => (
+                            <li key={i}>
+                                {pub.authors.map((author, j) => (
+                                    <Link to={`/institute/staff/${author.id}`}>{`${author.last_name} ${author.name[0]}, `}</Link>
+
+                                ))}
+                                {pub.title}
+                                {`. // ${pub.journal} - ${pub.Year}. - Vol. ${pub.volume}. – No. ${pub.number}. – P. ${pub.pages}.`}
+                                {pub.url && <Link to={pub.url}>{` DOI ${pub.URL}`}</Link>}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </div>
