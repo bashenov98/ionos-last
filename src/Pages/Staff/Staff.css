@@ -45,6 +45,7 @@
     display: flex;
     flex-direction: row;
     padding: 100px;
+    padding-bottom: 180px;
     gap: 40px;
 } 
 
