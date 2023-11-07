@@ -92,6 +92,20 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    animation: smoothScroll 0.3s forwards;
+}
+@keyframes smoothScroll {
+	0% {
+		transform: translateY(-40px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
 
 .headerBotTabs {
     display: flex;

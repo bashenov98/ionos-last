@@ -30,6 +30,8 @@ const Home = () => {
   const [news, setNews] = useState([]);
   const [projects, setProjects] = useState([]);
 
+  const windowWidth = window.innerWidth;
+
   useEffect(() => {
     const search = async () => {
       await axios
@@ -94,6 +96,7 @@ const Home = () => {
                 <Link
                   className="searchResultLink"
                   to={`/institute/staff/${emp.id}`}
+                  key={i}
                 >
                   <div
                     className="searchResult"
@@ -129,6 +132,7 @@ const Home = () => {
                 <Link
                   className="searchResultLink"
                   to={`/performance/currentprojects/${p.id}`}
+                  key={i}
                 >
                   <div
                     className="searchResult"
@@ -145,7 +149,7 @@ const Home = () => {
             </div>
           </div>
 
-          <h1 className="homeBannerHeader">{t('bannerheader')}</h1>
+          <h1 className={`homeBannerHeader ${windowWidth>1080 && "animate-charcter"}`}>{t('bannerheader')}</h1>
           <p className="homeBannerText">
           {t('bannerbio')}{" "}
           </p>

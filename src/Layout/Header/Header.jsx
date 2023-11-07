@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { useTranslation } from "react-i18next";
@@ -37,6 +37,27 @@ const Header = () => {
     setDropdownVisibility(0);
     setDrawerOpen(false);
   };
+
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const header = document.getElementById("myHeader");
+    const sticky = header.offsetTop;
+
+    const handleScroll = () => {
+      if (window.scrollY > sticky) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="header">
@@ -86,7 +107,7 @@ const Header = () => {
           </div>
         </div>
       )}
-      <div className="headerBot">
+      <div className={`headerBot ${isSticky ? 'sticky' : ''}`} id="myHeader">
         <div className="headerLogoDiv">
           <Link to="/">
             <img src={Logo} className="headerLogo" alt="logo" />
