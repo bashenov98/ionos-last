@@ -29,10 +29,6 @@
     justify-content: center;
 }
 
-.staffItem {
-
-}  
-
 
 .link {
     text-decoration: none;
@@ -47,12 +43,35 @@
 
 .staffDetail {
     display: flex;
-    flex-direction: column;
-    padding: 100px;
-} 
-.staffDetailCard {
-    display: flex;
     flex-direction: row;
+    padding: 100px;
+    gap: 40px;
+} 
+
+.staffDetailRight {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.staffDetailRight h2 {
+    margin: 0;
+}
+
+.staffDetailRightSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.staffDetailRightSection h6 {
+    font-weight: 600;
+}
+
+.staffDetailRightContacts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .staffItem {
