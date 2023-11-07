@@ -29,6 +29,9 @@
     justify-content: center;
 }
 
+.staffDetailPersonImg {
+    height: 500px;
+}
 
 .link {
     text-decoration: none;
@@ -57,6 +60,7 @@
 
 .staffDetailRight h2 {
     margin: 0;
+    font-weight: 600;
 }
 
 .staffDetailRightSection {
@@ -116,5 +120,43 @@
 .employeeIcon {
     height: 25px;
     width: auto;
-    padding-right: 20px;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .staffDetail {
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .staffDetailRight h2 {
+        font-size: 58px;
+    }
+
+    .staffDetail p {
+        font-size: 50px;
+    }
+
+    .staffDetailPersonImg {
+        height: auto;
+
+    }
+
+    .employeeIcon {
+        height: 65px;
+    }
+
+    .staffDetailRightSection {
+        font-size: 50px;
+    }
+
+    .staffDetailRightSection ul {
+        font-size: 50px;
+    }
+
+    .staffDetailRightSection h6 {
+        font-size: 50px;
+    }
 }

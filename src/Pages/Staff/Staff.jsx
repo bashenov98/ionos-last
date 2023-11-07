@@ -154,7 +154,7 @@ export const StaffDetail = () => {
   return (
     loaded && (
       <div className="staffDetail">
-        {employee.photo && <img src={employee.photo} height={"500px"} />}
+        {employee.photo && <img src={employee.photo} className="staffDetailPersonImg" />}
 
         <div className="staffDetailRight">
 
