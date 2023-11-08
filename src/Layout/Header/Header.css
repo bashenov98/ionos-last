@@ -147,6 +147,10 @@
     width: 100%;
 }
 
+.droptab-link:hover {
+    color: rgb(74, 5, 233)
+}
+
 @media only screen and (max-width: 1024px) {
     .headerBotTab {
         font-size: 16px;
