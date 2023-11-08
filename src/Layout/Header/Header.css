@@ -21,6 +21,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 160px;
+}
+
+.headerTopContacts img:hover {
+    width: 40px;
 }
 
 .headerLogoDiv {
@@ -130,8 +135,12 @@
 } 
 
 .droptab {
-    width: max-content;
+    width: 100%;
     padding: 5px;
+}
+
+.droptab:hover {
+    background: var(--Gray-3, #F3F5F6);
 }
 
 .droptab-link {
@@ -148,7 +157,7 @@
 }
 
 .droptab-link:hover {
-    color: rgb(74, 5, 233)
+    color: rgb(74, 5, 233);
 }
 
 @media only screen and (max-width: 1024px) {
