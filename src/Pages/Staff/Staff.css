@@ -4,6 +4,7 @@
     background-size: contain;
     background-image: linear-gradient(245.86deg, #1B3571 26.48%, #4C1F3D 45.38%), url("../../media/ionos_logo-white\ 1.png");
     background-blend-mode: overlay;
+    padding-bottom: 320px;
 }
 
 .staffContainer {}

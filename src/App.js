@@ -58,7 +58,7 @@ function App() {
           <Route
             path="/institute/experimentalbase"
             element={<ExperimentalBase/>}
-          />
+          /> 
           <Route
             path="/institute/technicalequipment"
             element={<TechnicalEquipment/>}
