@@ -44,6 +44,7 @@ const Publications = () => {
                         url: pub.attributes.url
                     }));
                     setPublications(p)
+                    console.log(publications)
                     setLoaded(true);
                 })
                 .catch(error => {

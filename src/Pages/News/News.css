@@ -140,6 +140,9 @@ link {
 
 }
 
+.newsDetail {
+    padding-bottom: 100px;
+}
 
 .newsDetailHeaderText {
     font-family: 'Poppins', sans-serif;
