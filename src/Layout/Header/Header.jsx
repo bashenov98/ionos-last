@@ -203,13 +203,15 @@ const Header = () => {
                     {t(item.section)}
                   </a>
                   {isDropdownVisible === item.index &&
-                    item.subSection.map((subsection, i) => (
+                    item.subSection.map((subsection, j) => (
                       <Link
                         className="droptab-link"
                         to={`/${item.section}/${subsection}`}
-                        key={i}
+                        key={j}
                       >
-                        {t(subsection)}
+                        <div key={j}>
+                          {t(subsection)}
+                        </div>
                       </Link>
                     ))}
                 </div>
