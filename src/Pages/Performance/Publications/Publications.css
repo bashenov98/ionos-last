@@ -32,3 +32,22 @@
     letter-spacing: 0.05em;
     text-align: left;    
 }
+
+@media only screen and (max-width: 1024px) {
+    .publicationsHeader {
+        padding-top: 100px;
+    }
+
+    .publicationsHeaderText {
+        font-size: 50px;
+    }
+
+    .publicationYearText {
+        font-size: 42px;
+    }
+
+    .publicationCitationText {
+        font-size: 38px;
+        line-height: normal;
+    }
+}

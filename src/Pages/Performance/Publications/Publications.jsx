@@ -95,7 +95,7 @@ const Publications = () => {
           {yearsData.map((year, i) => (
             <div key={i}>
               <h1 className="publicationYearText">{`${year} год:`}</h1>
-              <ul>
+              <ul className="publicationCitationText">
                 {
                   publications
                     .filter((publication) => publication.year == year)
