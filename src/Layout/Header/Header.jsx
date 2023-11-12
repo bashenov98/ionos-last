@@ -206,7 +206,7 @@ const Header = () => {
                     item.subSection.map((subsection, i) => (
                       <Link
                         className="droptab-link"
-                        to={()=>navigate(`/${item.section}/${subsection}`)}
+                        to={`/${item.section}/${subsection}`}
                         key={i}
                       >
                         <p>{t(subsection)}</p>
