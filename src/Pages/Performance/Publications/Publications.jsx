@@ -15,9 +15,6 @@ const Publications = () => {
 
   const yearsData = ["2023", "2022", "2021", "2020"];
 
-  console.log(                  publications
-    .filter((publication) => publication.year))
-
   useEffect(() => {
     const fetchPublications = async () => {
       await axios
