@@ -15,6 +15,9 @@ const Publications = () => {
 
   const yearsData = ["2023", "2022", "2021", "2020"];
 
+  console.log(                  publications
+    .filter((publication) => publication.year))
+
   useEffect(() => {
     const fetchPublications = async () => {
       await axios
@@ -96,20 +99,24 @@ const Publications = () => {
             <div key={i}>
               <h1 className="publicationYearText">{`${year} год:`}</h1>
               <ul>
-                {publications
-                  .filter((publication) => publication.Year === year)
-                  .map((pub, i) => (
-                    <li key={i}>
-                      {pub.authors.map((author, j) => (
-                        <Link
-                          to={`/institute/staff/${author.id}`}
-                        >{`${author.last_name} ${author.name[0]}, `}</Link>
-                      ))}
-                      {pub.title}
-                      {`. // ${pub.journal} - ${pub.Year}. - Vol. ${pub.volume}. – No. ${pub.number}. – P. ${pub.pages}.`}
-                      {pub.url && <Link to={pub.url}>{` DOI ${pub.URL}`}</Link>}
-                    </li>
-                  ))}
+                {
+                  publications
+                    .filter((publication) => publication.year == year)
+                    .map((pub, i) => (
+                      <li key={i}>
+                        {pub.authors.map((author, j) => (
+                          <Link
+                            to={`/institute/staff/${author.id}`}
+                            key={j}
+                          >{`${author.last_name} ${author.name[0]}, `}</Link>
+                        ))}
+                        {pub.title}
+                        {`. // ${pub.journal} - ${pub.Year}. - Vol. ${pub.volume}. – No. ${pub.number}. – P. ${pub.pages}.`}
+                        {pub.url && (
+                          <Link to={pub.url}>{` DOI ${pub.URL}`}</Link>
+                        )}
+                      </li>
+                    ))}
               </ul>
 
               {/* <ol>
