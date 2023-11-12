@@ -209,7 +209,7 @@ const Header = () => {
                         to={`/${item.section}/${subsection}`}
                         key={i}
                       >
-                        <p>{t(subsection)}</p>
+                        {t(subsection)}
                       </Link>
                     ))}
                 </div>
