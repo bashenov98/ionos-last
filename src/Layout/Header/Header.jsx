@@ -197,12 +197,13 @@ const Header = () => {
                       fontWeight: "500",
                       marginTop: "30px",
                     }}
-                    onMouseEnter={() => setDropdownVisibility(item.index)}
-                    onMouseLeave={onMouseLeaveMobile}
+                    // onMouseEnter={() => setDropdownVisibility(item.index)}
+                    // onMouseLeave={onMouseLeaveMobile}
                   >
                     {t(item.section)}
                   </a>
-                  {isDropdownVisible === item.index &&
+                  {/* {isDropdownVisible === item.index && */}
+                  {isDropdownVisible === isDropdownVisible &&
                     item.subSection.map((subsection, j) => (
                       <Link
                         className="droptab-link"
