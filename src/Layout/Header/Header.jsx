@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
@@ -20,6 +20,8 @@ const Header = () => {
   const { t } = useTranslation();
 
   const [isDropdownVisible, setDropdownVisibility] = useState(0);
+
+  const navigate = useNavigate();
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -204,7 +206,8 @@ const Header = () => {
                     item.subSection.map((subsection, i) => (
                       <a
                         className="droptab-link"
-                        href={`/${item.section}/${subsection}`}
+                
+                        onClick={()=>navigate(`/${item.section}/${subsection}`)}
                         key={i}
                       >
                         <p>{t(subsection)}</p>
