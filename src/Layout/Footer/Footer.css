@@ -9,26 +9,21 @@
     border-top: 1px solid (255, 255, 255, 1);
     padding: 0 26px;
     justify-content: space-between;
-
+    align-items: center;
 }
 
 .footerLeft {
-    padding-top: 16px;
     padding-right: 25px;
-
 }
 
 .footerCenter {
-    padding: 16px 26px 0;
+    padding: 0 26px;
 }
 
 .footerBorder {
     border-left: 0.5px solid rgb(255, 255, 255, 1);
     border-right: 0.5px solid rgb(255, 255, 255, 1);
-}
-
-.footerRight {
-    padding-top: 16px;
+    height: 100%;
 }
 
 .footerText {

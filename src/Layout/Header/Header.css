@@ -148,9 +148,12 @@
     touch-action: manipulation;
     text-decoration: none;
     color: black;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    font-style: normal;
     font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-weight: 300;
     padding: 0 20px;
     width: 100%;
