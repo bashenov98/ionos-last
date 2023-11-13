@@ -69,10 +69,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 30px;
 }
 
 .headerLanguageButtonText {
-    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 600;
     line-height: 21px;
@@ -80,9 +80,14 @@
     text-align: center;
     color: rgba(28, 54, 114, 1);
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
     margin: 0;
+}
+
+.headerLanguageButtonText:hover {
+    font-size: 24px;
 }
 
 .headerBot {
