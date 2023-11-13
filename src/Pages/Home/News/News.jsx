@@ -1,37 +1,40 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
+import logo from '../../../media/ionos_logo-white.png';
 
 import "./News.css";
 
-import image1 from "../../../media/news/image1.png";
-import image2 from "../../../media/news/image2.png";
-import image3 from "../../../media/news/image3.png";
-
 export const News = () => {
-  const news = [
-    {
-      id: 1,
-      date: "26.11.2022",
-      img: image1,
-      header:
-        "Конференция GIS day 2022 посвященная геоинформационным технологиям.",
-    },
-    {
-      id: 2,
-      date: "06.03.2023",
-      img: image3,
-      header: "Празднование 30-летия казахстанской космонавтики",
-    },
-    {
-      id: 3,
-      date: "08.06.2023",
-      img: image2,
-      header: "Перерегистрация Института Ионосферы и изменение наименования",
-    },
-  ];
-
+  const [news, setNews] = useState([]);
+  
   useEffect(() => {
-    news.reverse();
+    (async () => {
+      await axios.get('https://ionos-strapi.onrender.com/api/newss?populate=*', {
+        headers: { Authorization: 'bearer d0c2c9e6d1e901cb8c7d394af03f7095912bdc63c760c08a41f3e370594bd3a023701f1dac6ae7d4a72e45893371f9333094ecbe57bef695102d42864c700787f3951f929aefcbbb7799c344a0b8ba0d37b5bc0bd68cffe1d7926c59631a24fce5928c2f1765662e466a7fa03c6709e5fd4df774ded6e36d3cb17ebaeab43d79' }
+      })
+        .then(response => {
+          const resp = response.data.data;
+          console.log(resp)
+
+          const sortedNewsData = resp
+          .sort((a, b) => new Date(b.attributes.Publish_date) - new Date(a.attributes.Publish_date))
+          .slice(0, 3)
+          .map(n => ({
+              id: n.id,
+              date: new Date(n.attributes.Publish_date).toLocaleDateString(),
+              img: n.attributes.Image.data ? n.attributes.Image.data.attributes.formats.small.url : logo,
+              header: n.attributes.Header
+          }));
+
+
+          setNews(sortedNewsData)
+        })
+        .catch(error => {
+          console.error('Error fetching data: ', error);
+        });
+    })();
   }, []);
 
   return (
