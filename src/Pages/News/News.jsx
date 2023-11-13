@@ -118,7 +118,7 @@ export const NewsDetail = () => {
 
         }
 
-        fetchNewsDetail();
+        fetchNewsDetail(); 
     }, []);
 
     return loaded && (
