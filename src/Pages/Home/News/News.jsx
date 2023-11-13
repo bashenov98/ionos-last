@@ -16,7 +16,6 @@ export const News = () => {
       })
         .then(response => {
           const resp = response.data.data;
-          console.log(resp)
 
           const sortedNewsData = resp
           .sort((a, b) => new Date(b.attributes.Publish_date) - new Date(a.attributes.Publish_date))

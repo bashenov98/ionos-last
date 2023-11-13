@@ -28,7 +28,6 @@ export const Partners = () => {
             })
                 .then(response => {
                     const resp = response.data.data;
-                    console.log(resp)
                     const partners = resp.map(part => ({
                         img: part.attributes.Logo.data.attributes.formats.small ? part.attributes.Logo.data.attributes.formats.small.url : part.attributes.Logo.data.attributes.formats.thumbnail.url
                     }));
@@ -46,7 +45,6 @@ export const Partners = () => {
             })
                 .then(response => {
                     const resp = response.data.data;
-                    console.log(resp)
                     const partners = resp.map(part => ({
                         img: part.attributes.Logo.data.attributes.formats.small ? part.attributes.Logo.data.attributes.formats.small.url : part.attributes.Logo.data.attributes.formats.thumbnail.url
                     }));

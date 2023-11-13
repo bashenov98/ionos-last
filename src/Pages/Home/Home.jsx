@@ -55,9 +55,8 @@ const Home = () => {
         .catch((error) => {
           console.error("Error fetching data: ", error);
         });
-      console.log(employees);
     };
-    search();
+    if (inputText != "") search();
   }, [inputText]);
 
   let inputHandler = (e) => {

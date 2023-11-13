@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import './Projects.css';
+
+import axios from "axios";
 
 import maxm from '../../../media/projects/maxm.png';
 import planet from '../../../media/projects/planet.png';
@@ -9,23 +11,47 @@ import landslides from '../../../media/projects/landslides.png';
 import logo from '../../../media/projects/ionos-logo.png'
 
 export const Projects = () => {
-    const projects = [
-        {
-            id: 1,
-            img: maxm,
-            header: "«МАКСМ» Многоцелевая аэрокосмическая система мониторинга",
-        },
-        {
-            id: 2,
-            img: planet,
-            header: "Разработка системы мониторинга за сдвижением земной поверхности на основе данных ДЗЗ",
-        },
-        {
-            id: 3,
-            img: landslides,
-            header: "Разработка интеллектуальной системы прогнозирования оползневых процессов",
-        },
-    ];
+    const [projects, setProjects] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const fetchProjectDetail = async () => {
+      try {
+        const response = await axios.get(
+          'https://ionos-strapi.onrender.com/api/projects?populate=*',
+          {
+            headers: {
+              Authorization: 'bearer d0c2c9e6d1e901cb8c7d394af03f7095912bdc63c760c08a41f3e370594bd3a023701f1dac6ae7d4a72e45893371f9333094ecbe57bef695102d42864c700787f3951f929aefcbbb7799c344a0b8ba0d37b5bc0bd68cffe1d7926c59631a24fce5928c2f1765662e466a7fa03c6709e5fd4df774ded6e36d3cb17ebaeab43d79',
+            },
+          }
+        );
+
+        const resp = response.data.data;
+        // Sort projects by Start_Date in descending order
+        const sortedProjects = resp
+          .sort((a, b) => new Date(b.attributes.Start_Date) - new Date(a.attributes.Start_Date))
+          .slice(0, 3); // Take the top 3 projects
+
+        // Map to new project structure
+        const projectsData = sortedProjects.map((p, index) => ({
+          id: p.id,
+          img: [maxm, planet, landslides][index % 3], // Cycle through your provided images, adjust logic as needed
+          header: p.attributes.Header,
+        }));
+
+        setProjects(projectsData);
+        console.log(projects);
+        setLoaded(true);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    };
+
+    fetchProjectDetail();
+  }, []);
+
+
+    
 
 
 
