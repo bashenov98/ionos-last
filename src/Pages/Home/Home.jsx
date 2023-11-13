@@ -203,7 +203,6 @@ const Home = () => {
       {/* <div className='homeMainMap'>
                 <Map />
             </div> */}
-      <ContactUs />
       {/* <div className='contactUs'>
                 
             </div> */}

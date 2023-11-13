@@ -41,7 +41,9 @@ i18n
           "adminsheader": "ADMINISTRATION OF INSTITUTE",
           "latestNewsHeader": "Latest news",
           "contactUsHeader": "Contact us",
-          "head": "Supervisor"
+          "head": "Supervisor",
+          "mainScienceStaff": "Core scientific staff",
+          "adminAndTechnicalStaff": "Administrative and technical staff"
         }
       },
       ru: {
@@ -79,7 +81,9 @@ i18n
           "adminsheader": "АДМИНИСТРАЦИЯ ИНСТИТУТА",
           "latestNewsHeader": "Последние новости",
           "contactUsHeader": "Свяжитесь с нами",
-          "head": "Руководитель"
+          "head": "Руководитель",
+          "mainScienceStaff": "Основной научный персонал",
+          "adminAndTechnicalStaff": "Административный и технический персонал"
         }
       },
       kz: {
@@ -116,6 +120,8 @@ i18n
           "geodynamiclab": "СПУТНИКТІК ЖӘНЕ ГЕОДИНАМИКАЛЫҚ ЗЕРТТЕУЛЕРГЕ АРНАЛҒАН ЗЕРТХАНАСЫ",
           "complexlab": "ЖЕР-ҒАРЫШТЫҚ ЗЕРТТЕУ ДЕРЕКТЕРІН ЖАҢАЛЫҚ ТАЛДАУҒА АРНАЛҒАН ЗЕРТХАНАСЫ",
           "cartographylab": "КАРТОГРАФИЯ ЖӘНЕ ГИС ЗЕРТХАНАСЫ",
+          "mainScienceStaff": "Негізгі ғылыми қызметкерлер",
+          "adminAndTechnicalStaff": "Әкімшілік-техникалық персонал"
           
         }
       }

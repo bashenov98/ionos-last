@@ -34,6 +34,7 @@ const Staff = () => {
             id: emp.id,
             name: `${emp.attributes.Name} ${emp.attributes.Last_Name}`,
             job: emp.attributes.Position ? emp.attributes.Position : "",
+            isScienceWorker: emp.attributes.isScienceWorker ? emp.attributes.isScienceWorker : false,
             img: emp.attributes.Photo.data
               ? emp.attributes.Photo.data[0].attributes.formats.small
                 ? emp.attributes.Photo.data[0].attributes.formats.small.url
@@ -53,10 +54,28 @@ const Staff = () => {
     <div className="staffBackground">
       <div className="staffContainer">
         <div className="staffHeader">
-          <h1 className="staffHeaderText">{t(location.pathname.slice(11))}</h1>
+          <h1 className="staffHeaderText">{t('mainScienceStaff')}</h1>
         </div>
         <div className="staffList">
-          {staff.map((emp, index) => (
+          {staff.filter((employee) => employee.isScienceWorker == true).map((emp, index) => (
+            <Link
+              className="link"
+              to={`/institute/staff/${emp.id}`}
+              key={index}
+            >
+              <div className="staffItem">
+                <img className="employeePhoto" src={emp.img} />
+                <h4 className="employeeNameText">{emp.name}</h4>
+                <p className="employeePositionText">{emp.job}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="staffHeader">
+          <h1 className="staffHeaderText">{t('adminAndTechnicalStaff')}</h1>
+        </div>
+        <div className="staffList">
+          {staff.filter((employee) => employee.isScienceWorker == false).map((emp, index) => (
             <Link
               className="link"
               to={`/institute/staff/${emp.id}`}

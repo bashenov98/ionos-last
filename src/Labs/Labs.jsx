@@ -54,7 +54,7 @@ const Labs = () => {
         }
       )
       .then((response) => {
-        setImg(response.data.data.attributes.Photo.data[0].attributes.url);
+        setImg(response.data.data.attributes.Photo ? response.data.data.attributes.Photo.data[0].attributes.url : "");
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
