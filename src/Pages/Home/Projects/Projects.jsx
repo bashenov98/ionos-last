@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import './Projects.css';
+import "./Projects.css";
 
 import axios from "axios";
 
@@ -8,7 +8,7 @@ import maxm from '../../../media/projects/maxm.png';
 import planet from '../../../media/projects/planet.png';
 import landslides from '../../../media/projects/landslides.png';
 
-import logo from '../../../media/projects/ionos-logo.png'
+import logo from "../../../media/projects/ionos-logo.png";
 
 export const Projects = () => {
     const [projects, setProjects] = useState([]);
@@ -18,10 +18,11 @@ export const Projects = () => {
     const fetchProjectDetail = async () => {
       try {
         const response = await axios.get(
-          'https://ionos-strapi.onrender.com/api/projects?populate=*',
+          `${process.env.REACT_APP_API_URL}/api/projects?populate=*`,
           {
             headers: {
-              Authorization: 'bearer d0c2c9e6d1e901cb8c7d394af03f7095912bdc63c760c08a41f3e370594bd3a023701f1dac6ae7d4a72e45893371f9333094ecbe57bef695102d42864c700787f3951f929aefcbbb7799c344a0b8ba0d37b5bc0bd68cffe1d7926c59631a24fce5928c2f1765662e466a7fa03c6709e5fd4df774ded6e36d3cb17ebaeab43d79',
+              Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
+,
             },
           }
         );
@@ -55,31 +56,31 @@ export const Projects = () => {
 
 
 
-    return (
-        <div className="projectsContainer">
-            <div className="projectsHeader">
-                <h1 className="projectsHeaderText">Выполняемые проекты</h1>
+  return (
+    <div className="projectsContainer">
+      <div className="projectsHeader">
+        <h1 className="projectsHeaderText">Выполняемые проекты</h1>
+      </div>
+      <div className="projectList">
+        {projects.map((project, i) => (
+          <div className="projectItem" key={i}>
+            <div className="projectItemTop">
+              <div className="projectIonosLogo">
+                <img className="projectIonosLogoImg" src={logo} />
+              </div>
+              <div className="projectLogo">
+                <img className="projectLogoImg" src={project.img} />
+              </div>
             </div>
-            <div className="projectList">
-                {projects.map((project, i) => (
-                    <div className="projectItem">
-                        <div className="projectItemTop">
-                            <div className="projectIonosLogo">
-                                <img className="projectIonosLogoImg" src={logo} />
-                            </div>
-                            <div className="projectLogo">
-                                <img className="projectLogoImg" src={project.img} />
-                            </div>
-                        </div>
-                        <div className="projectItemBot">
-                            <h3 className="projectItemBotText">{project.header}</h3>
-                        </div>
-                    </div>
-                ))}
+            <div className="projectItemBot">
+              <h3 className="projectItemBotText">{project.header}</h3>
             </div>
-            <div className="projectsButtonDiv">
-                <button className="projectsButton">ВСЕ ПРОЕКТЫ</button>
-            </div>
-        </div>
-    );
-}
+          </div>
+        ))}
+      </div>
+      <div className="projectsButtonDiv">
+        <button className="projectsButton">ВСЕ ПРОЕКТЫ</button>
+      </div>
+    </div>
+  );
+};
