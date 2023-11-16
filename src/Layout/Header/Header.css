@@ -187,6 +187,7 @@
     .headerTopContacts  {
         margin-top: 250px;
         justify-content: center;
+        align-items: center;
     }
 
     .headerTopContacts img {

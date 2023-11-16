@@ -198,12 +198,12 @@ const Header = () => {
                       marginTop: "30px",
                     }}
                     onMouseEnter={() => setDropdownVisibility(item.index)}
-                    // onMouseLeave={onMouseLeaveMobile}
+                  // onMouseLeave={onMouseLeaveMobile}
                   >
                     {t(item.section)}
                   </a>
                   {isDropdownVisible === item.index &&
-                  // {/* {isDropdownVisible === isDropdownVisible && */}
+                    // {/* {isDropdownVisible === isDropdownVisible && */}
                     item.subSection.map((subsection, j) => (
                       <Link
                         className="droptab-link"
@@ -218,30 +218,31 @@ const Header = () => {
                 </div>
               ))}
 
-              <div className="headerTopContacts">
-                <Link
-                  style={{ paddingRight: "18px" }}
-                  to="https://youtube.com/@Instituteofionosphere?si=Ql_V8WJWj0ItWEO9"
-                >
-                  <img src={YoutubeIcon} />
-                </Link>
-                <Link
-                  style={{ paddingRight: "18px" }}
-                  to="https://instagram.com/ionoskz?igshid=MzRlODBiNWFlZA=="
-                >
-                  <img src={InstagramIcon} />
-                </Link>
-                <Link
-                  style={{ paddingRight: "18px" }}
-                  to="https://www.linkedin.com/company/ionos-kz/"
-                >
-                  <img src={LinkedInIcon} />
-                </Link>
-                <Link to="https://m.facebook.com/p/100081835389053/">
-                  <img src={FacebookIcon} />
-                </Link>
-              </div>
+
               <div className="headerTopLinks">
+                <div className="headerTopContacts">
+                  <Link
+                    style={{ paddingRight: "18px" }}
+                    to="https://youtube.com/@Instituteofionosphere?si=Ql_V8WJWj0ItWEO9"
+                  >
+                    <img src={YoutubeIcon} />
+                  </Link>
+                  <Link
+                    style={{ paddingRight: "18px" }}
+                    to="https://instagram.com/ionoskz?igshid=MzRlODBiNWFlZA=="
+                  >
+                    <img src={InstagramIcon} />
+                  </Link>
+                  <Link
+                    style={{ paddingRight: "18px" }}
+                    to="https://www.linkedin.com/company/ionos-kz/"
+                  >
+                    <img src={LinkedInIcon} />
+                  </Link>
+                  <Link to="https://m.facebook.com/p/100081835389053/">
+                    <img src={FacebookIcon} />
+                  </Link>
+                </div>
                 <Link
                   className="headerTopLink"
                   to="https://www.gov.kz/memleket/entities/kazcosmos/about?lang=ru"
@@ -250,14 +251,14 @@ const Header = () => {
                 </Link>
               </div>
               {isDropdownVisible === 0 && (
-              <div className="footerMobile">
-                <p className="footerMobileText">Адрес: 050020, Республика Казахстан, г.Алматы,Каменское плато, Садоводческое товарищество «Ионосфера» д.117</p>
-                <p className="footerMobileText">Время работы: пн-пт с 09:00 до 17:00, перерыв с 13:00 до 13:30</p>
-                <p className="footerMobileText">Телефон: 8(727) 380-30-54</p>
-                <p className="footerMobileText">Факс: 8(727) 380-30-53</p>
-                <p className="footerMobileText">E-mail: ionos@ionos.kz</p>
-                <p className="footerMobileText">admion1@mail.ru</p>
-              </div>)}
+                <div className="footerMobile">
+                  <p className="footerMobileText">Адрес: 050020, Республика Казахстан, г.Алматы,Каменское плато, Садоводческое товарищество «Ионосфера» д.117</p>
+                  <p className="footerMobileText">Время работы: пн-пт с 09:00 до 17:00, перерыв с 13:00 до 13:30</p>
+                  <p className="footerMobileText">Телефон: 8(727) 380-30-54</p>
+                  <p className="footerMobileText">Факс: 8(727) 380-30-53</p>
+                  <p className="footerMobileText">E-mail: ionos@ionos.kz</p>
+                  <p className="footerMobileText">admion1@mail.ru</p>
+                </div>)}
             </Drawer>
           </div>
         )}
