@@ -18,11 +18,20 @@ const Staff = () => {
   const { t } = useTranslation();
   const [staff, setStaff] = useState([]);
   const employees = [];
+  const langs = {
+    kz: "kk-Cyrl-KZ",
+    en: "en",
+    ru: "ru-RU",
+  }
+
+  const getLocale = (key) => {
+    return langs[key];
+  }
 
   useEffect(() => {
     (async () => {
       await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/employees?populate=*`, {
+        .get(`${process.env.REACT_APP_API_URL}/api/employees?populate=*&locale=${getLocale(i18n.language)}`, {
           headers: {
             Authorization:
               `bearer ${process.env.REACT_APP_API_TOKEN}`
@@ -42,6 +51,7 @@ const Staff = () => {
                 : "https://res.cloudinary.com/ddsakxfcm/image/upload/v1693151526/small_1_335533421b.png"
               : "https://res.cloudinary.com/ddsakxfcm/image/upload/v1693151526/small_1_335533421b.png",
           }));
+          console.log(employees)
 
           setStaff(employees);
         })
@@ -50,7 +60,7 @@ const Staff = () => {
           console.error("Error fetching data: ", error);
         });
     })();
-  }, []);
+  }, [i18n.language]);
 
   return (
     <div className="staffBackground">
