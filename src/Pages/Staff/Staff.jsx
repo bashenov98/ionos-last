@@ -46,7 +46,7 @@ const Staff = () => {
             job: emp.attributes.Position ? emp.attributes.Position : "",
             isScienceWorker: emp.attributes.isScienceWorker ? emp.attributes.isScienceWorker : false,
             img: emp.attributes.Photo.data
-              ? `localhost:1337${emp.attributes.Photo.data[0].attributes.url}`
+              ? `http://127.0.0.1:1337${emp.attributes.Photo.data[0].attributes.url}`
               : "",
           }));
           console.log(employees)
