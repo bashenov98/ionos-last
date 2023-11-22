@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { useTranslation } from "react-i18next";
+import i18n from "../../../i18n";
 
 import logo from '../../../media/ionos_logo-white.png';
 
 import "./News.css";
 
 export const News = () => {
+  const { t } = useTranslation();
+
   const [news, setNews] = useState([]);
+  const langs = {
+    kz: "kk-Cyrl-KZ",
+    en: "en",
+    ru: "ru-RU",
+  }
+
+  const getLocale = (key) => {
+    return langs[key];
+  }
   
   useEffect(() => {
     (async () => {
-      await axios.get(`${process.env.REACT_APP_API_URL}/api/newss?populate=*`, {
+      await axios.get(`${process.env.REACT_APP_API_URL}/api/newss?populate=*&locale=${getLocale(i18n.language)}`, {
         headers: { Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
  }
       })
@@ -24,7 +37,7 @@ export const News = () => {
           .map(n => ({
               id: n.id,
               date: new Date(n.attributes.Publish_date).toLocaleDateString(),
-              img: n.attributes.Image.data ? n.attributes.Image.data.attributes.formats.small.url : logo,
+              img: n.attributes.Image.data ? `http://89.250.82.210:1337${n.attributes.Image.data.attributes.url}` : logo,
               header: n.attributes.Header
           }));
 

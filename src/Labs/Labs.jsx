@@ -56,7 +56,7 @@ const Labs = () => {
         }
       )
       .then((response) => {
-        setImg(response.data.data.attributes.Photo ? response.data.data.attributes.Photo.data[0].attributes.url : "");
+        setImg(response.data.data.attributes.Photo ? `http://89.250.82.210:1337${response.data.data.attributes.Photo.data[0].attributes.url}` : "");
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
@@ -68,19 +68,19 @@ const Labs = () => {
   const dataHandler = () => {
     switch (currentPath) {
       case "diagnosticlab":
-        return setLab(1);
-      case "nonstationarylab":
-        return setLab(2);
-      case "geomagneticlab":
         return setLab(3);
-      case "reliabilitylab":
+      case "nonstationarylab":
         return setLab(4);
-      case "geodynamiclab":
+      case "geomagneticlab":
         return setLab(5);
-      case "complexlab":
+      case "reliabilitylab":
         return setLab(6);
-      case "cartographylab":
+      case "geodynamiclab":
         return setLab(7);
+      case "complexlab":
+        return setLab(8);
+      case "cartographylab":
+        return setLab(9);
       default:
         return setLab("");
     }

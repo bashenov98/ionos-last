@@ -30,7 +30,7 @@ export const Partners = () => {
                 .then(response => {
                     const resp = response.data.data;
                     const partners = resp.map(part => ({
-                        img: part.attributes.Logo.data.attributes.formats.small ? part.attributes.Logo.data.attributes.formats.small.url : part.attributes.Logo.data.attributes.formats.thumbnail.url
+                        img: part.attributes.Logo.data ? `http://89.250.82.210:1337${part.attributes.Logo.data.attributes.url}` : ""
                     }));
 
                     setLocal(partners)
@@ -48,7 +48,7 @@ export const Partners = () => {
                 .then(response => {
                     const resp = response.data.data;
                     const partners = resp.map(part => ({
-                        img: part.attributes.Logo.data.attributes.formats.small ? part.attributes.Logo.data.attributes.formats.small.url : part.attributes.Logo.data.attributes.formats.thumbnail.url
+                        img: part.attributes.Logo.data ? `http://89.250.82.210:1337${part.attributes.Logo.data.attributes.url}` : ""
                     }));
 
                     setInter(partners)

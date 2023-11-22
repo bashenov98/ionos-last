@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import "./Projects.css";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../i18n";
 
 import axios from "axios";
 
@@ -13,12 +15,23 @@ import logo from "../../../media/projects/ionos-logo.png";
 export const Projects = () => {
     const [projects, setProjects] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const { t } = useTranslation();
+
+  const langs = {
+    kz: "kk-Cyrl-KZ",
+    en: "en",
+    ru: "ru-RU",
+  }
+
+  const getLocale = (key) => {
+    return langs[key];
+  }
 
   useEffect(() => {
     const fetchProjectDetail = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/projects?populate=*`,
+          `${process.env.REACT_APP_API_URL}/api/projects?populate=*&locale=${getLocale(i18n.language)}`,
           {
             headers: {
               Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`

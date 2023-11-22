@@ -139,8 +139,8 @@ export const StaffDetail = () => {
             email: n.attributes.Email ? n.attributes.Email : "",
             orcid: n.attributes.Orcid_Link ? n.attributes.Orcid_Link : "",
             photo: n.attributes.Photo.data
-              ? n.attributes.Photo.data[0].attributes.formats.small.url
-              : "https://res.cloudinary.com/ddsakxfcm/image/upload/v1693151526/small_1_335533421b.png",
+              ? `http://89.250.82.210:1337${n.attributes.Photo.data[0].attributes.url}`
+              : "",
           });
           const pubs = n.attributes.publications.data;
           const p = pubs.map((pub) => ({

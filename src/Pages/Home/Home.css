@@ -144,10 +144,14 @@ h5 {
 }
 
 @keyframes textclip {
-  to {
+  from {
     background-position: 200% center;
   }
+  to {
+    background-position: 0 center;
+  }
 }
+
 
 .homeBannerText {
   margin-top: 40px;
