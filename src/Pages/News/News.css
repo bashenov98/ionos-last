@@ -87,6 +87,10 @@ link {
     height: auto;
 }
 
+.newsItemRight {
+    width: 80%;
+}
+
 .newsItemHeaderTop {
     font-size: 28px;
     font-weight: 700;

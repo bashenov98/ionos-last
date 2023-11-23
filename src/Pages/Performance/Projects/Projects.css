@@ -1,20 +1,20 @@
 .projectsDiv {
-    padding: 40px 0 320px;
+    padding: 0 0 200px;
 }
 
 .projectItemLeft {
     display: flex;
     background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%);
-    width: 146px;
-    height: 128px;
-    justify-content: center;
+    width: 170px;
+    height: 152px;
     align-items: center;
+    justify-content: center;
     border-radius: 10px;
 }
 
 .projectItemImg {
-    width: 146px;
-    height: 100px;
+    width: 90%;
+    height: auto;
 }
 
 .projectItemHeader {
