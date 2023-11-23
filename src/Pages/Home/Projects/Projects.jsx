@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import "./Projects.css";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import i18n from "../../../i18n";
 
 import axios from "axios";
@@ -92,7 +93,7 @@ export const Projects = () => {
         ))}
       </div>
       <div className="projectsButtonDiv">
-        <button className="projectsButton">ВСЕ ПРОЕКТЫ</button>
+        <Link to="performance/currentprojects"><button className="projectsButton">ВСЕ ПРОЕКТЫ</button></Link>
       </div>
     </div>
   );

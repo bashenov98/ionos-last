@@ -26,13 +26,19 @@ export const Projects = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    const langs = {
+      kz: "kk-Cyrl-KZ",
+      en: "en",
+      ru: "ru-RU",
+    };
+    const langKey = langs[i18n.language];
     const fetchProjectDetail = async () => {
       await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/projects?populate=*`, {
+        .get(`${process.env.REACT_APP_API_URL}/api/projects?populate=*&locale=${langKey}`, {
           headers: {
             Authorization:
               `Bearer ${process.env.REACT_APP_API_TOKEN}`
-,
+            ,
           },
         })
         .then((response) => {
@@ -67,7 +73,7 @@ export const Projects = () => {
     };
 
     fetchProjectDetail();
-  }, []);
+  }, [i18n.language]);
 
   return (
     loaded && (
@@ -102,9 +108,9 @@ export const Projects = () => {
                   {p.IRN ? ", " : ""}{" "}
                   {p.Start_Date && p.Date_End
                     ? `${p.Start_Date.getFullYear()}-${p.Date_End.getFullYear()} гг. (${monthDiff(
-                        p.Start_Date,
-                        p.Date_End
-                      )} месяцев)`
+                      p.Start_Date,
+                      p.Date_End
+                    )} месяцев)`
                     : ""}
                 </h1>
                 <Link
@@ -136,7 +142,7 @@ export const ProjectDetail = () => {
           headers: {
             Authorization:
               `Bearer ${process.env.REACT_APP_API_TOKEN}`
-,
+            ,
           },
         })
         .then((response) => {
