@@ -1,111 +1,107 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import i18n from "../i18n";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-
-import { useNavigate } from "react-router-dom";
 
 import "./Labs.css";
 
 const Labs = () => {
-  
+  const langs = {
+    kz: "kk-Cyrl-KZ",
+    en: "en",
+    ru: "ru-RU",
+  };
+
+  const labIndices = {
+    'diagnosticlab': 3,
+    'nonstationarylab': 5,
+    'geomagneticlab': 8,
+    'reliabilitylab': 11,
+    'geodynamiclab': 14,
+    'complexlab': 17,
+    'cartographylab': 20,
+  };
+
   const location = useLocation();
   const navigate = useNavigate();
-  const currentPath = location.pathname.slice(6);
+  const { t, i18n } = useTranslation();
+  const [lab, setLab] = useState(null);
+  const [data, setData] = useState(null);
+  const [image, setImage] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  const [lab, setLab] = useState();
-  const [img, setImg] = useState("");
-  const [empId, setEmpId] = useState("");
-  const { t } = useTranslation();
-  const [data, setData] = useState();
+  const fetchLabData = async () => {
+    setLoading(true);
+    const langKey = langs[i18n.language];
+    let labIndex = labIndices[currentPath] || 0;
+    switch (i18n.language) {
+      case "en":
+        labIndex = labIndex;
+        break;
+      case "ru":
+        labIndex = labIndex + 1;
+        break;
+      case "kz":
+        labIndex = labIndex + 2;
+        break;
 
-  const fetchLab = async () => {
-    const res = await axios
-      .get(
-        `${process.env.REACT_APP_API_URL}/api/laboratories/${lab}?populate=*`,
-        {
-          headers: {
-            Authorization:
-              `Bearer ${process.env.REACT_APP_API_TOKEN}`
-,
-          },
-        }
-      )
-      .then((response) => {
-        setData(response.data.data);
-        setEmpId(response.data.data.attributes.Head.data.id);
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
+    }
+
+    console.log(labIndex)
+    const apiUrl = process.env.REACT_APP_API_URL;
+    const apiToken = process.env.REACT_APP_API_TOKEN;
+
+    try {
+      const labResponse = await axios.get(`${apiUrl}/api/laboratories/${labIndex}?populate=*&locale=${langKey}`, {
+        headers: {
+          Authorization: `Bearer ${apiToken}`,
+        },
       });
 
-    return res;
-  };
+      setData(labResponse.data.data);
+      console.log(labResponse.data.data)
 
-  const fetchImg = async () => {
-    const res = await axios
-      .get(
-        `${process.env.REACT_APP_API_URL}/api/employees/${empId}?populate=*`,
-        {
-          headers: {
-            Authorization:
-              `Bearer ${process.env.REACT_APP_API_TOKEN}`
-,
-          },
-        }
-      )
-      .then((response) => {
-        setImg(response.data.data.attributes.Photo ? `http://89.250.82.210:1337${response.data.data.attributes.Photo.data[0].attributes.url}` : "");
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
+      const headId = labResponse.data.data.attributes.Head.data.id;
+      console.log(headId)
+      const employeeResponse = await axios.get(`${apiUrl}/api/employees/${headId}?populate=*`, {
+        headers: {
+          Authorization: `Bearer ${apiToken}`,
+        },
       });
 
-    return res;
-  };
+      const photoUrl = employeeResponse.data.data.attributes.Photo
+        ? `http://89.250.82.210:1337${employeeResponse.data.data.attributes.Photo.data[0].attributes.url}`
+        : "";
 
-  const dataHandler = () => {
-    switch (currentPath) {
-      case "diagnosticlab":
-        return setLab(3);
-      case "nonstationarylab":
-        return setLab(4);
-      case "geomagneticlab":
-        return setLab(5);
-      case "reliabilitylab":
-        return setLab(6);
-      case "geodynamiclab":
-        return setLab(7);
-      case "complexlab":
-        return setLab(8);
-      case "cartographylab":
-        return setLab(9);
-      default:
-        return setLab("");
+      setImage(photoUrl);
+    } catch (err) {
+      console.error("Error fetching data: ", err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
-  useEffect(() => {
-    dataHandler();
-  }, []);
+  const currentPath = location.pathname.slice(6);
 
   useEffect(() => {
-    fetchLab();
-  }, [lab]);
+    fetchLabData();
+  }, [currentPath, i18n.language]);
 
-  useEffect(() => {
-    fetchImg();
-  }, [empId]);
+
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     data && (
       <div className="lab">
-        <h1 className="labHeaderText">{t(location.pathname.slice(6))}</h1>
+        <h1 className="labHeaderText">{t(currentPath)}</h1>
 
         <div className="labMain">
           <div className="labMainPerson">
-            <img src={img} alt="person-img" width="136px" />
+            <img src={image} alt="person-img" width="136px" />
             <h3>
               {data.attributes.Head.data.attributes.Name}{" "}
               {data.attributes.Head.data.attributes.Last_Name}
@@ -120,8 +116,8 @@ const Labs = () => {
         </div>
 
         <div className="labActionButtons">
-          <button onClick={()=>navigate(`/labs/${currentPath}/projects`)}>Проекты</button>
-          <button onClick={()=>navigate(`/labs/${currentPath}/employees`)}>Сотрудники</button>
+          <button onClick={() => navigate(`/labs/${currentPath}/projects`)}>Проекты</button>
+          <button onClick={() => navigate(`/labs/${currentPath}/employees`)}>Сотрудники</button>
         </div>
       </div>
     )

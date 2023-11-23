@@ -1,108 +1,91 @@
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./LabsEmployees.css";
 
-import ProfileImg from "media/labs/empty-profile.png";
-import { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-
 const LabsEmployees = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const currentPath = location.pathname.slice(6).split("/")[0];
-
-  const [lab, setLab] = useState();
-  const [img, setImg] = useState("");
-  const [empId, setEmpId] = useState("");
-  const { t } = useTranslation();
-  const [data, setData] = useState();
+  const { pathname } = useLocation();
+  const { t, i18n } = useTranslation();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const [employees, setEmployees] = useState([]);
-  const [employeesId, setEmployeesId] = useState([]);
 
+  const labIndices = {
+    diagnosticlab: 3,
+    nonstationarylab: 5,
+    geomagneticlab: 8,
+    reliabilitylab: 11,
+    geodynamiclab: 14,
+    complexlab: 17,
+    cartographylab: 20,
+  };
 
-  const [labs, setLabs] = useState();
-
-  console.log(employeesId)
-
-  console.log(employees)
-
-  const dataHandler = () => {
-    switch (currentPath) {
-      case "diagnosticlab":
-        return setLab(1);
-      case "nonstationarylab":
-        return setLab(2);
-      case "geomagneticlab":
-        return setLab(3);
-      case "reliabilitylab":
-        return setLab(4);
-      case "geodynamiclab":
-        return setLab(5);
-      case "complexlab":
-        return setLab(6);
-      case "cartographylab":
-        return setLab(7);
-      default:
-        return setLab("");
-    }
+  const langs = {
+    kz: "kk-Cyrl-KZ",
+    en: "en",
+    ru: "ru-RU",
   };
 
   const fetchEmployees = async () => {
-    const res = await axios
-      .get(`${process.env.REACT_APP_API_URL}/api/employees?populate=*`, {
+    setLoading(true);
+    const currentPath = pathname.split('/').filter(Boolean)[1]; // Get the second segment after the first '/'
+    let labIndex = labIndices[currentPath] || 0;
+
+    labIndex += i18n.language === "ru" ? 1 : i18n.language === "kz" ? 2 : 0;
+
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/laboratories/${labIndex}?populate[0]=employees&populate[1]=employees.Photo&locale=${langs[i18n.language]}`, {
         headers: {
-          Authorization:
-            `Bearer ${process.env.REACT_APP_API_TOKEN}`
-,
+          Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
         },
-      })
-      .then((res) => {
-        setEmployees(res.data.data);
       });
+      const emps = response.data.data.attributes.employees.data.map((emp) => ({
+        id: emp.id,
+        name: `${emp.attributes.Name} ${emp.attributes.Last_Name}`,
+        job: emp.attributes.Position ? emp.attributes.Position : "",
+        img: emp.attributes.Photo.data
+          ? `http://89.250.82.210:1337${emp.attributes.Photo.data[0].attributes.url}`
+          : "",
+      }));
+      setEmployees(emps);
 
-    return res;
-  };
-
-  const fetchLab = async () => {
-    const res = await axios
-      .get(
-        `${process.env.REACT_APP_API_URL}/api/laboratories/${lab}?populate=*`,
-        {
-          headers: {
-            Authorization:
-              `Bearer ${process.env.REACT_APP_API_TOKEN}`
-,
-          },
-        }
-      )
-      .then((response) => {
-        setEmployeesId(response.data.data.attributes.employees.data.map(item => item.id));
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-      });
-
-    return res;
+    } catch (err) {
+      console.error("Error fetching data: ", err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
-    dataHandler();
-    fetchEmployees();
-  }, []);
+    (async () => {
+      await fetchEmployees();
+    })();
+    console.log(employees)
+    // В зависимости добавляется fetchEmployees, чтобы избежать проблемы замыкания
+  }, [pathname, i18n.language]);
+  
 
-  useEffect(() => {
-    fetchLab();
-  }, [lab]);
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
-  return (
+  return employees && (
     <div className="labsEmployees">
-      <h1>СОТРУДНИКИ</h1>
+      <h1>{t('staff')}</h1>
       <div className="labsEmployeesMain">
-        {employees.filter(item => employeesId.includes(item.id)).map((employee, i) => (
-          <div key={i}>
-         
-            <img src={employee.attributes.Photo.data[0].attributes.url || ProfileImg} alt="profile-img" width={"130px"}/>
-          </div>
+        {employees.map((emp, index) => (
+          <Link
+            className="link"
+            to={`/institute/staff/${emp.id}`}
+            key={index}
+          >
+            <div className="staffItem">
+              <img className="employeePhoto" src={emp.img} />
+              <h4 className="labEmployeeNameText">{emp.name}</h4>
+              <p className="labEmployeePositionText">{emp.job}</p>
+            </div>
+          </Link>
         ))}
       </div>
     </div>

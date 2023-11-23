@@ -51,7 +51,7 @@ export const News = () => {
   }, []);
 
   return (
-    <div className="newsContainer">
+    <div className="homeNewsContainer">
       <div className="newsHeader">
         <h1 className="newsHeaderText">ПОСЛЕДНИЕ НОВОСТИ</h1>
       </div>

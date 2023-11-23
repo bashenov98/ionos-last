@@ -13,7 +13,7 @@ import landslides from '../../../media/projects/landslides.png';
 import logo from "../../../media/projects/ionos-logo.png";
 
 export const Projects = () => {
-    const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const { t } = useTranslation();
 

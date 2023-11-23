@@ -64,7 +64,7 @@ const Staff = () => {
     <div className="staffBackground">
       <div className="staffContainer">
         <div className="staffHeader">
-          <h1 className="staffHeaderText">{t('mainScienceStaff')}</h1>
+          <h1 className="staffHeaderText">{t('mainScienceStaff').toUpperCase()}</h1>
         </div>
         <div className="staffList">
           {staff.filter((employee) => employee.isScienceWorker == true).map((emp, index) => (
@@ -82,7 +82,7 @@ const Staff = () => {
           ))}
         </div>
         <div className="staffHeader">
-          <h1 className="staffHeaderText">{t('adminAndTechnicalStaff')}</h1>
+          <h1 className="staffHeaderText">{t('adminAndTechnicalStaff').toUpperCase()}</h1>
         </div>
         <div className="staffList">
           {staff.filter((employee) => employee.isScienceWorker == false).map((emp, index) => (

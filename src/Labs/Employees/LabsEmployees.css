@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 30px;
   align-items: center;
-  padding: 100px 30px;
+  padding: 100px 100px 200px;
 }
 
 .labsEmployees h1 {
@@ -20,4 +20,25 @@
   grid-template-columns: auto auto auto auto;
   column-gap: 40px;
   row-gap: 40px;
+}
+
+.labEmployeeNameText {
+  padding-top: 17px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.13em;
+  text-align: center;
+  color: black;
+}
+
+.labEmployeePositionText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.13em;
+  text-align: center;
+  color: black;
 }

@@ -150,9 +150,6 @@ const Home = () => {
           </div>
 
           <h1 className={`homeBannerHeader ${windowWidth>1080 && "animate-charcter"}`}>{t('bannerheader')}</h1>
-          <p className="homeBannerText">
-          {t('bannerbio')}{" "}
-          </p>
         </div>
       </div> 
       <Administration />
