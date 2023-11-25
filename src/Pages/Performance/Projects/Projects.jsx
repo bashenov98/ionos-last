@@ -134,11 +134,19 @@ export const ProjectDetail = () => {
   const [project, setProject] = useState();
   const [loaded, setLoaded] = useState(false);
   const { id } = useParams();
+  let index = id;
+  
 
   useEffect(() => {
+    const langs = {
+      kz: "kk-Cyrl-KZ",
+      en: "en",
+      ru: "ru-RU",
+    };
+    const langKey = langs[i18n.language];
     const fetchProjectDetail = async () => {
       await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/projects/${id}`, {
+        .get(`${process.env.REACT_APP_API_URL}/api/projects/${id}?locale=${langKey}`, {
           headers: {
             Authorization:
               `Bearer ${process.env.REACT_APP_API_TOKEN}`
@@ -187,7 +195,7 @@ export const ProjectDetail = () => {
     };
 
     fetchProjectDetail();
-  }, []);
+  }, [i18n.language]);
 
   return (
     loaded && (
@@ -209,25 +217,26 @@ export const ProjectDetail = () => {
             <h1 className="newsNavbarPath">/</h1>
           </div>
         </div>
-        <div>
-          <h1 className="projectDetailSubheaderText">Цель:</h1>
-          <h1 className="projectDetailDescriptionText">{project.Goal}</h1>
-        </div>
-        <div>
-          <h1 className="projectDetailSubheaderText">Описание:</h1>
-          <h1 className="projectDetailDescriptionText">{project.Descripton}</h1>
-        </div>
-        {project.Results && (
+        <div className="projectDetailContainer">
           <div>
-            <div>
-              <h1 className="projectDetailSubheaderText">Результаты:</h1>
-              <h1 className="projectDetailDescriptionText">
-                {project.Results}
-              </h1>
-            </div>
+            <h1 className="projectDetailSubheaderText">Цель:</h1>
+            <h1 className="projectDetailDescriptionText">{project.Goal}</h1>
           </div>
-        )}
-        <div></div>
+          <div>
+            <h1 className="projectDetailSubheaderText">Описание:</h1>
+            <h1 className="projectDetailDescriptionText">{project.Descripton}</h1>
+          </div>
+          {project.Results && (
+            <div>
+              <div>
+                <h1 className="projectDetailSubheaderText">Результаты:</h1>
+                <h1 className="projectDetailDescriptionText">
+                  {project.Results}
+                </h1>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     )
   );

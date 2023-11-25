@@ -12,6 +12,10 @@
     border-radius: 10px;
 }
 
+.projectDetailContainer {
+    padding-bottom: 100px;
+}
+
 .projectItemImg {
     width: 90%;
     height: auto;

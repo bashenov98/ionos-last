@@ -19,11 +19,21 @@ const News = () => {
 
     const [news, setNews] = useState([]);
 
+    const langs = {
+        kz: "kk-Cyrl-KZ",
+        en: "en",
+        ru: "ru-RU",
+    }
+    const getLocale = (key) => {
+        return langs[key];
+    }
+
     useEffect(() => {
         (async () => {
-            await axios.get(`${process.env.REACT_APP_API_URL}/api/newss?populate=*`, {
-                headers: { Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
- }
+            await axios.get(`${process.env.REACT_APP_API_URL}/api/newss?populate=*&locale=${getLocale(i18n.language)}`, {
+                headers: {
+                    Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
+                }
             })
                 .then(response => {
                     const resp = response.data.data;
@@ -40,7 +50,7 @@ const News = () => {
                     console.error('Error fetching data: ', error);
                 });
         })();
-    }, []);
+    }, [i18n.language]);
 
     return (
         <div className='newsContainer'>
@@ -82,15 +92,23 @@ export const NewsDetail = () => {
     const [news, setNews] = useState();
     const [loaded, setLoaded] = useState(false);
     const [date, setDate] = useState();
+    const langs = {
+        kz: "kk-Cyrl-KZ",
+        en: "en",
+        ru: "ru-RU",
+    }
+    const getLocale = (key) => {
+        return langs[key];
+    }
 
     const { id } = useParams();
 
     useEffect(() => {
-        console.log()
         const fetchNewsDetail = async () => {
-            await axios.get(`${process.env.REACT_APP_API_URL}/api/newss/${id}?populate=*`, {
-                headers: { Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
- }
+            await axios.get(`${process.env.REACT_APP_API_URL}/api/newss/${id}?populate=*&locale=${getLocale(i18n.language)}`, {
+                headers: {
+                    Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
+                }
             })
                 .then(response => {
                     const n = response.data.data
@@ -100,7 +118,7 @@ export const NewsDetail = () => {
                         year: 'numeric',
                         month: 'long',
                         day: '2-digit'
-                      }).format(newDate);
+                    }).format(newDate);
 
                     setNews({
                         header: n.attributes.Header,
@@ -110,8 +128,8 @@ export const NewsDetail = () => {
                         // authorId: n.attributes.Author ? n.attributes.Author.data.id : "",
                         image: n.attributes.Image.data ? n.attributes.Image.data.attributes.formats.small.url : logo
                     });
-                
-                    setDate(formattedDate);      
+
+                    setDate(formattedDate);
                     setLoaded(true);
                 })
                 .catch(error => {
@@ -120,7 +138,7 @@ export const NewsDetail = () => {
 
         }
 
-        fetchNewsDetail(); 
+        fetchNewsDetail();
     }, []);
 
     return loaded && (
@@ -141,7 +159,7 @@ export const NewsDetail = () => {
                 </div>
             </div>
             <div className='newsDate'>
-                <img src={dateLogo} className='newsDateImg'/> 
+                <img src={dateLogo} className='newsDateImg' />
                 <h1 className='newsDateText'>{`Опубликовано:   ${news.date}`}</h1>
             </div>
             <div className='newsImageParams'>

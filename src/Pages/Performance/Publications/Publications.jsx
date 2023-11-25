@@ -8,6 +8,12 @@ import { Link } from "react-router-dom";
 import "./Publications.css";
 
 const Publications = () => {
+  const langs = {
+    kz: "kk-Cyrl-KZ",
+    en: "en",
+    ru: "ru-RU",
+  };
+  const langKey = langs[i18n.language];
   const location = useLocation();
   const { t } = useTranslation();
   const [loaded, setLoaded] = useState(false);
@@ -18,7 +24,7 @@ const Publications = () => {
   useEffect(() => {
     const fetchPublications = async () => {
       await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/publications?populate=*`, {
+        .get(`${process.env.REACT_APP_API_URL}/api/publications?populate=*&locale=${langKey}`, {
           headers: {
             Authorization:
               `Bearer ${process.env.REACT_APP_API_TOKEN}`
@@ -57,7 +63,7 @@ const Publications = () => {
     };
 
     fetchPublications();
-  }, []);
+  }, [i18n.language]);
 
   return (
     loaded && (
