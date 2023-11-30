@@ -43,7 +43,11 @@ i18n
           "contactUsHeader": "Contact us",
           "head": "Supervisor",
           "mainScienceStaff": "Core scientific staff",
-          "adminAndTechnicalStaff": "Administrative and technical staff"
+          "adminAndTechnicalStaff": "Administrative and technical staff",
+          "more": "MORE",
+          "grantproject": "Grant project", 
+          "months": "months",
+          "main": "Main Page"
         }
       },
       ru: {
@@ -83,7 +87,11 @@ i18n
           "contactUsHeader": "Свяжитесь с нами",
           "head": "Руководитель",
           "mainScienceStaff": "Основной научный персонал",
-          "adminAndTechnicalStaff": "Административный и технический персонал"
+          "adminAndTechnicalStaff": "Административный и технический персонал",
+          "more": "ПОДРОБНЕЕ",
+          "grantproject": "Грантовый проект", 
+          "months": "месяцев",
+          "main": "Главная страница"
         }
       },
       kz: {
@@ -121,7 +129,11 @@ i18n
           "complexlab": "ЖЕР-ҒАРЫШТЫҚ ЗЕРТТЕУ ДЕРЕКТЕРІН ЖАҢАЛЫҚ ТАЛДАУҒА АРНАЛҒАН ЗЕРТХАНАСЫ",
           "cartographylab": "КАРТОГРАФИЯ ЖӘНЕ ГИС ЗЕРТХАНАСЫ",
           "mainScienceStaff": "Негізгі ғылыми қызметкерлер",
-          "adminAndTechnicalStaff": "Әкімшілік-техникалық персонал"
+          "adminAndTechnicalStaff": "Әкімшілік-техникалық персонал",
+          "more": "ТОЛЫҒЫРАҚ",
+          "grantproject": "Гранттық жоба", 
+          "months": "ай",
+          "main": "Басты бет"
           
         }
       }

@@ -16,7 +16,7 @@ import GeophysicalForecast from "./Pages/Services/GeophysicalForecast";
 import SystemDev from "./Pages/Services/SystemDev";
 import { Projects, ProjectDetail } from "./Pages/Performance/Projects/Projects";
 import Publications from "./Pages/Performance/Publications/Publications";
-import Seminars from "./Pages/Performance/Seminars/Seminars";
+import {SeminarDetail, Seminars} from "./Pages/Performance/Seminars/Seminars";
 import Patents from "./Pages/Performance/Patents";
 
 import "./App.css";
@@ -94,6 +94,10 @@ function App() {
           />
           <Route path="/performance/publications" element={<Publications/>} />
           <Route path="/performance/seminars" element={<Seminars/>} />
+          <Route
+            path="/performance/seminars/:id"
+            element={<SeminarDetail/>}
+          />
           <Route path="/performance/patents" element={<Patents/>} />
         </Routes>
         <Footer />
