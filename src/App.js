@@ -17,7 +17,7 @@ import SystemDev from "./Pages/Services/SystemDev";
 import { Projects, ProjectDetail } from "./Pages/Performance/Projects/Projects";
 import Publications from "./Pages/Performance/Publications/Publications";
 import {SeminarDetail, Seminars} from "./Pages/Performance/Seminars/Seminars";
-import Patents from "./Pages/Performance/Patents";
+import Patents from "./Pages/Performance/Patents/Patents";
 
 import "./App.css";
 import { Footer } from "./Layout/Footer/Footer";
