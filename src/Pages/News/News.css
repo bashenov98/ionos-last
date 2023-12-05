@@ -1,204 +1,196 @@
 .newsContainer {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 250px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 250px;
 }
 
 .newsHeaderText {
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 48px;
-    letter-spacing: 0.35em;
-    text-align: center;
-    padding: 11px 0 9px;
-
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 48px;
+  letter-spacing: 0.35em;
+  text-align: center;
+  padding: 11px 0 9px;
 }
 
 .newsNavbarDiv {
-    padding-bottom: 28px;
+  padding-bottom: 28px;
 }
 
 .newsNavbar {
-    padding-left: 12px;
-    display: flex;
-    flex-direction: row;
-    background: rgba(245, 245, 245, 1);
-    height: 34px;
-    width: 100%;
+  padding-left: 12px;
+  display: flex;
+  flex-direction: row;
+  background: rgba(245, 245, 245, 1);
+  height: 34px;
+  width: 100%;
 }
 
 link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .newsNavbarIcon {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .newsNavbarPath {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 16px;
-    letter-spacing: 0.15em;
-    text-align: left;
-    color: black;
-    padding: 9px 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.15em;
+  text-align: left;
+  color: black;
+  padding: 9px 10px;
 }
 
 .newsNavbarPage {
-
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 16px;
-    letter-spacing: 0.15em;
-    text-align: left;
-    color: rgba(119, 119, 119, 1);
-    padding: 9px 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.15em;
+  text-align: left;
+  color: rgba(119, 119, 119, 1);
+  padding: 9px 10px;
 }
 
 .newsList {
-    display: flex;
-    flex-direction: column;
-    padding-left: 40px;
-    padding-right: 40px;
-    gap: 51px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-right: 40px;
+  gap: 51px;
 }
 
 .newsItem {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
 }
 
 .newsItemLeft {
-    display: flex;
-    background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%);
-    width: 170px;
-    height: 152px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
+  display: flex;
+  background: linear-gradient(245.86deg, #1b3571 26.48%, #5e1532 93.72%);
+  width: 170px;
+  height: 152px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 .newsItemImg {
-    width: 90%;
-    height: auto;
+  width: 90%;
+  height: auto;
 }
 
 .newsItemRight {
-    width: 80%;
+  width: 80%;
 }
 
 .newsItemHeaderTop {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 33px;
-    letter-spacing: 0.05em;
-    text-align: left;
-    border-bottom: 1px solid black;
-    color: rgba(66, 103, 244, 1);
-
-
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  border-bottom: 1px solid black;
+  color: rgba(66, 103, 244, 1);
 }
 
 .newsItemHeaderBot {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 900;
-    line-height: 23px;
-    letter-spacing: 0.05em;
-    text-align: left;
-    padding-top: 16px;
-
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  padding-top: 16px;
 }
 
 .newsItemMoreButtonLink {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .newsItemMoreButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 143px;
-    height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 143px;
+  height: 30px;
 }
 
 .newsItemMoreButtonText {
-    padding: 6px 23px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 18px;
-    letter-spacing: 0.05em;
-    background: rgba(28, 54, 114, 1);
-    text-align: center;
-    color: white;
-    border: none;
-
+  padding: 6px 23px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  background: rgba(28, 54, 114, 1);
+  text-align: center;
+  color: white;
+  border: none;
 }
 
 .newsDetail {
-    padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .newsDetailHeaderText {
-    font-family: 'Poppins', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 33px;
-    letter-spacing: 0.05em;
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 19px;
-
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 19px;
 }
 
 .newsDate {
-    display: flex;
-    flex-direction: row;
-    padding-left: 31px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 31px;
 }
 
 .newsDateImg {
-    height: 19px;
-    width: 17px;
+  height: 19px;
+  width: 17px;
 }
 
 .newsDateText {
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 15px;
-    letter-spacing: 0.03em;
-    text-align: left;
-    padding-left: 7px;
-    margin-top: 4px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding-left: 7px;
+  margin-top: 4px;
+  align-items: center;
+  justify-content: center;
 }
 
 .newsImageParams {
-    padding: 42px 57px 0;
+  padding: 42px 57px 0;
 }
 
 .newsDetailImage {
-    width: 513px;
-    height: auto;
+  width: 513px;
+  height: auto;
 
-    box-shadow: 0px 9px 4px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 9px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
 .newsDetailDescriptionText {
-    padding: 61px 42px 48px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 26px;
-    letter-spacing: 0.05em;
-    text-align: left;
-
+  padding: 61px 42px 48px;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0.05em;
+  text-align: left;
 }

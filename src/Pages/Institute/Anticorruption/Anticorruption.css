@@ -1,3 +1,49 @@
 .anticorruptionContainer {
-    padding: 42px;
+  padding: 42px;
+  min-height: 100vh;
+  padding-bottom: 120px;
+}
+
+.anticorruptionContainer h1 {
+  color: #030305;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 8.4px;
+  text-align: center;
+}
+
+.anticorruptionContainer h3 {
+  color: #030305;
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.75px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.anticorBtm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #030305;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.8px;
+  margin-top: 20px;
+}
+
+.anticorBtm p {
+    text-align: center;
+}
+
+.anticorBtm img {
+    width: 130px;
+    height: 98px;
 }
