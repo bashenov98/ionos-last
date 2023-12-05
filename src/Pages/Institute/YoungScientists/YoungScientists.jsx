@@ -1,50 +1,133 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import i18n from '../../../i18n';
-import { useLocation } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../i18n";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
-import './YoungScientists.css';
-import Files from 'Layout/Files/Files';
-
-
-
+import "./YoungScientists.css";
+import Files from "Layout/Files/Files";
 
 const YoungScientists = () => {
-    const location = useLocation();
-    const [files, setFiles] = useState([]);
-    const { t } = useTranslation();
+  const location = useLocation();
+  const [files, setFiles] = useState([]);
+  const { t } = useTranslation();
 
-    useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/api/young-scientists-file?populate=*`, {
-            headers: {
-                Authorization:
-                    `Bearer ${process.env.REACT_APP_API_TOKEN}`
-                ,
-            },
-        })
-            .then((response) => {
-                const resp = response.data.data.attributes.files.data;
-                console.log(resp)
-                const filesData = resp.map((s) => ({
-                    // url: `${process.env.REACT_APP_API_URL}:1337${s.attributes.url}`,
-                    url: s.attributes.url,
-                    name: s.attributes.name,
-                }))
-                setFiles(filesData)
+  useEffect(() => {
+    axios
+      .get(
+        `${process.env.REACT_APP_API_URL}/api/young-scientists-file?populate=*`,
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
+          },
+        }
+      )
+      .then((response) => {
+        const resp = response.data.data.attributes.files.data;
+        console.log(resp);
+        const filesData = resp.map((s) => ({
+          // url: `${process.env.REACT_APP_API_URL}:1337${s.attributes.url}`,
+          url: s.attributes.url,
+          name: s.attributes.name,
+        }));
+        setFiles(filesData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+  }, []);
 
-            })
-            .catch((error) => {
-                console.error("Error fetching data: ", error);
-            });
-    }, []);
+  return (
+    <div className="youngSci">
+      <h2>{t(location.pathname.slice(11))}</h2>
+      <div>
+        В Институте ионосферы действует общественная организация Института —
+        Совет молодых ученых.
+        <br />
+        <br />
+        Совет молодых ученых формируется из представителей различных
+        подразделений Института.
+        <br />
+        <br />
+        Совет в своей деятельности руководствуется действующим законодательством
+        Республики Казахстан, Уставом Института, постановлениями и
+        распоряжениями руководства Института.
+        <br />
+        <br />
+        Общее руководство деятельностью Совета осуществляет Заместитель
+        директора по научно-исследовательской работе (НИР). Деятельность Совета
+        осуществляется в контакте с отделом научно-исследовательской работы и
+        другими подразделениями Института, которые оказывают содействие в его
+        работе.
+      </div>
 
-    return (
-        <div>
-            <h2>{t(location.pathname.slice(11))}</h2>
-            <Files files={files} />
-        </div>
-    );
-}
+      <div className="youngSciGoals">
+        <h3>ЦЕЛИ И ЗАДАЧИ СОВЕТА</h3>
+        Целями деятельности Совета являются: активизация профессионального роста
+        молодых ученых Института, объединение их усилий для разработки
+        актуальных научных проблем и решения приоритетных научных задач, а также
+        развития инновационной деятельности молодых ученых Института.
+      </div>
+
+      <div className="youngSciTasks">
+        <h3>ОСНОВНЫМИ ЗАДАЧИ ЯВЛЯЮТСЯ:</h3>
+        Объединение молодых ученых Института и активизация их деятельности для
+        выполнения поставленных целей, получения новых знаний и интеграция их
+        совместной научной деятельности;
+        <br />
+        Содействие молодым ученым Института в проведении фундаментальных и
+        прикладных исследований.
+        <br />
+        Предметом деятельности Совета являются:
+        <br />
+        Представление интересов молодых ученых в Ученом совете Института, в
+        государственных органах, общественных и иных организациях, включая
+        средствах массовой информации (СМИ);
+        <br />
+        Мониторинг и анализ деятельности молодых ученых Института;
+        <br />
+        Налаживание информационного обмена среди молодых ученых и специалистов
+        научных организаций Института: распространение и обмен информацией о
+        печатных и электронных источниках профессиональной информации, о
+        грантах, фондах, программах поддержки молодых ученых и специалистов,
+        конференциях, школах, научно-практических семинарах и т.д.;
+        <br />
+        Способствование организации проведения конференций молодых ученых
+        Института, семинаров, циклов лекций ведущих ученых;
+        <br />
+        Способствование созданию в Институте научно-инновационных проектов
+        молодых ученых, а также других форм организации научно-
+        исследовательской деятельности;
+        <br />
+        Инициирование организации хозяйственных обществ, деятельность которых
+        заключается в практическом применении (внедрении) результатов
+        интеллектуальной деятельности, для участия в их работе молодых ученых
+        Института;
+        <br />
+        Подготовка предложений по организации полноценного доступа молодых
+        ученых к новейшим информационным технологиям;
+        <br />
+        Участие в решении социальных и других проблем молодых ученых Института;
+        <br />
+        Содействие финансовой поддержке участия молодых ученых в конференциях,
+        семинарах, симпозиумах, стажировках, в том числе международных;
+        <br />
+        Формирование и расширение сети контактов с Советами молодых ученых
+        других научных организаций, высших учебных заведений;
+        <br />
+        Проведение мероприятий по привлечению учащихся школ и студентов высших
+        учебных заведений в академическую науку, способствование популяризации
+        науки;
+        <br />
+        Содействие сохранению и воссозданию исторических, а также формированию
+        новых традиций в Институте;
+        <br />
+        Организация спортивного и культурного досуга молодых ученых и их семей.
+      </div>
+
+      <Files files={files} />
+    </div>
+  );
+};
 
 export default YoungScientists;

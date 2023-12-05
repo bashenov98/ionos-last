@@ -1,0 +1,55 @@
+.youngSci {
+  width: 98%;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 100px;
+}
+
+.youngSci h2 {
+  color: #030305;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 8.4px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.youngSciGoals {
+  color: #030305;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.8px;
+}
+
+.youngSciGoals h3 {
+  margin-top: 30px;
+  color: #030305;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.youngSciTasks {
+  color: #030305;
+  font-size: 14.3px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.715px;
+  margin-top: 20px;
+}
+
+.youngSciTasks h3 {
+  color: #030305;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.75px;
+}
