@@ -36,7 +36,7 @@ const Home = () => {
     const search = async () => {
       await axios
         .get(
-          `${process.env.REACT_APP_API_URL}/api/fuzzy-search/search?query=${inputText}`,
+          `${process.env.REACT_APP_API_URL}/api/fuzzy-search/search?query=${inputText}&locale=ru-RU`,
           {
             headers: {
               Authorization:
