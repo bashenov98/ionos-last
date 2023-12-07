@@ -4,6 +4,7 @@ import i18n from '../../../i18n';
 import { useLocation } from 'react-router-dom';
 import Files from 'Layout/Files/Files';
 import axios from 'axios';
+import './GovPurchases.css';
 
 
 const GovPurchases = () => {
@@ -36,8 +37,8 @@ const GovPurchases = () => {
     }, []);
 
     return (
-        <div>
-            <h2>{t(location.pathname.slice(11))}</h2>
+        <div className='govPurchasesContainer'>
+            <h1>{t(location.pathname.slice(11))}</h1>
             <Files files={files} />
         </div>
     );
