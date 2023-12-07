@@ -6,8 +6,9 @@ export const VideoComponent = () => {
   return (
     <div className="videoContainer">
       <iframe className="videoFrame"
-        src={`https://www.youtube.com/embed/zJ5Sde7ayP4?si=t3h6QZfkaUmHQiRm`}
+        src={`http://www.youtube.com/embed/zJ5Sde7ayP4?si=t3h6QZfkaUmHQiRm`}
         width={"100%"}
+        height={"500px"}
         bor
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

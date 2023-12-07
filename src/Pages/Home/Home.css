@@ -26,7 +26,26 @@ h5 {
   color: white;
   text-align: center;
   background-size: 100%;
-  background-position: top;
+  background-position: 100% 20%;
+
+  /* The image doesn't repeat */
+  background-repeat: scroll;
+
+  /* Fix the background */
+  background-attachment: fixed;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.homeBannerMobile {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../media/2023-09-11\ 01.15.44.jpg");
+  color: white;
+  text-align: center;
+  background-size: 100%;
+  background-position: center;
 
   /* The image doesn't repeat */
   background-repeat: scroll;

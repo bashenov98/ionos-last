@@ -68,7 +68,7 @@ const Home = () => {
 
   return (
     <div className="homeWrapper">
-      <div className="homeBanner">
+      <div className={`${windowWidth>1080 ? "homeBanner" : "homeBannerMobile"}`}>
         <div className="homeBannerOverlay">
           <div className="searchBar">
             <div
