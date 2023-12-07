@@ -149,7 +149,7 @@ const Home = () => {
             </div>
           </div>
 
-          <h1 className={`homeBannerHeader ${windowWidth>1080 && "animate-charcter"}`}>{t('bannerheader')}</h1>
+          <h1 className={`homeBannerHeader ${windowWidth>1080 && "blinking-text"}`}>{t('bannerheader')}</h1>
           <h1 className={`homeBannerText`}>{t('bannerbio')}</h1>
         </div>
       </div> 

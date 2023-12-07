@@ -1,7 +1,12 @@
 .videoContainer {
-    padding: 100px;
+    padding: 100px 0 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(245.86deg, #1B3571 26.48%, #5E1532 93.72%);
+}
+
+.videoFrame {
+    width: 100%;
+    height: 100%;
 }

@@ -38,7 +38,7 @@ const GovPurchases = () => {
 
     return (
         <div className='govPurchasesContainer'>
-            <h1>{t(location.pathname.slice(11))}</h1>
+            <h1 className='govPurchasesHeaderText'>{t(location.pathname.slice(11))}</h1>
             <Files files={files} />
         </div>
     );

@@ -22,14 +22,14 @@ h5 {
   display: flex;
   height: 100vh;
   width: 100%;
-  background-image: url("../../media/gif_background.GIF");
+  background-image: url("../../media/output-onlinegiftools.gif");
   color: white;
   text-align: center;
   background-size: 100%;
-  background-position: center;
+  background-position: top;
 
   /* The image doesn't repeat */
-  background-repeat: no-repeat;
+  background-repeat: scroll;
 
   /* Fix the background */
   background-attachment: fixed;
@@ -130,7 +130,7 @@ h5 {
   margin-bottom: 10px;
 }
 
-.animate-charcter {
+/* .animate-charcter {
   background-image: linear-gradient(
     225deg,
     #231557 0%,
@@ -147,7 +147,7 @@ h5 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 4s linear infinite;
-  /* display: inline-block; */
+   display: inline-block; 
 }
 
 @keyframes textclip {
@@ -157,7 +157,32 @@ h5 {
   to {
     background-position: 0 center;
   }
+} */
+
+@keyframes blinkingText {
+  0% {
+    text-shadow: 0 0 10px #ffffff;
+  }
+  50% {
+    text-shadow: 0 0 20px #ffffff;
+  }
+  100% {
+    text-shadow: 0 0 10px #ffffff;
+  }
 }
+
+.blinking-text {
+/* Установите основной стиль вашего текста */
+
+/* Подключите анимацию с заданным временем и повторением */
+animation: blinkingText 1s infinite;
+}
+
+/* Также вы можете добавить свойства для более плавного мигания */
+.blinking-text {
+animation-timing-function: ease-in-out;
+}
+
 
 
 .homeBannerText {
