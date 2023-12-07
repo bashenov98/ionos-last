@@ -37,17 +37,55 @@ const LabsEmployees = () => {
     en: "en",
     ru: "ru-RU",
   };
+  const Indices = {
+    'diagnosticlab': {
+      'kz': 4,
+      'en': 3,
+      'ru': 2
+    },
+    'nonstationarylab': {
+      'kz': 7,
+      'en': 5,
+      'ru': 6
+    },
+    'geomagneticlab': {
+      'kz': 10,
+      'en': 8,
+      'ru': 9
+    },
+    'reliabilitylab': {
+      'kz': 13,
+      'en': 11,
+      'ru': 12
+    },
+    'geodynamiclab': {
+      'kz': 16,
+      'en': 14,
+      'ru': 15
+    },
+    'complexlab': {
+      'kz': 18,
+      'en': 17,
+      'ru': 19
+    },
+    'cartographylab': {
+      'kz': 22,
+      'en': 20,
+      'ru': 21
+    }
+  };
 
   const fetchProjects = async () => {
     setLoaded(false);
     const currentPath = pathname.split('/').filter(Boolean)[1]; // Get the second segment after the first '/'
     let labIndex = labIndices[currentPath] || 0;
     console.log(labIndex)
+    const index = Indices[currentPath][i18n.language];
 
     labIndex += i18n.language === "ru" ? 1 : i18n.language === "kz" ? 2 : 0;
 
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/laboratories/${labIndex}?populate[0]=projects&populate[1]=employees.Photo&locale=${langs[i18n.language]}`, {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/laboratories/${index}?populate[0]=projects&populate[1]=employees.Photo&locale=${langs[i18n.language]}`, {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
         },
