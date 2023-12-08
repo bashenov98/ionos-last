@@ -1,0 +1,45 @@
+.systemDev {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  width: 96%;
+  margin: 0 auto;
+  padding-bottom: 200px;
+}
+
+.systemDev h2 {
+  color: #030305;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 7.2px;
+  text-align: center;
+}
+
+.systemDevMain {
+  color: #030305;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.systemDevLogos {
+  display: flex;
+  flex-direction: column;
+  color: #030305;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.systemDevLogos img {
+  width: 803px;
+  margin: 0 auto;
+}
