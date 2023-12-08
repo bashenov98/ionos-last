@@ -1,0 +1,101 @@
+.geophysicalForecast {
+  padding-bottom: 200px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.geophysicalForecast h2 {
+  color: #030305;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 8.4px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.geophysicalForecast p {
+  color: #030305;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.75px;
+  margin-top: 30px;
+}
+
+.geophysicalForecastImages {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.geophysicalForecastImagesRow {
+  display: flex;
+  flex-direction: row;
+  color: #030305;
+}
+
+.geophysicalForecastImages h3 {
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.9px;
+}
+
+.geophysicalForecastImagesRowBox {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  color: #030305;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.9px;
+}
+
+.geophysicalForecastImagesRowBox a {
+  color: #00f;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.75px;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.geophysicalForecastImagesBtm {
+  display: flex;
+  flex-direction: column;
+  color: #030305;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  margin-top: 40px;
+}
+
+.geophysicalForecastBtm {
+  margin-top: 40px;
+  width: 94%;
+  color: #030305;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.9px;
+}
