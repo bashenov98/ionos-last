@@ -120,7 +120,6 @@ export const SeminarDetail = () => {
     let index = id;
     const { t } = useTranslation();
 
-
     useEffect(() => {
         const langs = {
             kz: "kk-Cyrl-KZ",
@@ -140,7 +139,7 @@ export const SeminarDetail = () => {
                 .then((response) => {
                     const n = response.data.data;
                     console.log(n)
-                    const imgs = [];
+                    let imgs = [];
                     if (n.attributes.Images.data) {
                         n.attributes.Images.data.forEach(image => {
                             // Check if the image object and its URL are defined
