@@ -35,8 +35,12 @@ const SystemDev = () => {
 
       <div className="systemDevLogos">
         Наши ГИС-проекты:
-        <img src={GisImg} alt="logo-img" />
-        <img src={MaksmImg} alt="logo-img" />
+        <a href="http://igmass.kz/" target="_blank">
+          <img src={GisImg} alt="logo-img" />
+        </a>
+        <a href="http://gislab.kz/" target="_blank">
+          <img src={MaksmImg} alt="logo-img" />
+        </a>
       </div>
     </div>
   );
