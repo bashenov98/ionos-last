@@ -22,39 +22,47 @@ const Staff = () => {
     kz: "kk-Cyrl-KZ",
     en: "en",
     ru: "ru-RU",
-  }
+  };
 
   const getLocale = (key) => {
     return langs[key];
-  }
+  };
 
+  console.log(staff);
   useEffect(() => {
     (async () => {
       await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/employees?populate=*&locale=${getLocale(i18n.language)}`, {
-          headers: {
-            Authorization:
-              `bearer ${process.env.REACT_APP_API_TOKEN}`
-,
-          },
-        })
+        .get(
+          `${
+            process.env.REACT_APP_API_URL
+          }/api/employees?populate=*&locale=${getLocale(i18n.language)}`,
+          {
+            headers: {
+              Authorization: `bearer ${process.env.REACT_APP_API_TOKEN}`,
+            },
+          }
+        )
         .then((response) => {
+          // console.log(response)
           const emps = response.data.data;
           const employees = emps.map((emp) => ({
             id: emp.id,
             name: `${emp.attributes.Name} ${emp.attributes.Last_Name}`,
             job: emp.attributes.Position ? emp.attributes.Position : "",
-            isScienceWorker: emp.attributes.isScienceWorker ? emp.attributes.isScienceWorker : false,
+            isScienceWorker: emp.attributes.isScienceWorker
+              ? emp.attributes.isScienceWorker
+              : false,
             img: emp.attributes.Photo.data
               ? `http://89.250.82.210:1337${emp.attributes.Photo.data[0].attributes.url}`
               : "",
+            rank: emp.attributes.Rank,
           }));
-          console.log(employees)
+          console.log(employees);
 
           setStaff(employees);
         })
         .catch((error) => {
-          console.log("url" +process.env.REACT_APP_API_URL)
+          console.log("url" + process.env.REACT_APP_API_URL);
           console.error("Error fetching data: ", error);
         });
     })();
@@ -64,40 +72,56 @@ const Staff = () => {
     <div className="staffBackground">
       <div className="staffContainer">
         <div className="staffHeader">
-          <h1 className="staffHeaderText">{t('mainScienceStaff').toUpperCase()}</h1>
+          <h1 className="staffHeaderText">
+            {t("mainScienceStaff").toUpperCase()}
+          </h1>
         </div>
         <div className="staffList">
-          {staff.filter((employee) => employee.isScienceWorker == true).map((emp, index) => (
-            <Link
-              className="link"
-              to={`/institute/staff/${emp.id}`}
-              key={index}
-            >
-              <div className="staffItem">
-                <img className="employeePhoto" src={emp.img} />
-                <h4 className="employeeNameText">{emp.name}</h4>
-                <p className="employeePositionText">{emp.job}</p>
-              </div>
-            </Link>
-          ))}
+          {staff
+            .filter((employee) => employee.isScienceWorker === true)
+            .sort((a, b) => {
+              // If rank is null, move it to the end
+              if (a.rank === null) return 1;
+              if (b.rank === null) return -1;
+
+              // Sort based on rank
+              return a.rank - b.rank;
+            })
+            .map((emp, index) => (
+              <Link
+                className="link"
+                to={`/institute/staff/${emp.id}`}
+                key={index}
+              >
+                <div className="staffItem">
+                  <img className="employeePhoto" src={emp.img} />
+                  <h4 className="employeeNameText">{emp.name}</h4>
+                  <p className="employeePositionText">{emp.job}</p>
+                </div>
+              </Link>
+            ))}
         </div>
         <div className="staffHeader">
-          <h1 className="staffHeaderText">{t('adminAndTechnicalStaff').toUpperCase()}</h1>
+          <h1 className="staffHeaderText">
+            {t("adminAndTechnicalStaff").toUpperCase()}
+          </h1>
         </div>
         <div className="staffList">
-          {staff.filter((employee) => employee.isScienceWorker == false).map((emp, index) => (
-            <Link
-              className="link"
-              to={`/institute/staff/${emp.id}`}
-              key={index}
-            >
-              <div className="staffItem">
-                <img className="employeePhoto" src={emp.img} />
-                <h4 className="employeeNameText">{emp.name}</h4>
-                <p className="employeePositionText">{emp.job}</p>
-              </div>
-            </Link>
-          ))}
+          {staff
+            .filter((employee) => employee.isScienceWorker == false)
+            .map((emp, index) => (
+              <Link
+                className="link"
+                to={`/institute/staff/${emp.id}`}
+                key={index}
+              >
+                <div className="staffItem">
+                  <img className="employeePhoto" src={emp.img} />
+                  <h4 className="employeeNameText">{emp.name}</h4>
+                  <p className="employeePositionText">{emp.job}</p>
+                </div>
+              </Link>
+            ))}
         </div>
       </div>
     </div>
@@ -122,9 +146,7 @@ export const StaffDetail = () => {
           `${process.env.REACT_APP_API_URL}/api/employees/${id}?populate[publications][populate][0]=Authors&populate[Photo][populate][1]=data&populate[projects][populate][2]=Image&populate[laboratory][populate][3]=data`,
           {
             headers: {
-              Authorization:
-                `Bearer ${process.env.REACT_APP_API_TOKEN}`
-,
+              Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
             },
           }
         )
@@ -184,12 +206,13 @@ export const StaffDetail = () => {
   return (
     loaded && (
       <div className="staffDetail">
-        {employee.photo && <img src={employee.photo} className="staffDetailPersonImg" />}
+        {employee.photo && (
+          <img src={employee.photo} className="staffDetailPersonImg" />
+        )}
 
         <div className="staffDetailRight">
-
           <div className="staffDetailRightContacts">
-            <h2 style={{marginBottom: "20px"}}>{employee.name}</h2>
+            <h2 style={{ marginBottom: "20px" }}>{employee.name}</h2>
             <div className="employeeParam">
               <img className="employeeIcon" src={job} />
               <p>{employee.job}</p>
@@ -242,21 +265,21 @@ export const StaffDetail = () => {
           </div>
 
           <div className="staffDetailRightSection">
-              <h2 >Публикации</h2>
-              <ul>
-                {publications.map((pub, i) => (
-                  <li key={i}>
-                    {pub.authors.map((author, j) => (
-                      <Link
-                        to={`/institute/staff/${author.id}`}
-                      >{`${author.last_name} ${author.name[0]}, `}</Link>
-                    ))}
-                    {pub.title}
-                    {`. // ${pub.journal} - ${pub.Year}. - Vol. ${pub.volume}. – No. ${pub.number}. – P. ${pub.pages}.`}
-                    {pub.url && <Link to={pub.url}>{` DOI ${pub.URL}`}</Link>}
-                  </li>
-                ))}
-              </ul>
+            <h2>Публикации</h2>
+            <ul>
+              {publications.map((pub, i) => (
+                <li key={i}>
+                  {pub.authors.map((author, j) => (
+                    <Link
+                      to={`/institute/staff/${author.id}`}
+                    >{`${author.last_name} ${author.name[0]}, `}</Link>
+                  ))}
+                  {pub.title}
+                  {`. // ${pub.journal} - ${pub.Year}. - Vol. ${pub.volume}. – No. ${pub.number}. – P. ${pub.pages}.`}
+                  {pub.url && <Link to={pub.url}>{` DOI ${pub.URL}`}</Link>}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

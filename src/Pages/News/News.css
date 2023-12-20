@@ -78,6 +78,7 @@ link {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .newsItemImg {
@@ -97,6 +98,7 @@ link {
   text-align: left;
   border-bottom: 1px solid black;
   color: rgba(66, 103, 244, 1);
+  cursor: pointer;
 }
 
 .newsItemHeaderBot {

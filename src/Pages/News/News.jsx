@@ -73,7 +73,7 @@ const News = () => {
                             <img className='newsItemImg' src={n.img} />
                         </div>
                         <div className='newsItemRight'>
-                            <h1 className='newsItemHeaderTop'>{n.header}</h1>
+                            <h1 className='newsItemHeaderTop' onClick={()=>navigate(`/institute/news/${n.id}`)}>{n.header}</h1>
                             <h1 className='newsItemHeaderBot'>{n.header}</h1>
                             <Link className='newsItemMoreButtonLink' to={`/institute/news/${n.id}`}>
                                 <div className='newsItemMoreButton'>
