@@ -126,7 +126,7 @@ export const NewsDetail = () => {
                         date: formattedDate,
                         // author: n.attributes.Author ? `${n.attributes.Author.data.attributes.Name} ${n.attributes.Author.data.attributes.Last_Name}` : "",
                         // authorId: n.attributes.Author ? n.attributes.Author.data.id : "",
-                        image: n.attributes.Image.data ? n.attributes.Image.data.attributes.formats.small.url : logo
+                        image: n.attributes.Image.data ? `http://89.250.82.210:1337${n.attributes.Image.data.attributes.formats.small.url}` : logo
                     });
 
                     setDate(formattedDate);
