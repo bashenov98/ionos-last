@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
-import Logo from "../../media/ionos_logo-white.png";
+import Logo from "../../media/Лого ИИ белый1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import headerData from "./header.data";
 import languagesData from "./languages.data";

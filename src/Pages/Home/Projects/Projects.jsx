@@ -11,7 +11,7 @@ import maxm from '../../../media/projects/maxm.png';
 import planet from '../../../media/projects/planet.png';
 import landslides from '../../../media/projects/landslides.png';
 
-import logo from "../../../media/projects/ionos-logo.png";
+import logo from "../../../media/Лого ИИ белый1.png";
 
 export const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -36,7 +36,7 @@ export const Projects = () => {
           {
             headers: {
               Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
-,
+              ,
             },
           }
         );
@@ -66,7 +66,7 @@ export const Projects = () => {
   }, []);
 
 
-    
+
 
 
 
@@ -78,17 +78,19 @@ export const Projects = () => {
       <div className="projectList">
         {projects.map((project, i) => (
           <div className="projectItem" key={i}>
-            <div className="projectItemTop">
-              <div className="projectIonosLogo">
-                <img className="projectIonosLogoImg" src={logo} />
+            <Link to = {`/performance/currentprojects/${project.id}`}>
+              <div className="projectItemTop">
+                <div className="projectIonosLogo">
+                  <img className="projectIonosLogoImg" src={logo} />
+                </div>
+                <div className="projectLogo">
+                  <img className="projectLogoImg" src={project.img} />
+                </div>
               </div>
-              <div className="projectLogo">
-                <img className="projectLogoImg" src={project.img} />
+              <div className="projectItemBot">
+                <h3 className="projectItemBotText">{project.header}</h3>
               </div>
-            </div>
-            <div className="projectItemBot">
-              <h3 className="projectItemBotText">{project.header}</h3>
-            </div>
+            </Link>
           </div>
         ))}
       </div>
