@@ -11,7 +11,7 @@ import maxm from '../../../media/projects/maxm.png';
 import planet from '../../../media/projects/planet.png';
 import landslides from '../../../media/projects/landslides.png';
 
-import logo from "../../../media/Лого ИИ белый1.png";
+import logo from "../../../media/logo_new_white.png";
 
 export const Projects = () => {
   const [projects, setProjects] = useState([]);
