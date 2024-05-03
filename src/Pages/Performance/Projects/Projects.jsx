@@ -6,7 +6,7 @@ import axios from "axios";
 
 import nav from "media/nav.png";
 
-import logo from '../../../media/ionos_logo-white.png';
+import logo from '../../../media/logo_new_white.png';
 
 import "./Projects.css";
 
