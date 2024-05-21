@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
+
+import i18n from '../../../i18n';
 
 import { Carousel } from 'react-responsive-carousel';
-
-
 
 import './Partners.css';
 
@@ -10,7 +10,6 @@ import kz from '../../../media/partners/kz.png';
 import foreign from '../../../media/partners/foreign.png';
 
 import axios from 'axios';
-
 
 export const Partners = () => {
     const [local, setLocal] = useState([]);
@@ -23,37 +22,41 @@ export const Partners = () => {
 
     useEffect(() => {
         (async () => {
-            await axios.get(`${process.env.REACT_APP_API_URL}/api/local-partners?populate=*`, {
-                headers: { Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
- }
-            })
-                .then(response => {
+            await axios
+                .get(`${process.env.REACT_APP_API_URL}/api/local-partners?populate=*`, {
+                    headers: { Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}` },
+                })
+                .then((response) => {
                     const resp = response.data.data;
-                    const partners = resp.map(part => ({
-                        img: part.attributes.Logo.data ? `${part.attributes.Logo.data.attributes.url}` : ""
+                    const partners = resp.map((part) => ({
+                        img: part.attributes.Logo.data
+                            ? `${part.attributes.Logo.data.attributes.url}`
+                            : '',
                     }));
 
-                    setLocal(partners)
+                    setLocal(partners);
                 })
-                .catch(error => {
+                .catch((error) => {
                     console.error('Error fetching data: ', error);
                 });
         })();
 
         (async () => {
-            await axios.get(`${process.env.REACT_APP_API_URL}/api/international-partners?populate=*` , {
-                headers: { Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
- }
-            })
-                .then(response => {
+            await axios
+                .get(`${process.env.REACT_APP_API_URL}/api/international-partners?populate=*`, {
+                    headers: { Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}` },
+                })
+                .then((response) => {
                     const resp = response.data.data;
-                    const partners = resp.map(part => ({
-                        img: part.attributes.Logo.data ? `${part.attributes.Logo.data.attributes.url}` : ""
+                    const partners = resp.map((part) => ({
+                        img: part.attributes.Logo.data
+                            ? `${part.attributes.Logo.data.attributes.url}`
+                            : '',
                     }));
 
-                    setInter(partners)
+                    setInter(partners);
                 })
-                .catch(error => {
+                .catch((error) => {
                     console.error('Error fetching data: ', error);
                 });
         })();
@@ -68,14 +71,13 @@ export const Partners = () => {
 
                 Array.from(carouselItems).forEach((item) => {
                     if (i < carouselItems.length) {
-                        item.style.transform = `translateX(-${i * 100}%)`
+                        item.style.transform = `translateX(-${i * 100}%)`;
                     }
-                })
+                });
 
                 if (i < carouselItems.length) {
                     i++;
-                }
-                else {
+                } else {
                     i = 0;
                 }
             }
@@ -84,14 +86,13 @@ export const Partners = () => {
 
                 Array.from(carouselItems).forEach((item) => {
                     if (i < carouselItems.length) {
-                        item.style.transform = `translateX(-${i * 80}%)`
+                        item.style.transform = `translateX(-${i * 80}%)`;
                     }
-                })
+                });
 
                 if (i < carouselItems.length) {
                     i++;
-                }
-                else {
+                } else {
                     i = 0;
                 }
             }
@@ -100,35 +101,46 @@ export const Partners = () => {
         return () => clearInterval(interval);
     }, []);
 
-
-
-
-    return loaded && (
-        <div className="partnersContainer">
-            <div className="partnersDiv">
-                <div className="partnersHeader">
-                    <h1 className="partnersHeaderText">КАЗАХСТАНСКИЕ ПАРТНЕРЫ</h1>
+    return (
+        loaded && (
+            <div className="partnersContainer">
+                <div className="partnersDiv">
+                    <div className="partnersHeader">
+                        <h1 className="partnersHeaderText">
+                            {i18n.language === 'kz'
+                                ? 'ҚАЗАҚСТАНДЫҚ ӘРІПТЕСТЕР'
+                                : i18n.language === 'ru'
+                                ? 'КАЗАХСТАНСКИЕ ПАРТНЕРЫ'
+                                : 'KAZAKHSTAN PARTNERS'}
+                        </h1>
+                    </div>
+                    <div className="partnersList" ref={carouselRef}>
+                        {local.map((partner, i) => (
+                            <div className="partnersItem" key={i}>
+                                <img className="partnersItemImg" src={partner.img} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div className="partnersList" ref={carouselRef}>
-                    {local.map((partner, i) => (
-                        <div className="partnersItem" key={i}>
-                            <img className="partnersItemImg" src={partner.img} />
-                        </div>
-                    ))}
+                <div className="partnersDiv">
+                    <div className="partnersHeader">
+                        <h1 className="partnersHeaderText">
+                            {i18n.language === 'kz'
+                                ? 'ШЕТЕЛДІК ӘРІПТЕСТЕР'
+                                : i18n.language === 'ru'
+                                ? 'ЗАРУБЕЖНЫЕ ПАРТНЕРЫ'
+                                : 'FOREIGN PARTNERS'}
+                        </h1>
+                    </div>
+                    <div className="partnersList" ref={carouselRefInt}>
+                        {inter.map((partner, i) => (
+                            <div className="partnersItem" key={i}>
+                                <img className="partnersItemImg" src={partner.img} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-            <div className="partnersDiv">
-                <div className="partnersHeader">
-                    <h1 className="partnersHeaderText">ЗАРУБЕЖНЫЕ ПАРТНЕРЫ</h1>
-                </div>
-                <div className="partnersList"  ref={carouselRefInt}>
-                    {inter.map((partner, i) => (
-                        <div className="partnersItem" key={i}>
-                            <img className="partnersItemImg" src={partner.img} />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
+        )
     );
-}
+};
