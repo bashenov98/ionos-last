@@ -37,7 +37,7 @@ export const News = () => {
           .map(n => ({
               id: n.id,
               date: new Date(n.attributes.Publish_date).toLocaleDateString(),
-              img: n.attributes.Image.data ? `http://89.250.82.210:1337${n.attributes.Image.data.attributes.url}` : logo,
+              img: n.attributes.Image.data ? `${n.attributes.Image.data.attributes.url}` : logo,
               header: n.attributes.Header
           }));
 

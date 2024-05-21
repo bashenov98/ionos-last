@@ -115,7 +115,7 @@ const Labs = () => {
         });
 
         const photoUrl = employeeResponse.data.data.attributes.Photo
-          ? `http://89.250.82.210:1337${employeeResponse.data.data.attributes.Photo.data[0].attributes.url}`
+          ? `${employeeResponse.data.data.attributes.Photo.data[0].attributes.url}`
           : "";
 
         setImage(photoUrl);

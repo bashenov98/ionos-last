@@ -161,7 +161,7 @@ export const StaffDetail = () => {
             email: n.attributes.Email ? n.attributes.Email : "",
             orcid: n.attributes.Orcid_Link ? n.attributes.Orcid_Link : "",
             photo: n.attributes.Photo.data
-              ? `http://89.250.82.210:1337${n.attributes.Photo.data[0].attributes.url}`
+              ? `${n.attributes.Photo.data[0].attributes.url}`
               : "",
           });
           const pubs = n.attributes.publications.data;

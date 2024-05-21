@@ -96,7 +96,7 @@ const LabsEmployees = () => {
         Header: pro.attributes.Header,
         IRN: pro.attributes.IRN,
         Image: pro.attributes.Image
-          ? `http://89.250.82.210:1337${pro.attributes.Image.data[0].attributes.url}`
+          ? `${pro.attributes.Image.data[0].attributes.url}`
           : logo,
         Start_Date: pro.attributes.Start_Date
           ? new Date(pro.attributes.Start_Date)

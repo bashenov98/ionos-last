@@ -83,7 +83,7 @@ const LabsEmployees = () => {
         name: `${emp.attributes.Name} ${emp.attributes.Last_Name}`,
         job: emp.attributes.Position ? emp.attributes.Position : "",
         img: emp.attributes.Photo.data
-          ? `http://89.250.82.210:1337${emp.attributes.Photo.data[0].attributes.url}`
+          ? `${emp.attributes.Photo.data[0].attributes.url}`
           : "",
       }));
       setEmployees(emps);
