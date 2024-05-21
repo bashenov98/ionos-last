@@ -53,7 +53,7 @@ const Staff = () => {
               ? emp.attributes.isScienceWorker
               : false,
             img: emp.attributes.Photo.data
-              ? `http://89.250.82.210:1337${emp.attributes.Photo.data[0].attributes.url}`
+              ? `${emp.attributes.Photo.data[0].attributes.url}`
               : "",
             rank: emp.attributes.Rank,
           }));
