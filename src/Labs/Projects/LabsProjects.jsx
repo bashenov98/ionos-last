@@ -4,7 +4,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./LabsProjects.css";
 
-import logo from '../../media/ionos_logo-white.png';
+import logo from '../../media/logo_new_white.png'; 
 
 function monthDiff(d1, d2) {
   var months;

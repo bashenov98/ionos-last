@@ -11,10 +11,10 @@ export const Administration = () => {
     const { t } = useTranslation();
 
     const administration = [
-        { id: 3, img: dir },
-        { id: 6, img: zamdir },
-        { id: 59, img: zamdirOV },
-        { id: 7, img: secretary },
+        { id: 3, img: dir, id_kaz: 4, id_en: 1 },
+        { id: 5, img: zamdir, id_kaz: 6, id_en: 2 },
+        { id: 11, img: zamdirOV, id_kaz: 12, id_en: 10 },
+        { id: 14, img: secretary, id_kaz: 15, id_en: 13 },
     ];
 
     return (
@@ -24,7 +24,7 @@ export const Administration = () => {
             </div>
             <div className="administrationList">
                 {administration.map((admin) => (
-                    <div className="administrationItem" key={admin.id}>
+                    <div className="administrationItem" key={i18n.language === 'kz' ? admin.id_kaz : i18n.language === 'ru' ? admin.id : admin.id_en}>
                         <div className="administrationItemImgDiv">
                             <img
                                 style={{

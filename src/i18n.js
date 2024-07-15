@@ -124,19 +124,19 @@ i18n.use(initReactI18next).init({
                         middleName: 'Maratovich',
                         position: 'Director',
                     },
-                    6: {
+                    5: {
                         lastName: 'Iskakov',
                         name: 'Berik',
                         middleName: 'Amaneldievich',
                         position: 'Deputy Director for R&D',
                     },
-                    59: {
+                    11: {
                         lastName: 'Kudaibergenov',
                         name: 'Muratbek',
                         middleName: 'Kasymbekovich',
                         position: 'Deputy Director for OV',
                     },
-                    7: {
+                    14: {
                         lastName: 'Iskalieva',
                         name: 'Gulnara',
                         middleName: '',
@@ -264,19 +264,19 @@ i18n.use(initReactI18next).init({
                         middleName: 'Маратович',
                         position: 'Директор',
                     },
-                    6: {
+                    5: {
                         lastName: 'Искаков',
                         name: 'Берик',
                         middleName: 'Амангельдиевич',
                         position: 'Заместитель директора по НИР',
                     },
-                    59: {
+                    11: {
                         lastName: 'Кудайбергенов',
                         name: 'Муратбек',
                         middleName: 'Касымбекович',
                         position: 'Заместитель директора по ОВ',
                     },
-                    7: {
+                    14: {
                         lastName: 'Искалиева',
                         name: 'Гульнара',
                         middleName: '',
@@ -404,19 +404,19 @@ i18n.use(initReactI18next).init({
                         middleName: 'Маратовұлы',
                         position: 'Директор',
                     },
-                    6: {
+                    5: {
                         lastName: 'Искаков',
                         name: 'Берік',
                         middleName: 'Амангельдіұлы',
                         position: 'ҒЗЖ бойынша директордың орынбасары',
                     },
-                    59: {
+                    11: {
                         lastName: 'Құдайбергенов',
                         name: 'Муратбек',
                         middleName: 'Қасымбекұлы',
                         position: 'ОВ бойынша директордың орынбасары',
                     },
-                    7: {
+                    14: {
                         lastName: 'Искалиева',
                         name: 'Гүлнара',
                         middleName: '',
