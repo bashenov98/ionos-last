@@ -7,6 +7,8 @@ import secretary from '../../media/admins/16.png';
 import './Administration.css';
 import { Link } from 'react-router-dom';
 
+import i18n from '../../../i18n';
+
 export const Administration = () => {
     const { t } = useTranslation();
 
